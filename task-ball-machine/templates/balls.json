@@ -1,0 +1,36 @@
+{
+  "boxes": {
+    "Work": {
+      "emoji": "💼",
+      "balls": [
+        {"id": "BALL-WORK-001", "content": "Deep work session — core project", "difficulty": "hard"},
+        {"id": "BALL-WORK-002", "content": "Email and admin cleanup", "difficulty": "easy"},
+        {"id": "BALL-WORK-003", "content": "Team sync and planning", "difficulty": "medium"}
+      ]
+    },
+    "Study": {
+      "emoji": "📚",
+      "balls": [
+        {"id": "BALL-STU-001", "content": "Read and annotate one paper", "difficulty": "medium"},
+        {"id": "BALL-STU-002", "content": "Review flashcards or notes", "difficulty": "easy"},
+        {"id": "BALL-STU-003", "content": "Deep dive into a hard concept", "difficulty": "hard"}
+      ]
+    },
+    "Health": {
+      "emoji": "🏃",
+      "balls": [
+        {"id": "BALL-HEA-001", "content": "30-minute cardio", "difficulty": "medium"},
+        {"id": "BALL-HEA-002", "content": "Stretching and mobility", "difficulty": "easy"},
+        {"id": "BALL-HEA-003", "content": "Long outdoor walk", "difficulty": "easy"}
+      ]
+    },
+    "Rest": {
+      "emoji": "🧘",
+      "balls": [
+        {"id": "BALL-RES-001", "content": "Read fiction or watch a film", "difficulty": "easy"},
+        {"id": "BALL-RES-002", "content": "Meditation or nap", "difficulty": "easy"},
+        {"id": "BALL-RES-003", "content": "Social call with friend", "difficulty": "medium"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "scenario": "happy_path_init",
+    "prompt": "我想在 ~/life-lottery 目录创建一个抽彩球系统，盒子包括 Work、Study、Rest，今天开始抽球",
+    "expected": "Hermes 应该：1) 创建目录 2) 根据模板生成 config.json + balls.json 3) 初始化 state.json 4) 展示今日看板"
+  },
+  {
+    "id": 2,
+    "scenario": "daily_draw",
+    "prompt": "今天早上和下午的球还没抽，帮我抽一下，然后看看今天的状态",
+    "expected": "Hermes 应该：1) 检查哪些场次已经抽了 2) 抽取未抽场次 3) 展示状态面板"
+  },
+  {
+    "id": 3,
+    "scenario": "complex_redraw_and_stats",
+    "prompt": "今天下午的任务我不想做了，想退回重抽。再给我看看这个周期的统计报告和连续完成天数",
+    "expected": "Hermes 应该：1) 检查下午场次是否已抽 2) 执行 redraw（退回+重抽）3) 展示 stats 报告"
+  }
+]

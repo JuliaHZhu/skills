@@ -1,0 +1,16 @@
+{
+  "cycle_name": "My First Cycle",
+  "cycle_start": "2026-06-01",
+  "cycle_end": "2026-06-30",
+  "duration_map": {
+    "hard": 3.0,
+    "medium": 2.5,
+    "easy": 2.0
+  },
+  "boxes": {
+    "Work":   { "emoji": "💼", "quota": 21 },
+    "Study":  { "emoji": "📚", "quota": 21 },
+    "Health": { "emoji": "🏃", "quota": 15 },
+    "Rest":   { "emoji": "🧘", "quota": 14 }
+  }
+}

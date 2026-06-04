@@ -1,0 +1,7 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-06-04T17:40	baseline	task-ball-machine	-	67	baseline	-	初始评估	dry_run
+2026-06-04T17:45	a0f9ebe	task-ball-machine	67	71	keep	资源整合度+Frontmatter	add triggers, expose templates, remove broken refs	dry_run
+2026-06-04T17:50	05ae1d8	task-ball-machine	71	74	keep	检查点设计	add human-in-the-loop checkpoints for destructive actions	dry_run
+2026-06-04T17:55	f1d9640	task-ball-machine	74	77	keep	工作流清晰度	restructure into numbered phases with I/O contracts	dry_run
+2026-06-04T18:00	c9fe80a	task-ball-machine	77	78	keep	指令具体性	expand commands with arg types, defaults, and legend	dry_run
+2026-06-04T18:05	70c2f3f	task-ball-machine	78	79	keep	边界条件覆盖	fix missing edit command, add empty-box edge case	dry_run
