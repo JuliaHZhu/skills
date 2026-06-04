@@ -162,7 +162,43 @@ python scripts/deck-cli.py outline parse outline.md
 
 ## Step 4: Assemble Deck
 
-**Per-section assembly**:
+### Paragraph Assembly Template
+
+When composing a draft, follow this structure for each paragraph:
+
+```markdown
+<!-- Section: [section_name] -->
+<!-- Tags: [tag1, tag2] -->
+<!-- Atoms used: N -->
+
+[Transition from previous paragraph, if not first]
+
+[Claim / Topic sentence]: State the main point of this paragraph,
+clearly linking to the section's purpose.
+
+[Evidence synthesis]: Integrate atom quotes into a coherent argument.
+- Use 2-4 atoms per paragraph when available
+- Group by logical flow (chronological, theoretical, or contrasting)
+- Connect atoms with transitions: "Similarly," "In contrast," "Building on this," "However"
+
+[Inline citations]: (AuthorYear) after each claim backed by an atom.
+Use author-year format; include page numbers when atoms provide them:
+  "...found significant effects (Smith2024, p.12)."
+
+[Interpretation / So what?]: 1-2 sentences explaining why this evidence
+matters for the hypothesis or theory. Do not end on a quote.
+
+<!-- If weak evidence: -->
+> [WEAK_EVIDENCE: tag H2 needs 5 atoms, found 2]
+```
+
+**Synthesis rules**:
+1. **Never drop a quote without context.** Each atom must be introduced ("According to X...") or woven into the narrative.
+2. **Vary sentence structure.** Do not start every sentence with "Author (Year) found..."
+3. **End with interpretation.** Every paragraph must close with the human's analytical voice, not a citation.
+4. **Flag conflicts.** If two atoms contradict, note: `[CONFLICTING_EVIDENCE: AuthorA2024 vs AuthorB2025]`
+
+### Per-section assembly
 ```bash
 python scripts/deck-cli.py assemble --section "Background"
 # Output: drafts/20250604-143022-section-Background.md
@@ -187,6 +223,21 @@ python scripts/deck-cli.py assemble --all
 
 ## Menu & Commands
 
+### Interaction Protocol (Human-in-the-Loop)
+
+The skill operates in **interactive mode by default**. Hermes must confirm with the human before executing irreversible or consequential actions:
+
+| Action | Hermes Behavior |
+|--------|----------------|
+| **Phase 1 → 2** (first atom extraction) | "I see you have N papers in `papers/`. Shall I help you extract atoms from `[papername]`?" |
+| **Phase 2 → 3** (outline parse) | "Outline parsed. I inferred these tags for each section: [list]. Please review `outline-map.yaml` and confirm before assembling." |
+| **Assemble a section** | "For section `[name]`, I found N atoms matching tags [tags]. Shall I assemble the draft?" — wait for `yes` |
+| **Re-assemble** (already assembled) | "This section was assembled on [date]. Create a new version instead of overwriting?" — default: yes |
+| **Phase guard triggered** | Explain risk, offer alternatives, request explicit confirmation: "⚠️ You are in phase X. [Action] may invalidate Y. Proceed? (yes/no/save-backup)" |
+| **Weak evidence detected** | "Only N/M atoms found for `[tag]`. I can write a flagged draft or wait for more atoms. Which do you prefer?" |
+
+**Non-interactive mode** (for scripting): All commands accept `--yes` to skip confirmations. Hermes uses this internally when acting as a scripted agent.
+
 ### Interactive Menu (default on skill trigger)
 When the skill is triggered without explicit command, Hermes presents:
 
@@ -204,15 +255,30 @@ Hermes asks: "Which step are you on?" and navigates accordingly.
 
 ### Direct Commands (for power users)
 
+All commands accept `--project-dir <path>` to operate on a specific deck. 
+Interactive mode is default; use `--yes` to skip confirmations when scripting.
+
 | Command | Purpose |
 |---------|---------|
-| `deck init <project_name>` | Create project skeleton |
-| `deck extract <paper>` | Extract atoms from one paper |
+| `deck init <project_name>` | Create project skeleton with templates |
+| `deck extract <paper>` | Scaffold atom extraction from one paper |
 | `deck outline parse <outline.md>` | Parse framework to tag map |
-| `deck assemble --section <name>` | Assemble one section |
+| `deck assemble --section <name>` | Assemble one section (prompts for confirmation) |
 | `deck assemble --all` | Assemble all sections |
 | `deck status` | Show phase, coverage, gaps |
 | `deck coverage` | Display hypothesis-path coverage matrix |
+
+### Templates Directory
+
+The `templates/` folder contains starter files copied by `deck init`:
+
+| File | Purpose |
+|------|---------|
+| `templates/project.yaml` | Blueprint template with example variables, hypotheses, theories |
+| `templates/outline.md` | Writing framework template with standard academic sections |
+| `templates/tag-registry.md` | Tag registry starter with coverage summary table |
+
+These are **starting points**, not enforced schemas. Humans edit them freely.
 
 ## State & Phase Guards
 
@@ -317,6 +383,39 @@ When a section cannot find enough atoms:
 - **With `ocr-and-documents`**: Convert PDFs to Markdown before placing in `papers/`.
 - **With `todo`**: Track `TODO_ATOMS` items as session tasks.
 - **With `web_extract`**: Fetch online papers for atom extraction.
+
+## Error Recovery & Edge Cases
+
+### Atoms Directory Empty
+If `atoms/` has no `.md` files:
+- Hermes: "No atoms found in `atoms/`. You need to extract atoms from papers first (Step 2)."
+- Do not proceed to assembly. Offer to help with extraction.
+
+### outline-map.yaml Parse Failure
+If `outline-map.yaml` is malformed or missing:
+- Hermes: "Cannot read outline map. Please run `deck outline parse outline.md` first."
+- If parse produces zero sections, warn: "Outline parsed but found 0 sections. Check that `outline.md` uses `##` or `###` headings."
+
+### Missing Tags in Atoms
+If a section requires tag `X` but no atom has it:
+- During assembly: proceed with `[WEAK_EVIDENCE: tag X, found 0]`
+- Append to `deck-progress.json` under `missing_tags` for tracking
+- Hermes offers: "Tag X has zero atoms. Continue with weak evidence, or pause to extract more?"
+
+### File Permission / IO Errors
+If `deck-cli.py` cannot write to `drafts/`:
+- Error: "Permission denied writing to drafts/. Check directory permissions or run from a writable location."
+- Never crash silently. Always report the exact path that failed.
+
+### Corrupted deck-progress.json
+If `deck-progress.json` is unreadable:
+- Hermes: "Progress file appears corrupted. I can recreate it, but phase history will be lost. Back up first?"
+- Default: create backup `deck-progress.json.bak`, then reinitialize with `current_phase: 1`
+
+### Blueprint Mismatch
+If `project.yaml` is edited after atoms exist (detected by atom timestamps newer than `project.yaml` mtime):
+- Warning: "Atoms were extracted after the last blueprint edit. If you changed hypotheses, existing atom tags may be stale."
+- Recommend: `deck coverage` to check tag consistency, then selective re-tagging.
 
 ## Common Pitfalls
 

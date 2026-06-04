@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "prompt": "I want to start a new research project about digital innovation and organizational ambidexterity. Can you help me set up a literature deck system?",
+    "expected": "Hermes should: (1) offer to run `deck init`, (2) ask about research variables/hypotheses to seed project.yaml, (3) present the 4-step menu, (4) guide phase 1 setup with human-in-the-loop confirmation"
+  },
+  {
+    "id": 2,
+    "prompt": "I already have 20 atoms extracted and an outline written. I'm ready to assemble the 'Theoretical Foundation' section. Can you do that?",
+    "expected": "Hermes should: (1) check deck-progress.json phase (should be >=3), (2) parse outline-map.yaml for 'Theoretical Foundation' tags, (3) search atoms/ for matching tags, (4) assemble draft with citations, (5) flag [WEAK_EVIDENCE] if atoms < needed, (6) save timestamped file, (7) NOT overwrite existing drafts"
+  },
+  {
+    "id": 3,
+    "prompt": "Wait, I think I made a mistake in my project.yaml. I need to change H2's variables. Can you help me edit it?",
+    "expected": "Hermes should: (1) check phase guard — if current_phase > 1, WARN that changing blueprint invalidates downstream atoms, (2) present the risk clearly, (3) ask for explicit confirmation before allowing edit, (4) suggest alternatives (init --force vs. patch approach)"
+  }
+]

@@ -1,0 +1,6 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-06-04T16:30	baseline	literature-deck	-	72.4	baseline	-	Initial evaluation	dry_run
+2026-06-04T16:35	round1	literature-deck	72.4	76.3	keep	检查点设计	Added Interaction Protocol with human confirmation checkpoints	dry_run
+2026-06-04T16:40	round2	literature-deck	76.3	84.05	keep	指令具体性	Added Paragraph Assembly Template with synthesis rules	dry_run
+2026-06-04T16:45	round3	literature-deck	84.05	88.05	keep	边界条件	Added Error Recovery and Edge Cases chapter (6 scenarios)	dry_run
+2026-06-04T16:50	round4	literature-deck	88.05	89.8	keep	资源整合	Documented templates directory and --yes flag	dry_run
