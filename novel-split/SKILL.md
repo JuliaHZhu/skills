@@ -1,7 +1,7 @@
 ---
 name: novel-split
 description: "Use when analyzing novel structure: split novel text into atomic units by scene × topic. Each atom = one identifiable information unit (motive reveal, method hint, tension spike, etc.). Long dialogue at climax is split by topic, not by speaker."
-version: 1.0.0
+version: 1.1.0
 author: JuliaHZhu
 license: MIT
 platforms: [linux, macos, windows]
@@ -143,3 +143,23 @@ He didn't pick it up. He walked straight toward the apartment door.
 - Preserve original text verbatim. Do not edit or summarize.
 - Surface markers are auxiliary — real labeling happens in `novel-tag`.
 - Atom IDs are zero-padded (`#001`, `#002`, ...) for sortability.
+
+## After Split Report
+
+When splitting is complete, report surface marker distribution. **This determines which tags novel-tag will use.**
+
+```
+✓ Split: scandal-in-bohemia
+  124 atoms / 8,200 chars
+  
+  Surface markers:
+  dialogue 55% / description 22% / action 15% / inner 6% / mixed 2%
+  
+  → Tag mode: dialogue-heavy (dialogue >50% — novel-tag will activate extension +4)
+  → Next: "tag scandal-in-bohemia"
+```
+
+If dialogue ≤50%:
+```
+  → Tag mode: narrative-driven (novel-tag uses base 10 only)
+```
