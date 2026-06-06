@@ -23,7 +23,7 @@ Split novel text into atomic units. One atom = one scene × one topic. This is t
 - You plan to run `novel-tag` afterward to label atoms with engine tags (clue, misdirection, tension, etc.)
 - You want to break down a long dialogue (e.g., final confrontation) into thematic units rather than treating it as one blob
 
-**Do not use for**: academic papers (use paragraph-based splitting), non-fiction essays, or texts where scene/topic boundaries don't apply.
+**Do not use for**: academic papers (use paragraph-based splitting), non-fiction essays, or short story collections — use `collection-split` first to separate individual stories, then `novel-split` on each.
 
 ## Core Philosophy
 
