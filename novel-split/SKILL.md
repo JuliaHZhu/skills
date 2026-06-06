@@ -76,6 +76,18 @@ Any of these triggers a new atom:
 - Two characters bantering/chatting (single function) → 1 atom
 - Rule: one atom = one identifiable information unit
 
+**Dialogue-heavy sizing** (when dialogue >50% of text):
+
+For dialogue-heavy works (Christie, Sayers, etc.), atoms should be **larger** — one atom = one complete exchange beat, not one topic shift:
+
+- A Q&A round (question → answer → reaction) = 1 atom
+- A probing sequence where character A fishes for information = 1 atom
+- Two characters sparring over one piece of information = 1 atom
+
+Why: tags like `interrogation` and `performance` describe *patterns across turns*. If atoms are too small (one line each), you'll never see the pattern. A slightly larger atom captures the exchange structure.
+
+Rule of thumb: narrative-driven (Doyle) → ~100-200 chars per atom. Dialogue-heavy (Christie) → ~200-400 chars per atom.
+
 **Description:**
 - Split by what's being described
 - Environment description → 1 atom
