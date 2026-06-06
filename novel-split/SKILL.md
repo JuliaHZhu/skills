@@ -35,13 +35,27 @@ Split novel text into atomic units. One atom = one scene × one topic. This is t
 
 ## Storage
 
+novel-split works on **whatever directory it's pointed at**. Read `source.md` in the current analysis directory, write `atoms.md` in the same directory.
+
+**Standalone novel** (no collection-split):
 ```
 ./analysis/<novel-name>/
-├── source.md      ← original text
-└── atoms.md       ← atomic sequence
+├── source.md      ← put raw text here
+└── atoms.md       ← output
 ```
 
-`<novel-name>` = short English slug derived from the title (e.g., `three-body-ch3`).
+**As part of pipeline** (after collection-split):
+```
+./analysis/<work-name>/
+├── source.md              ← collection raw text
+├── index.md
+├── <segment-slug>/
+│   ├── source.md          ← collection-split wrote this
+│   └── atoms.md           ← novel-split writes this ← HERE
+└── ...
+```
+
+`<novel-name>` or `<segment-slug>` = short English slug (e.g., `three-body-ch3`, `scandal-in-bohemia`).
 
 ## Split Rules
 

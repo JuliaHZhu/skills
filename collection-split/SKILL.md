@@ -34,15 +34,20 @@ Before running `novel-split` atom-by-atom, you need these segments — they're t
 
 ```
 ./analysis/<work-name>/
-├── index.md              ← segment list
+├── source.md              ← ORIGINAL: put the raw text here first
+├── index.md               ← segment list (generated)
 ├── <segment-slug>/
-│   ├── source.md         ← segment text
-│   └── atoms.md          ← after novel-split
+│   ├── source.md          ← extracted segment text
+│   └── atoms.md           ← after novel-split on this segment
 ├── <segment-slug>/
 │   ├── source.md
 │   └── atoms.md
 └── ...
 ```
+
+**Step 0**: Put the raw text (downloaded novel/collection) in `./analysis/<work-name>/source.md`.
+**Step 1**: Run collection-split → reads source.md → extracts segments → writes each to `<segment-slug>/source.md` + index.md.
+**Step 2**: Run novel-split on each segment directory → reads `<segment-slug>/source.md` → writes `<segment-slug>/atoms.md`.
 
 ## Mode A: Collection → Stories
 

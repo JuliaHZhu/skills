@@ -47,7 +47,7 @@ Read these carefully. This is your full deck. Every atom gets tagged from this s
 
 ### Step 1: Read the atoms
 
-Open `./analysis/<novel-name>/atoms.md`. Look for atoms marked `[untagged]`.
+Open `./analysis/<work-name>/<segment-slug>/atoms.md` (or wherever novel-split wrote it). Look for atoms marked `[untagged]`.
 
 ### Step 2: Tag in batches
 
