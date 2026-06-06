@@ -1,115 +1,135 @@
 ---
 name: collection-split
-description: "Use when splitting a short story collection into individual stories before atomic analysis. Handles Sherlock Holmes, short story anthologies, linked story cycles. Each story becomes its own atoms.md via novel-split."
-version: 1.0.0
+description: "Use when splitting a larger work into natural segments before atomic analysis. Two modes: (1) short story collections → individual stories, (2) detective/mystery novels → investigation phases (案发→初查→线索→误导→突破→对峙→收束). Each segment becomes its own directory with source.md and atoms.md."
+version: 1.1.0
 author: JuliaHZhu
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [Architecture, Novel Analysis, Short Stories, Collections, Story Splitting]
+    tags: [Architecture, Novel Analysis, Detective Fiction, Short Stories, Story Splitting, Narrative Structure]
     related_skills: [novel-split, novel-tag]
     requires_toolsets: [file, terminal]
 ---
 
-# Collection Split — Short Story Collections
+# Segment Split — Collections & Detective Novels
 
-A short story collection isn't a novel. Each story is an independent narrative unit with its own structure, pacing, and engine. Before running `novel-split`, you need to split the collection into individual stories.
+Split a larger work into natural narrative segments. Two modes:
+
+**Mode A — Short story collections**: each story = one segment
+**Mode B — Detective/mystery novels**: each investigation phase = one segment
+
+Before running `novel-split` atom-by-atom, you need these segments — they're the right granularity for structural analysis.
 
 ## When to Use
 
-- You have a short story collection (Sherlock Holmes, Dubliners, The Martian Chronicles, etc.)
-- The text contains multiple independent narratives under one cover
-- You want to analyze each story's structure separately, not treat the whole book as one continuous narrative
+- Short story collections (Sherlock Holmes, Dubliners, etc.)
+- Detective/mystery novels (Holmes novels, Christie, Chandler, etc.)
+- Linked story cycles (The Martian Chronicles, Winesburg, Ohio)
+- Any work where the natural narrative unit is larger than a chapter but smaller than the whole book
 
-**Do not use for**: novels (use `novel-split` directly), essay collections (use paragraph-based splitting), or collections where stories share a continuous plot (treat as a novel).
+**Do not use for**: standalone novels without clear phase structure (use `novel-split` directly), essay collections, or non-fiction.
 
 ## Storage
 
 ```
-./analysis/<collection-name>/
-├── index.md              ← story list with metadata
-├── <story-slug-01>/
-│   ├── source.md         ← story text
-│   └── atoms.md          ← atoms (after novel-split)
-├── <story-slug-02>/
+./analysis/<work-name>/
+├── index.md              ← segment list
+├── <segment-slug>/
+│   ├── source.md         ← segment text
+│   └── atoms.md          ← after novel-split
+├── <segment-slug>/
 │   ├── source.md
 │   └── atoms.md
 └── ...
 ```
 
-`<collection-name>` = short English slug (e.g., `sherlock-adventures`).
-`<story-slug>` = story title slug (e.g., `scandal-in-bohemia`).
+## Mode A: Collection → Stories
 
-## Phase 1: Split Collection into Stories
+Split a collection into individual stories by identifying story titles, numbered sections, or clear narrative endings followed by new beginnings.
 
-### Step 1: Identify story boundaries
-
-Look for:
-- Explicit story titles (e.g., "A Scandal in Bohemia", "The Red-Headed League")
-- Numbered sections (I. / II. / III.)
-- Clear narrative endings + new beginnings
-- Table of contents (if available)
-
-### Step 2: Extract each story
-
-For each story identified:
-1. Create `./analysis/<collection-name>/<story-slug>/source.md`
-2. Write the full story text into it
-3. Record in index.md
-
-### Step 3: Write index.md
+### index.md format
 
 ```markdown
 # Collection: The Adventures of Sherlock Holmes
+## Mode: collection
 ## Author: Arthur Conan Doyle
-## Total stories: 12
+## Segments: 12
 ## Analyzed: 0/12
 
-| # | Story | Slug | Words | Status |
+| # | Title | Slug | Words | Status |
 |---|-------|------|-------|--------|
 | 1 | A Scandal in Bohemia | scandal-in-bohemia | 8,200 | pending |
 | 2 | The Red-Headed League | red-headed-league | 9,400 | pending |
-| 3 | A Case of Identity | case-of-identity | 7,100 | pending |
 | ... | ... | ... | ... | ... |
 ```
 
-## Phase 2: Atomic Split per Story
+## Mode B: Detective Novel → Investigation Phases
 
-After collection is split, run `novel-split` on each story. The agent should:
+For detective/mystery novels, split by **case progression**, not by chapter. A 200-page novel might have 6-8 segments, each spanning multiple chapters.
 
-1. Read index.md to see which stories are still `pending`
-2. For each pending story: read `source.md` → follow novel-split rules → write `atoms.md`
-3. Update index.md: `pending` → `atoms-ready`
+### Standard phase template
 
-Or batch: "split all pending stories" → process each one sequentially.
+| # | Phase | Slug | What happens | Typical signals |
+|---|-------|------|-------------|-----------------|
+| 1 | 案发 | crime | Crime discovered, initial scene, victim found | Body discovered, crime reported |
+| 2 | 初查 | initial-investigation | Detective arrives, basic facts gathered, key players introduced | Interviews begin, scene examined |
+| 3 | 线索 | clue-gathering | Evidence collected, witnesses interviewed, theories form | Detective visits locations, gathers items |
+| 4 | 误导 | red-herring | False lead emerges, wrong suspect, tension from wrong direction | Suspicion falls on innocent party |
+| 5 | 突破 | breakthrough | Key insight, turning point, puzzle pieces click | Detective has "aha" moment |
+| 6 | 对峙 | confrontation | Facing the culprit, climax, stakes at maximum | Detective confronts suspect |
+| 7 | 收束 | resolution | Explanation of the crime, tying loose ends | Detective explains the case |
 
-## Phase 3: Tag per Story (Optional)
+**Not every novel has all 7 phases.** Some merge phases, some skip them, some loop back. Adapt to the actual text — the template is a guide, not a straitjacket.
 
-After atoms are ready, run `novel-tag` on each story. The agent can:
+If a phase is very long (e.g., clue-gathering spans 80 pages), split it further: `clue-gathering-1`, `clue-gathering-2`.
 
-- Tag one story: "tag scandal-in-bohemia"
-- Tag all: "tag all atoms-ready stories"
-- Update index.md: `atoms-ready` → `tagged`
+### Phase-specific index.md
 
-## Cross-Story Analysis
+```markdown
+# Novel: The Hound of the Baskervilles
+## Mode: detective-novel
+## Author: Arthur Conan Doyle
+## Total words: 59,000
+## Segments: 6
 
-Once multiple stories are analyzed, cross-story insights emerge:
-
+| # | Phase | Slug | Words | Chapters | Status |
+|---|-------|------|-------|----------|--------|
+| 1 | 案发 | crime | 6,200 | Ch.1-2 | pending |
+| 2 | 初查 | initial-investigation | 11,000 | Ch.3-5 | pending |
+| 3 | 线索 | clue-gathering | 18,000 | Ch.6-9 | pending |
+| 4 | 突破 | breakthrough | 8,500 | Ch.10-12 | pending |
+| 5 | 对峙 | confrontation | 9,300 | Ch.13-14 | pending |
+| 6 | 收束 | resolution | 6,000 | Ch.15 | pending |
 ```
-✓ Collection stats: 12 stories, 104,000 words total
-  Average story: 8,700 words / 58 atoms
-  Clue density range: 8% (Bohemia) to 35% (Speckled Band)
-  Twist frequency: 0.3/story (most stories don't have one)
-  Resolution density: consistent 5-8% across all stories
+
+## After Splitting
+
+Each segment gets `novel-split` (atomize) then `novel-tag` (label). Update index.md status: `pending` → `atoms-ready` → `tagged`.
+
+## Cross-Segment Analysis
+
+Once tagged, compare segments:
+
+**Collection mode:**
+```
+Clue density range: 8% (Bohemia) → 35% (Speckled Band)
+Twist frequency: 0.3/story
 ```
 
-This is where Architecture Bee earns its name — not just analyzing one story, but seeing patterns across the collection.
+**Detective novel mode:**
+```
+Clue density by phase:
+  案发: 12%  初查: 22%  线索: 38%  突破: 15%  对峙: 5%  收束: 8%
+  
+Tension peaks at: 对峙 (68% of atoms tagged [tension])
+Misdirection concentrated in: 线索 phase (all 4 misdirection atoms)
+```
 
 ## Constraints
 
-- Each story gets its own directory. Do not mix atoms across stories.
-- Story slugs: lowercase, hyphens, no special chars. Derive from title.
-- If a story is very short (<2,000 words), it might only have 10-15 atoms. That's fine.
-- The index.md tracks progress. Update it after each operation.
-- For very large collections (50+ stories): process in batches of 10, report progress.
+- Each segment gets its own directory. No mixing.
+- Slugs: lowercase, hyphens. Derive from phase or story title.
+- For detective novels: adapt the 7-phase template to the actual text. Don't force a phase that isn't there.
+- For very short segments (<2,000 words, <15 atoms): merge into adjacent segment if it makes narrative sense.
+- index.md tracks everything. Update after each operation.
