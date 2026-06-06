@@ -26,6 +26,21 @@ Uses **Deck thinking**: the full 10-tag taxonomy is your deck of cards. For each
 
 **Do not use for**: academic papers, essays, or non-fiction (different tag taxonomy needed).
 
+## Storage
+
+novel-tag reads and writes in the same directory:
+
+```
+./analysis/<work-name>/<segment-slug>/
+├── source.md          ← original text (reference only, not modified)
+└── atoms.md           ← INPUT: untagged atoms → OUTPUT: tagged atoms (in-place update)
+```
+
+- **Input**: `atoms.md` with `[untagged]` markers
+- **Output**: same `atoms.md` with `[untagged]` replaced by engine tags
+- The skill updates the file header: `Tagged: No` → `Tagged: Yes`
+- Source text (`source.md`) is never modified — reference only
+
 ## The Tag Deck (10 Cards)
 
 Read these carefully. This is your full deck. Every atom gets tagged from this set.
