@@ -59,7 +59,7 @@ novel-split works on **whatever directory it's pointed at**. Read `source.md` in
 
 ## Split Rules
 
-### Level 1: Scene Boundary (always split)
+### Level 1: Scene Boundary (always split, both modes)
 
 Any of these triggers a new atom:
 - Location/scene change
@@ -67,40 +67,57 @@ Any of these triggers a new atom:
 - Time jump ("Three days later...")
 - Chapter/section break
 
-### Level 2: Topic Boundary (split within same scene)
+### Level 2: Atom Model — choose by dialogue ratio
 
-**Dialogue:**
-- Same scene, continuous conversation → split by thematic content
+**novel-split auto-detects the dominant mode** from surface marker distribution. The split report at the end announces which mode was used.
+
+#### Doyle Mode (dialogue ≤50%)
+
+Atom = scene × topic. Watson is *watching* — each atom is one observation point.
+
+**Dialogue splitting**: by thematic content
 - Protagonist reveals motive → 1 atom
 - Protagonist then reveals method → 1 atom (separate)
 - Two characters bantering/chatting (single function) → 1 atom
-- Rule: one atom = one identifiable information unit
+- Atom size: ~100-200 chars
 
-**Dialogue-heavy sizing** (when dialogue >50% of text):
-
-For dialogue-heavy works (Christie, Sayers, etc.), atoms should be **larger** — one atom = one complete exchange beat, not one topic shift:
-
-- A Q&A round (question → answer → reaction) = 1 atom
-- A probing sequence where character A fishes for information = 1 atom
-- Two characters sparring over one piece of information = 1 atom
-
-Why: tags like `interrogation` and `performance` describe *patterns across turns*. If atoms are too small (one line each), you'll never see the pattern. A slightly larger atom captures the exchange structure.
-
-Rule of thumb: narrative-driven (Doyle) → ~100-200 chars per atom. Dialogue-heavy (Christie) → ~200-400 chars per atom.
-
-**Description:**
-- Split by what's being described
-- Environment description → 1 atom
+**Description splitting**: by what's being described
+- Environment → 1 atom
 - Character appearance → 1 atom
 - Atmosphere/mood → 1 atom
 
-**Action:**
-- One continuous action sequence → 1 atom
-- Action type shift (chase → standoff → escape) = each gets its own atom
+**Action splitting**: by action type
+- One continuous sequence → 1 atom
+- Type shift (chase → standoff → escape) = separate atoms
 
-**Inner Monologue:**
-- One continuous thought stream → 1 atom
-- Topic shift in thoughts → new atom
+**Inner monologue**: by thought topic
+- One stream → 1 atom
+- Topic shift → new atom
+
+#### Christie Mode (dialogue >50%)
+
+Atom = **one complete dialogue round**. Christie's characters *talk* — the atom is the full exchange dynamic, not a single information point.
+
+**What counts as one dialogue round:**
+- A question → answer → reaction (the full Q&A cycle) = 1 atom
+- A probing sequence where A fishes for information from B = 1 atom
+- Two characters sparring over one disputed fact = 1 atom
+- A confession/exposition burst (one character holds the floor) = 1 atom
+- Character A avoids a question and changes topic → the avoidance IS part of the atom
+
+**Why**: when atoms are dialogue rounds, contradiction/performance/interrogation become **visible within a single atom**. Atom #012 now contains "A said he was home at 8" AND "B said he came back at 9" — the contradiction is in the atom. No need for a cross-reference.
+
+**Boundaries**: new round starts when:
+- The topic shifts (from alibi to motive, from timeline to weapon)
+- A new character enters the conversation
+- The power dynamic flips (interrogator becomes the interrogated)
+- Scene changes (Level 1)
+
+**Atom size**: ~200-500 chars. Larger than Doyle mode because one atom = a full exchange.
+
+#### Description, Action, Inner Monologue (Christie mode)
+
+These follow Doyle rules — Christie's non-dialogue passages are similar to Doyle's.
 
 ### Surface Markers (annotate at split time)
 

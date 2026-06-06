@@ -1,7 +1,7 @@
 ---
 name: novel-tag
-description: "Use when labeling novel atoms with engine tags. Two-layer system: (1) atom-layer 10 base tags — clue, misdirection, tension, revelation, motive, method, character, setting, twist, resolution. (2) relation-layer 4 tags — contradiction, omission, performance, interrogation — annotated in ## Relations section at end of atoms.md. Dialogue-heavy works (>50% dialogue) activate relation layer."
-version: 1.2.0
+description: "Use when labeling novel atoms with engine tags. Two modes: Doyle mode (dialogue≤50%) = 10 base tags at atom level. Christie mode (dialogue>50%) = all 14 tags at atom level — dialogue-round atoms naturally contain contradiction/performance/interrogation/omission within a single atom."
+version: 1.3.0
 author: JuliaHZhu
 license: MIT
 platforms: [linux, macos, windows]
@@ -14,173 +14,128 @@ metadata:
 
 # Novel Engine Tagging
 
-Two-layer labeling system:
+Two modes, auto-selected by dialogue ratio (from novel-split report):
 
-- **Atom layer**: 10 base tags per atom — what function does this atom serve?
-- **Relation layer**: 4 extension tags — what pattern exists *between* atoms?
+- **Doyle mode** (dialogue ≤50%): 10 base tags. Small observation-point atoms.
+- **Christie mode** (dialogue >50%): all 14 tags. Large dialogue-round atoms — contradiction, performance, interrogation, and omission are visible *within* a single atom.
 
-The 4 extension tags (contradiction, omission, performance, interrogation) describe **relationships**, not single-atom properties. They cannot be tagged atom-by-atom — they only become visible when you compare atoms.
+No separate Relations layer needed. In Christie mode, the atom IS the exchange unit.
 
 ## When to Use
 
-- You have an `atoms.md` file from `novel-split` and want to add engine labels
-- Dialogue-heavy works (>50% dialogue, e.g. Christie): the relation layer captures "dialogue as reasoning engine"
-
-**Do not use for**: academic papers, essays, or non-fiction.
+- You have an `atoms.md` from `novel-split` and want to add engine labels
+- The split report tells you which mode to use
 
 ## Storage
 
 ```
 ./analysis/<work-name>/<segment-slug>/
-├── source.md          ← original text (reference only, not modified)
-└── atoms.md           ← INPUT: untagged atoms → OUTPUT: tagged atoms + ## Relations
+├── source.md          ← original text (reference only)
+└── atoms.md           ← INPUT: untagged → OUTPUT: tagged (in-place)
 ```
 
 - **Input**: `atoms.md` with `[untagged]` markers
-- **Output**: same `atoms.md` — atom tags updated in-place, `## Relations` appended at end
-- Updates file header: `Tagged: No` → `Tagged: Yes`
+- **Output**: same file, tags updated in-place
+- Header updated: `Tagged: No` → `Tagged: Yes`
 
 ---
 
-## Layer 1: Atom Tags (10 base — always active)
+## Doyle Mode — 10 Tags (dialogue ≤50%)
 
-Every atom gets 1-3 tags from this set.
+Watson is *watching*. Atoms are small observation points. Each atom carries 1-3 tags.
 
 | Tag | Meaning | Judgment Rule |
 |-----|---------|---------------|
-| **clue** | Fragment pointing to truth | If deleted, the reader loses one reasoning path |
-| **misdirection** | Deliberate red herring | If deleted, the reader would NOT be deceived |
+| **clue** | Fragment pointing to truth | If deleted, reader loses a reasoning path |
+| **misdirection** | Deliberate red herring | If deleted, reader would NOT be deceived |
 | **tension** | Urgency/threat escalation | Time pressure, approaching threat, rising stakes |
-| **revelation** | Partial truth emerges | Reader's "aha" moment. Clue is a fragment; revelation snaps it into place |
+| **revelation** | Partial truth emerges | Reader's "aha" moment |
 | **motive** | Why a character acts | Psychological reason for behavior |
-| **method** | How something was done | Mechanism of crime/action. Separate from motive: why vs how |
-| **character** | Character building / relationship | Pure character work. Does NOT advance the mystery |
-| **setting** | Environment / atmosphere | Pure spatial/mood description. No clue information |
-| **twist** | Expectation overturned | Reader thought A, turns out B. Revelation adds a piece; twist flips the table |
-| **resolution** | Loose end tied / callback paid off | Earlier foreshadowing cashes out here |
+| **method** | How something was done | Mechanism of crime/action |
+| **character** | Character building / relationship | Pure character work, doesn't advance mystery |
+| **setting** | Environment / atmosphere | Pure spatial/mood, no clue information |
+| **twist** | Expectation overturned | Reader thought A, turns out B |
+| **resolution** | Loose end tied / callback paid off | Earlier foreshadowing cashes out |
 
-### Atom Tagging Rules
-
-- 1-3 tags per atom. Most get 1-2.
-- Primary function first. If 80% tension + 20% character → tag `[tension]` only.
-- When in doubt, use `[other]`.
-- Mutual exclusion: `clue` vs `misdirection`, `revelation` vs `twist`, `character` vs `motive`.
-
-### Atom Tagging Workflow
-
-1. Read `atoms.md`, find `[untagged]` atoms, process 200 at a time
-2. For each atom: read text → consult deck → pick 1-3 tags
-3. Update: `[untagged] [180 chars] [dialogue]` → `[tension] [clue] [180 chars] [dialogue]`
-4. Update header: `Tagged: Yes`
+Rules: 1-3 tags per atom. Primary function first. Mutual exclusion: `clue` vs `misdirection`, `revelation` vs `twist`.
 
 ---
 
-## Layer 2: Relations (4 tags — dialogue >50% only)
+## Christie Mode — 14 Tags (dialogue >50%)
 
-**Why not atom-level**: these describe patterns *between* atoms. A single atom cannot be "contradiction" — contradiction exists between atom #12 and atom #27. Interrogation is the Q&A rhythm across #15→#18→#22.
+Atoms are **dialogue rounds**. A single atom captures: question → answer → evasion → contradiction → follow-up. The full exchange dynamic is visible within the atom.
 
-Append a `## Relations` section at the bottom of `atoms.md`:
+### Base 10 (same as Doyle)
 
-```markdown
-## Relations
+All 10 base tags apply. Tag as usual.
 
-### contradiction
-- #012 ↔ #027: A says home at 8pm, B says A returned at 9pm — timeline conflict
-- #045 ↔ #089: witness claims red car, suspect's neighbor says blue car
+### Extension +4 (visible within dialogue-round atoms)
 
-### omission
-- #033 → #035: asked about the knife, responds with weather story — deliberate evasion
-- (none found in this segment)
+| Tag | Meaning | How it's visible in a dialogue-round atom |
+|-----|---------|------------------------------------------|
+| **contradiction** | Two accounts/perspectives conflict | Atom contains both: A says X, B says Y that contradicts X. The conflict is inside the atom |
+| **omission** | What's NOT said — avoidance, silence | Atom contains a question AND an answer that isn't an answer. The gap is in the atom |
+| **performance** | Character playing a role | Atom captures the full act: the setup, the fake persona, the fishing. Performance spans the atom |
+| **interrogation** | Q&A itself is the reasoning engine | Atom IS the Q&A cycle. Who asks, who answers, who evades — all in one atom |
 
-### performance
-- #008–#015: Tommy poses as art collector, entire exchange is a performance
-- #052–#058: suspect plays dumb when asked about bank records
+### Christie Tagging Rules
 
-### interrogation
-- #018 → #022 → #025: three-round Q&A, each answer narrows the timeline
-- (none found in this segment)
-```
+- 1-3 tags per atom, same as Doyle
+- `contradiction`: use when the atom contains conflicting claims. Don't also tag `misdirection` unless the conflict is *deliberately* deceptive
+- `performance`: use when the atom's dialogue is a character acting. Don't also tag `character` — character is real; performance is mask
+- `interrogation`: use when the atom's Q&A structure itself drives the investigation. Can coexist with `clue` (process + result)
+- `omission`: use when a question gets a non-answer within the atom. Don't tag `misdirection` unless the evasion is deliberately deceptive
 
-### Relation Tags
-
-| Tag | What it captures | How to spot it |
-|-----|-----------------|----------------|
-| **contradiction** | Two atoms give conflicting information | Scan for pairs of atoms where facts don't align. Mark both atom IDs |
-| **omission** | Character avoids answering a natural question | Look at atom N (question asked), atom N+1 (answer evaded). The gap between them is the omission |
-| **performance** | A sequence of atoms where a character is acting | Scan for 3+ consecutive atoms where a character plays a role. Mark the range (#M–#N) |
-| **interrogation** | Q&A pattern where the questioning itself drives revelation | Look for 3+ atoms forming a question→answer→follow-up chain |
-
-### How to Spot Relations (after atom tagging is complete)
-
-1. **contradiction**: re-read all clue-tagged atoms. Any pair that conflicts? Mark.
-2. **omission**: scan dialogue-heavy chunks. Where does a question get a non-answer? Mark.
-3. **performance**: scan for 3+ consecutive dialogue atoms where a character's stated identity doesn't match their behavior. Mark the range.
-4. **interrogation**: scan for chains of 3+ dialogue atoms with escalating Q&A tension. Mark the chain.
-
-### Relation Constraints
-
-- Only annotate relations when dialogue >50%.
-- `(none found in this segment)` is a valid entry — don't force it.
-- Mark atom IDs, not just "chapter 3 has contradictions." Be specific.
-- Performance ranges: mark the first and last atom of the performance sequence.
-
----
-
-## Tagging Examples
-
-### Atom layer (all works)
+### Christie Examples
 
 ```
-"How long you been waiting?"
-"Three hours. He hasn't come out."
-"Impossible. The back door?"
-"Blocked off."
-
-→ [tension] [clue] [dialogue]
-```
-
-### Atom + Relation layer (Christie style)
-
-Atom tags:
-```
-#008 Tommy posed as an art collector, approaching the suspect with easy charm.
+Tommy posed as an art collector, approaching the suspect with easy charm.
 "Oh, I've been looking for a piece exactly like this. Wherever did you find it?"
 The suspect warmed to the flattery and began describing the gallery—and the dealer.
+Tommy nodded along, already memorizing the name.
 
-→ [clue] [dialogue]
-(atom-level only: clue. Performance and interrogation go in Relations, not here.)
+→ [performance] [interrogation] [clue]
+performance: the whole atom is Tommy acting as a collector
+interrogation: the Q&A structure — ask → flatter → extract
+clue: dealer's name extracted
 ```
 
-Relations:
-```markdown
-## Relations
+```
+"I was at home all evening."
+"But your landlady says you didn't return until nine."
+"I don't know what she's talking about. She must have confused the days."
+The inspector wrote something down without looking up.
 
-### performance
-- #008–#015: Tommy as art collector — entire exchange is a fishing performance
-
-### interrogation
-- #018 → #022 → #025: three-round Q&A — each answer narrows the timeline
+→ [contradiction] [tension]
+contradiction: "home all evening" vs "returned at nine" — both in the atom
+tension: the inspector's silent note-taking ratchets pressure
+Not misdirection — not clear yet if it's a lie or a mistake
 ```
 
-Critically: the atom itself is tagged `[clue]` (it contains a clue: the dealer's name). But the *fact that it's a performance* is annotated in Relations, not on the atom.
+```
+"Where were you on Tuesday?"
+"What a lovely painting behind you. Is that a Turner?"
+"I asked about Tuesday."
+"I've always loved art. My mother was a painter, you know..."
+The detective waited.
+
+→ [omission] [performance]
+omission: three answers, none answers the question
+performance: playing the art enthusiast to deflect
+```
 
 ---
 
 ## After Tagging
 
 ```
-✓ Tagged: scandal-in-bohemia
-  124 atoms labeled — base 10 tags
-  Mode: narrative-driven (dialogue 35%) — relation layer NOT activated
-
-  Distribution: clue 22% / tension 18% / character 15% / revelation 8% / ...
+✓ Doyle mode: scandal-in-bohemia
+  124 atoms / 10 tags active
+  clue 22% / tension 18% / character 15% / ...
 ```
 
 ```
-✓ Tagged: the-tuesday-club
-  203 atoms labeled — base 10 + relation layer
-  Mode: dialogue-heavy (dialogue 68%) — relation layer active
-
-  Atom distribution: clue 18% / tension 22% / character 12% / ...
-  Relations: contradiction 3 / omission 2 / performance 1 / interrogation 4
+✓ Christie mode: the-tuesday-club
+  203 atoms / 14 tags active (dialogue 68%)
+  clue 18% / tension 22% / interrogation 12% / performance 8% / contradiction 5% / omission 3% / ...
 ```
