@@ -1,13 +1,13 @@
 ---
 name: novel-tag
-description: "Use when labeling novel atoms with engine tags. Deck-thinking: the full 10-tag taxonomy is pre-loaded; for each atom, pick 1-3 tags that best describe its narrative engine function. Tags: clue, misdirection, tension, revelation, motive, method, character, setting, twist, resolution."
-version: 1.0.0
+description: "Use when labeling novel atoms with engine tags. Deck-thinking: 14-tag taxonomy pre-loaded (10 base + 4 dialogue-heavy extension). Base: clue, misdirection, tension, revelation, motive, method, character, setting, twist, resolution. Extension (dialogue>50% only): contradiction, omission, performance, interrogation."
+version: 1.1.0
 author: JuliaHZhu
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [Architecture, Novel Analysis, Structural Analysis, Narrative Engine, Tagging]
+    tags: [Architecture, Novel Analysis, Structural Analysis, Narrative Engine, Tagging, Detective Fiction, Dialogue Analysis]
     related_skills: [novel-split]
     requires_toolsets: [file]
 ---
@@ -16,13 +16,14 @@ metadata:
 
 Label novel atoms with **engine tags** — not surface labels like "dialogue" or "description", but structural labels that reveal the narrative engine: what function does this atom serve in the story's machinery?
 
-Uses **Deck thinking**: the full 10-tag taxonomy is your deck of cards. For each atom, you pick 1-3 cards that match. No more, no less.
+Uses **Deck thinking**: the full 14-tag taxonomy is your deck of cards. For each atom, pick 1-3 cards that match. No more, no less.
 
 ## When to Use
 
 - You have an `atoms.md` file from `novel-split` and want to add engine labels
 - You want to answer questions like: "What's the clue-to-misdirection ratio in Chapter 3?" or "Where does the tension peak?"
 - You're studying the structure of a mystery/thriller/suspense novel to understand its engine
+- **Dialogue-heavy works** (>50% dialogue, e.g. Christie): the extension tags capture "dialogue as reasoning engine"
 
 **Do not use for**: academic papers, essays, or non-fiction (different tag taxonomy needed).
 
@@ -41,9 +42,11 @@ novel-tag reads and writes in the same directory:
 - The skill updates the file header: `Tagged: No` → `Tagged: Yes`
 - Source text (`source.md`) is never modified — reference only
 
-## The Tag Deck (10 Cards)
+## The Tag Deck
 
-Read these carefully. This is your full deck. Every atom gets tagged from this set.
+### Base 10 — Universal Detective Fiction Tags
+
+Designed for narrative-driven works (Doyle / Watson-narrator style). Applicable to all detective fiction.
 
 | Tag | Meaning | Judgment Rule |
 |-----|---------|---------------|
@@ -58,29 +61,64 @@ Read these carefully. This is your full deck. Every atom gets tagged from this s
 | **twist** | Expectation overturned | Reader thought A, turns out B. Unlike revelation (adding a piece), twist is flipping the table |
 | **resolution** | Loose end tied / callback paid off | Earlier foreshadowing cashes out here. The story's "clasp" closing |
 
+### Extension +4 — Dialogue-Heavy Tags
+
+**Use only when dialogue >50% of total atoms** (e.g. Christie, Sayers, Marsh). These capture "dialogue as reasoning engine" — the mechanism where conversation IS the investigation.
+
+| Tag | Meaning | Judgment Rule | vs. Base Tag |
+|-----|---------|---------------|--------------|
+| **contradiction** | Two accounts/perspectives conflict | If deleted, the reader loses a logical inconsistency. A says X at 8pm, B says X at 9pm — not about who's lying, but that the information *itself* conflicts | vs `misdirection`: misdirection is *deliberate* deception; contradiction may be accidental, but the *conflict itself* is the signal |
+| **omission** | What's NOT said — avoidance, silence, evasion | Character naturally *could* mention something but doesn't. The gap itself carries information | vs `misdirection`: misdirection is actively saying something false; omission is *passively* not saying something true |
+| **performance** | Acting / pretending / fishing in dialogue | Character plays a role that isn't themselves (playing dumb, fake familiarity, feigned weakness, probing questions) | vs `character`: character is real personality building; performance is a character *acting* — a mask, not the face |
+| **interrogation** | Dialogue as questioning game — back-and-forth inquiry IS the reasoning process | The structure of Q&A itself drives the investigation. Who asks, who answers, who evades — the *process* reveals more than individual answers | vs `clue`: clue is an information fragment (result); interrogation is the *method and process* of obtaining information |
+
+## Usage Rules
+
+1. **Base 10 always available.** Every work gets these.
+2. **Extension +4 only when dialogue >50%.** Don't use `contradiction` / `omission` / `performance` / `interrogation` on narrative-heavy works.
+3. **1-3 tags per atom.** Most get 1-2. Don't pad.
+4. **Primary function first.** If 80% is interrogation and 20% reveals a clue → tag `[interrogation]`, not `[clue]`.
+5. **When in doubt, use `[other]`.** Better vague than wrong.
+
+### Mutual Exclusion Notes
+
+| Pair | Rule |
+|------|------|
+| `clue` vs `misdirection` | Truth or decoy? Pick one |
+| `revelation` vs `twist` | Adding a piece or flipping the table? Pick one |
+| `contradiction` vs `misdirection` | Info conflict or deliberate deception? Usually pick one, can coexist if both clearly present |
+| `omission` vs `misdirection` | Passive silence or active lie? Can coexist |
+| `performance` vs `character` | Acting or real? Pick one |
+| `interrogation` vs `clue` | Process or result? Can coexist — interrogation is *how*, clue is *what* |
+
 ## Tagging Workflow
 
-### Step 1: Read the atoms
+### Step 1: Determine mode
 
-Open `./analysis/<work-name>/<segment-slug>/atoms.md` (or wherever novel-split wrote it). Look for atoms marked `[untagged]`.
+Check the atoms.md header or spot-check dialogue ratio. If dialogue >50%, activate the extension +4 tags.
 
-### Step 2: Tag in batches
+### Step 2: Read the atoms
+
+Open `./analysis/<work-name>/<segment-slug>/atoms.md`. Look for atoms marked `[untagged]`.
+
+### Step 3: Tag in batches
 
 Process 200 atoms at a time. For each atom:
 
 1. Read the original text
-2. Consult the Tag Deck definitions above
+2. Consult the Tag Deck (base 10, + extension 4 if applicable)
 3. Pick 1-3 tags that best describe the atom's engine function
 4. Update: `[untagged] [180 chars] [dialogue]` → `[tension] [clue] [180 chars] [dialogue]`
 
-### Step 3: Repeat until done
+### Step 4: Repeat until done
 
 Continue until all atoms are tagged. Update the file header: `Tagged: Yes`.
 
 ## Tagging Examples
 
+### Doyle / Watson style (base 10)
+
 ```
-Original:
 "How long you been waiting?"
 "Three hours. He hasn't come out."
 "Impossible. The back door?"
@@ -92,26 +130,35 @@ Why: "Three hours" creates time pressure (tension). "Back door blocked off" is a
 Not character — this advances the mystery, not the character arc.
 ```
 
+### Christie style (base 10 + extension 4)
+
 ```
-Original:
-He remembered meeting her twenty years ago. Same winter, same alley.
-She wore a red coat, a flame in the snow.
+Tommy posed as an art collector, approaching the suspect with easy charm.
+"Oh, I've been looking for a piece exactly like this. Wherever did you find it?"
+The suspect warmed to the flattery and began describing the gallery—and the dealer.
 
-→ [character] [description-setting]
-Why: Pure memory + relationship establishment. Does not advance the main plot.
-Not clue — this is emotional background, not a reasoning path.
+→ [performance] [interrogation] [clue]
+performance: acting as a collector
+interrogation: fishing for information through feigned interest
+clue: the dealer's name is extracted
 ```
 
-## Tagging Principles
+```
+"I was at home all evening."
+"But your landlady says you didn't return until nine."
 
-- **Primary function first.** If 80% of the atom builds tension and 20% has character flavor → tag `[tension]` only, not `[character]`.
-- **When in doubt, use `[other]`.** Better to leave it vague than force a wrong label.
-- **1-3 tags. Most atoms get 1-2.** Don't pad.
-- **Dialogue ≠ automatic `[character]`.** Dialogue can carry clue, misdirection, motive, tension, or revelation. The `[character]` tag is only for pure character-building moments.
-- **Mutual exclusion awareness:**
-  - `[clue]` vs `[misdirection]` — truth or decoy? Pick one.
-  - `[revelation]` vs `[twist]` — adding a piece or flipping the table? Pick one.
-  - `[motive]` vs `[method]` — why or how? Can coexist, but rarely do.
+→ [contradiction] [tension]
+contradiction: the two accounts don't match
+tension: the confrontation is escalating
+```
+
+```
+Asked directly about the missing knife, the suspect launched into a long story about the weather, the traffic, and what he had for lunch—never once touching the question.
+
+→ [omission] [tension]
+omission: deliberate avoidance of the topic
+tension: the evasion creates pressure
+```
 
 ## After Tagging
 
@@ -120,9 +167,10 @@ When all atoms are tagged, report a quick preview:
 ```
 ✓ Tagged: <novel-name>
   847 atoms labeled
+  Mode: dialogue-heavy (dialogue 62%) — extension tags active
 
-  Tag distribution (spot-check of first 100 atoms):
-  clue 22% / tension 18% / dialogue 35% / character 15% / revelation 5% / other 5%
+  Base distribution: clue 18% / tension 22% / character 12% / ...
+  Extension distribution: interrogation 15% / performance 8% / contradiction 5% / omission 3%
 
   Next: compute full statistics or generate a PM template.
 ```
