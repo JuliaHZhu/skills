@@ -1,8 +1,8 @@
 ---
 name: style-analyzer
-description: "Analyze a published paper's writing style across three dimensions: relevance to user's research, sentence/paragraph DNA, and stealable writing patterns. Outputs a Style DNA Card for imitation. Use when the user asks to 'analyze this paper's style', '拆文笔', '文笔DNA', '模仿这篇', 'how is this written', 'write like this paper'."
-version: 1.0.0
-author: JuliaHZhu
+description: "Analyze a published paper's writing style across three dimensions: relevance, sentence/paragraph DNA, and stealable patterns. Supports single-paper analysis, batch processing to build a style gene pool, and browsing the pool by field/method/journal/verdict. Use when: 'analyze this paper's style', '拆文笔', '文笔DNA', '模仿这篇', '批量分析', '我的基因库', '基因库有什么'."
+version: 1.1.0
+author: JuliaHZhu (adapted from HKUSTDial/Supervisor-Skills framework)
 license: CC-BY-4.0
 platforms: [linux, macos, windows]
 metadata:
@@ -20,10 +20,17 @@ The goal is NOT to judge quality. It is to describe **how** the paper is written
 
 ## When to Use
 
+**Single paper analysis:**
 - You found a well-written paper in your field and want to write like it.
 - You're starting a new section and want a concrete style reference.
 - You want to understand why a paper "reads well" — not the content, but the craft.
 - The user asks to "analyze this paper's style", "拆文笔", "文笔DNA", "模仿这篇", "how is this written", "write like Teece".
+
+**Batch + gene pool:**
+- The user asks to "批量分析论文", "build my style gene pool", "批量生成文笔卡片".
+- The user gives a list of paper URLs/paths and says "分析这些".
+- The user asks "我的基因库", "基因库有什么", "浏览卡片", "文笔基因库", "style pool", "show my style cards".
+- The user asks to filter the pool: "只看战略管理的卡片", "筛出 top journal 的".
 
 ## When NOT to Use
 
@@ -164,34 +171,194 @@ Aim for **5-8 patterns** per paper. Fewer for short/poorly-written papers.
 
 ## Step 5: Compile the Style DNA Card
 
-Write the final card to the user's workspace. The card is a reference document — the user will consult it while writing their own paper.
+Write the final card to the user's workspace. Each card MUST include a YAML frontmatter block for machine readability — this is what powers the gene pool browser.
 
 ```markdown
-# Style DNA Card: [Paper ID / Short Name]
+---
+paper_id: Teece2007
+paper_title: "Explicating Dynamic Capabilities: The Nature and Microfoundations of (Sustainable) Enterprise Performance"
+first_author: Teece
+year: 2007
+field: strategic management
+method: theory/conceptual
+journal: Strategic Management Journal
+journal_tier: top
+verdict: "✅"
+pattern_count: 6
+analyzed_date: 2026-06-07
+---
+
+# Style DNA Card: Teece2007
 
 ## Relevance
 | Field | Method | Journal | Verdict |
 |-------|--------|---------|---------|
-| [same/adjacent/different] | [same/adjacent/different] | [top/field/lower] | [✅/⚠️/❌] [one-line reason] |
-
-## Sentence DNA
-[One-paragraph description of sentence patterns. Include the key numbers and the one-sentence pattern summary.]
-
-## Paragraph DNA
-[One-paragraph description of paragraph patterns. Include the key numbers and the one-sentence pattern summary.]
-
-## Voice
-[One-paragraph description of voice/stance. Pronoun choice, certainty level, hedging density.]
-
-## ✂️ Stealable Patterns
-1. **[Pattern Name]**: [template formula] *(Section: [where])*
-2. **[Pattern Name]**: [template formula] *(Section: [where])*
+| same | same | top (SMJ) | ✅ Highly imitable — same field, top journal |
 ...
 ```
 
-Write the card to `~/.hermes/cache/style-cards/<paper-id>.md` so it persists across sessions.
+**After writing the card to `~/.hermes/cache/style-cards/<paper-id>.md`**, update the pool index.
+
+### Step 5A: Update index.json
+
+The file `~/.hermes/cache/style-cards/index.json` is the machine-readable gene pool index. After every card write, update it:
+
+```json
+{
+  "updated": "2026-06-07T16:00:00",
+  "total_cards": 1,
+  "cards": {
+    "Teece2007": {
+      "paper_title": "Explicating Dynamic Capabilities",
+      "first_author": "Teece",
+      "year": 2007,
+      "field": "strategic management",
+      "method": "theory/conceptual",
+      "journal": "Strategic Management Journal",
+      "journal_tier": "top",
+      "verdict": "✅",
+      "pattern_count": 6,
+      "analyzed_date": "2026-06-07"
+    }
+  }
+}
+```
+
+- If `index.json` doesn't exist, create it with the new card as the only entry.
+- If it exists, add the new card to `cards` dict, increment `total_cards`, update `updated`.
+- If re-analyzing an existing paper, update the entry — don't duplicate.
 
 🔴 **CHECKPOINT** — Show the completed card to the user. Ask: "Does this capture the paper's style? Any patterns I missed?"
+
+---
+
+## Step 6: Gene Pool Browser — 基因库浏览
+
+When the user asks "我的基因库", "基因库有什么", "浏览卡片", "style pool", "show my style cards", or wants to filter the pool — read from the gene pool and present results.
+
+### 6A. Pool Overview
+
+Read `~/.hermes/cache/style-cards/index.json`. If it doesn't exist or `total_cards` is 0:
+
+```
+📭 基因库为空。还没有分析过任何论文。
+   用 "分析这篇论文" 来添加第一张文笔 DNA 卡片。
+```
+
+If cards exist, output a summary table:
+
+```
+🧬 文笔基因库 — 共 N 张卡片
+
+| Paper | Author | Year | Field | Method | Journal | Verdict |
+|-------|--------|------|-------|--------|---------|---------|
+| Teece2007 | Teece | 2007 | strategic mgmt | theory | SMJ 🏆 | ✅ |
+| ... | ... | ... | ... | ... | ... | ... |
+```
+
+### 6B. Filtered View
+
+When user applies a filter (e.g., "只看战略管理", "筛出 top journal", "只看 ✅"):
+
+1. Read `index.json`
+2. Filter by the specified dimension(s)
+3. Show the filtered table with filter description above
+
+Supported filters:
+- `field` — match against card's `field` field (fuzzy match)
+- `method` — match against card's `method` field
+- `journal_tier` — exact match on `top` / `field` / `lower`
+- `verdict` — exact match on `✅` / `⚠️` / `❌`
+- `author` — match against `first_author`
+
+```
+🔍 筛选: field=strategic, journal_tier=top — 共 N 张
+[filtered table]
+```
+
+### 6C. Pool Stats
+
+When the user asks "基因库统计" or "stats":
+
+```
+📊 基因库统计
+
+卡片总数: N
+字段分布:
+  strategic management: 5
+  entrepreneurship: 3
+  organization theory: 2
+方法分布:
+  empirical (SEM): 4
+  theory/conceptual: 3
+  case study: 2
+  experiment: 1
+期刊层级:
+  top: 6
+  field: 3
+  lower: 1
+可模仿性:
+  ✅  Highly imitable: 5
+  ⚠️  Partially imitable: 4
+  ❌  Low transferability: 1
+```
+
+### 6D. Keyword Search
+
+When the user asks "基因库搜 <keyword>" or "find cards about <topic>":
+
+Search across all `.md` card files in `~/.hermes/cache/style-cards/` using `search_files` for the keyword. Report matching cards with the surrounding context line.
+
+---
+
+## Step 7: Batch Mode — 批量分析
+
+When the user provides a list of papers and says "批量分析", "分析这些论文", "build my gene pool", "批量生成文笔卡片":
+
+### 7A. Parse the List
+
+Accept:
+- Multiple arXiv URLs (one per line)
+- Multiple local file paths
+- A list of paper names + authors (user will provide text for each later if needed)
+- Mixed format
+
+If the list is ambiguous, ask the user to clarify which papers.
+
+### 7B. Process Each Paper
+
+For each paper in the list:
+
+1. Check `~/.hermes/cache/style-cards/` — if a card already exists for this paper, mark it `⏭️ SKIP (already in pool)`
+2. Run **Steps 1–5** for the paper
+3. Write the card + update `index.json`
+4. Mark progress: `✅ Teece2007 done, 2/5`
+
+🔴 **BATCH RULE**: Do NOT ask the CHECKPOINT question after each individual card in batch mode — it would block the pipeline. Trust the Steps 1-5 process. Only show the final batch summary.
+
+If a paper fails (paywall, too short, inaccessible):
+- Mark it `❌ FAILED: <paper-id> — <reason>`
+- Continue to the next paper
+
+### 7C. Batch Summary
+
+After all papers processed:
+
+```
+🧬 批量分析完成
+
+| Status | Paper | Details |
+|--------|-------|---------|
+| ✅ | Teece2007 | 6 patterns, ✅ highly imitable |
+| ✅ | Eisenhardt1989 | 5 patterns, ✅ highly imitable |
+| ⏭️ | Barney1991 | Already in pool |
+| ❌ | PaperX | Paywall — need text |
+
+3 processed, 1 skipped, 1 failed
+基因库现在有 N 张卡片
+```
+
+Then automatically show the updated pool overview (Step 6A).
 
 ---
 

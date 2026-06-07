@@ -1,8 +1,22 @@
 # Style DNA Card Template
 
-Copy this template when producing a Style DNA Card. Replace bracketed placeholders.
+Each card MUST include YAML frontmatter for machine readability (powers the gene pool browser). Copy and fill in the `---` block, then complete the sections below.
 
 ```markdown
+---
+paper_id: [ShortID]
+paper_title: "[Full Title]"
+first_author: [LastName]
+year: [YYYY]
+field: [strategic management / entrepreneurship / organization theory / ...]
+method: [empirical (SEM) / theory/conceptual / case study / experiment / ...]
+journal: [Full Journal Name]
+journal_tier: [top / field / lower]
+verdict: "[✅ / ⚠️ / ❌]"
+pattern_count: [N]
+analyzed_date: [YYYY-MM-DD]
+---
+
 # Style DNA Card: [Paper ID]
 
 ## Relevance
