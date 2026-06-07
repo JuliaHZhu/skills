@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "prompt": "分析 Teece (2007) 'Explicating dynamic capabilities' 这篇论文的文笔，我想模仿它的写法写我的论文。",
+    "expected": "输出完整的 Style DNA Card：相关性评估（同领域/顶刊→高度可模仿）、句子DNA（平均句长+长短句比+模式描述）、段落DNA（开头/结尾模式+段长）、语气（we主导+断言型+低hedging）、5-8个可偷模式（定义公式/假设推演/Discussion开头等）"
+  },
+  {
+    "id": 2,
+    "prompt": "这篇 Nature 材料科学的论文写得怎么样，我想模仿它的写法写管理学的论文。",
+    "expected": "识别领域不匹配（材料科学 vs 管理学），标注为低可转移性但依然按流程给出 DNA 卡片；在相关性部分明确说❌低可转移性，提醒用户写作传统完全不同"
+  },
+  {
+    "id": 3,
+    "prompt": "帮我拆一下 Grant (1996) 'Toward a knowledge-based theory of the firm' 的文笔 DNA",
+    "expected": "理论论文的分析：句子DNA（Grant 以短句+清晰论断著称）、段落模式（每个段落一个核心主张）、可偷模式（理论命题陈述公式、概念对比模式）"
+  }
+]
