@@ -86,6 +86,8 @@ TITLE-ABS-KEY("psychological safety" AND "AI") AND PUBYEAR > 2021 AND SRCTITLE("
 - 搜索词太窄 — 同义词/变体也要搜。比如 "AI" 也要搜 "artificial intelligence" "machine learning" "algorithm"。
 - 只搜标题不搜摘要 — 会漏掉。标题可能不包含 construct 名但摘要有。
 
+🔴 **CHECKPOINT: 期刊追溯完成后，展示搜索结果给用户确认。如果找到 "related but different" 的论文，让用户判断是否需要窄化 gap 后再继续。**
+
 ## Verification Source 2: Scholar Tracing（学者追溯）
 
 **逻辑**：如果这个 gap 真的存在，研究这些 construct 的前沿学者不应该已经做过。
@@ -215,6 +217,7 @@ AI 驱动的学习支持工具通过增强员工学习敏捷性，促进双元�
 | **学者追溯无法定位** | 概念地图中的学者档案未覆盖 gap 涉及的所有 construct | 用 Google Scholar 搜 construct 名 → 找被引最高的 3 篇 → 从作者中补学者档案 → 重新追溯 |
 | **理论验证三框架都失败** | 试了 2-3 个理论框架都无法干净覆盖 gap | 不要强行套理论。标注"理论待构建"，gap 仍可能成立（跨领域创新），但在 model-builder 中标注论证成本高 |
 | **三源通过但 gap 太窄** | gap 成立但只涉及一个很小的 construct 组合 | gap 成立但贡献可能不够。检查：这个 gap 展开后能不能支撑 ≥ 3 个假设？不能 → 回 idea-rebel 找更宽的 gap |
+| **期刊搜索返回过多结果** | 搜索返回 > 20 篇论文，无法快速判定 gap | gap 可能太宽——不是"没人做过"而是"太多人做过，你需要窄化"。① 在搜索中加一个调节变量缩小范围；② 原 gap 可能涉及一个已成熟的研究流，改搜索 "[construct A] review" 看看有没有综述覆盖 |
 
 ## Output
 
@@ -252,6 +255,18 @@ AI 驱动的学习支持工具通过增强员工学习敏捷性，促进双元�
 - **发现 1 篇 "related but different" 不要直接判不通过。** 分析差异——如果差异够大（不同情境、不同机制、不同 granularity），gap 可能窄化后仍然成立。
 - **不要验证第一个通过的就停下来不追其他的。** 至少验证 2-3 个 gap，从中选理论支撑最强的。
 - **期刊搜索的 year constraint 不要设太窄。** 至少近 5 年。如果 gap 涉及的是热门话题（如 AI），缩短到 3 年也够。
+
+## 假 Gap 黑名单
+
+以下类型的 gap 不应该浪费三源验证——它们是伪 gap，不是没人做，而是不该做：
+
+| 假 gap 类型 | 症状 | 为什么不该追 |
+|------------|------|-------------|
+| **同义反复** | 两个 construct 在定义上是同一件事的不同名字 | 不管搜没搜到，论证 A→B 等于说 "X→X"，审稿人会秒杀 |
+| **定义包含关系** | 一个 construct 是另一个的子集 | 如 "innovation → product innovation"——product innovation 就是 innovation 的一种，路径不带来新知识 |
+| **明显不可研究** | 涉及无法测量的变量（如 "organizational subconscious"） | 没有量表 = 不能建模 = 不是 gap 是 wish |
+| **已被 review 明确否定** | 领域综述论文明确写了 "future research should NOT pursue X" | 不一定是 gap——可能是前人试过发现死胡同 |
+| **只有情境差异** | 唯一的不同是换了行业/国家，没有任何 construct 或理论创新 | 审稿人会说是 "cross-context replication"，不是新贡献。除非你有 theory-based reason 说明为什么情境会改变 mechanism |
 
 ## Composability
 
