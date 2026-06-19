@@ -1,6 +1,6 @@
 ---
 name: contribution-shaper
-description: "Identify and sharpen the core contribution of a research model. Layer contributions (theory vs context vs method), upgrade variable definitions, and check differentiation from the closest existing papers."
+description: "Identify and sharpen the core contribution of a research model. Layer contributions (theory vs context vs method), upgrade variable definitions, and check differentiation from the closest existing papers. 触发词：打磨贡献、contribution是什么、变量升级、区分度检查、贡献分层、contribution shaper."
 version: 1.0.0
 author: JuliaHZhu
 license: MIT
@@ -115,6 +115,8 @@ territory-mapper → idea-rebel → gap-validator → model-builder → contribu
 | 工作自主性 | ❌ | - | 标准定义已够 | 保持 |
 ```
 
+🔴 **CHECKPOINT: 变量升级决策展示给用户确认——升级了哪些、为什么、量表是否可用。升级必须用户同意。**
+
 ## Step 3: Differentiation Check（区分度检查）
 
 找出文献池中与你模型最接近的 3 篇论文，系统性地比较。这直接决定 Introduction 的"how we differ"段。
@@ -149,6 +151,8 @@ territory-mapper → idea-rebel → gap-validator → model-builder → contribu
 | 足够 | 至少 2 个核心维度不同（IV/Mediator/DV/理论/情境） | 低 |
 | 勉强 | 只有情境不同 | 审稿人: "为什么不直接在已有模型上做 cross-context 研究？" |
 | 不够 | 相同点多于不同点 | 必须重新设计，和已有论文撞了 |
+
+🔴 **CHECKPOINT: 区分度矩阵展示给用户确认——如果区分度"勉强"或"不够"，用户决定是继续（接受风险）还是退回 model-builder 调整模型。**
 
 ## Step 4: Mediation Mechanism Deepening
 
@@ -218,6 +222,16 @@ territory-mapper → idea-rebel → gap-validator → model-builder → contribu
 - **中介机制分析不要停留在"A 通过 M 影响 C"。** 必须说明 M 的哪个具体维度/机制在起作用。这是把"descriptive mediation"变成"explanatory mediation"的关键。
 - **区分度矩阵中不要把"情境不同"当作唯一区分点。** 必须有理论或 construct 层面的差异——否则审稿人会说"这是 cross-context replication，不是新贡献"。
 - **不要跳过最接近论文的作者追溯。** Lee 2023 的作者可能正在写一个直接相关的 working paper——查他们的 recent presentations、SSRN preprint、conference submissions。
+
+## 失败恢复
+
+| 场景 | 症状 | 恢复动作 |
+|------|------|---------|
+| **模型输出不完整** | model-builder 给的假设表缺少贡献层级标注 | 退回 model-builder 补标注，不猜测——贡献层级必须基于 gap-validator 的验证结论，不是 contribution-shaper 自己判断 |
+| **所有路径都标成 contribution** | Step 1 发现 5 条假设全是 🟢 | 退回 model-builder 重新检查：至少 mediator→DV 这条路径大概率有人做过。如果确实没人做过 → 检查 gap-validator 是否漏了文献 |
+| **变量升级后无量表** | 升级方向清晰但没有可用量表 | 回退到通用定义。升级必须同时满足 (a) 理论依据 (b) 可测量 (c) 量表兼容。缺一不可 |
+| **区分度不够且无法调整** | 区分度矩阵显示"不够"，但模型已定型无法改 | ① 检查是否可以通过突出 "中介机制不同" 来增加区分度；② 如果仍不够 → 标注为 "extension paper" 而非 "contribution paper"，调整 Introduction 的贡献声称强度 |
+| **最接近论文的作者有新作** | 区分度检查时发现 Lee 2023 作者刚发了直接相关的 working paper | gap 可能已被占据。立即送 gap-validator 重新验证——如果新 paper 确实覆盖了你的 gap，只能放弃或找新的区分角度 |
 
 ## Composability
 
