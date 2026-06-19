@@ -1,6 +1,6 @@
 ---
 name: territory-mapper
-description: "Map an unfamiliar research domain by building concept cards and scholar profiles. Uses saturation detection instead of intuition — stop when new papers stop introducing new concepts."
+description: "Map an unfamiliar research domain by building concept cards and scholar profiles. Uses saturation detection instead of intuition. 触发词：铺地图、概念卡片、学者建档、领域不熟、帮我了解一下这个领域、saturation detection."
 version: 1.0.0
 author: JuliaHZhu
 license: MIT
@@ -157,6 +157,8 @@ Anita Woolley, Sara Singer, Michaela Kerrissey, Ingrid Nembhard
 
 **种子论文数：3-5 篇。** 少于 3 不足以启动饱和检测，多于 5 容易过早饱和（种子太窄）。
 
+🔴 **CHECKPOINT: 种子论文选定后，展示列表给用户确认，再开始建第一张概念卡片。不要自己替用户决定种子论文。**
+
 ## 扩展策略：引文滚雪球
 
 读种子论文时，从引用中选下一批论文：
@@ -188,6 +190,17 @@ Anita Woolley, Sara Singer, Michaela Kerrissey, Ingrid Nembhard
 | 18 | Lee2024 | 0 | 11 | 0 | 23 | 0 | ⚠️ |
 | 19 | Park2025 | 0 | 11 | 0 | 23 | 0 | ✅ 概念饱和 |
 ```
+
+🔴 **CHECKPOINT: 3/4 维度达阈值时，暂停并展示饱和报告给用户确认——是否退出 mapping 还是继续扩展搜索范围？不替用户做"已经够了"的判断。**
+
+## 失败恢复
+
+| 场景 | 症状 | 恢复动作 |
+|------|------|---------|
+| **种子论文不足** | 可获得的种子 < 3 篇 | ① 从已有 1-2 篇的后引/前引扩展；② 用关键词在顶刊搜近 3 年综述；③ 仍不足 → 向用户请求推荐或降低种子数阈值到 2 篇 |
+| **滚雪球越滚越远** | 连续 3 篇新论文与种子共享 construct < 2 个 | 回退到上一步的论文池，换一条引文路径；如果所有路径都偏 → 可能是领域本身较窄，提前检查饱和信号 |
+| **饱和迟迟不出现** | >30 篇论文后仍未达 3/4 阈值 | ① 检查种子是否太窄（只覆盖一个学派）；② 扩展种子期刊范围（加 2-3 本相关领域期刊）；③ 可能领域本身概念空间大——此时饱和信号不适用，改按"新概念增长率 < 10%"判断 |
+| **概念之间关系稀疏** | 累计概念 > 15 但关系 < 5 | 领域可能还没形成稳定的 construct 搭配——概念卡片有效但关系维度的饱和信号不可靠。此时退出条件改为 2/3（概念+学者）而非 3/4 |
 
 ## Output
 
