@@ -1,6 +1,6 @@
 ---
 name: gap-validator
-description: "Verify that a candidate research gap is real (nobody has done it) using three independent verification sources: journal tracing, scholar tracing, and theoretical grounding. No domain intuition required."
+description: "Verify that a candidate research gap is real (nobody has done it) using three independent verification sources: journal tracing, scholar tracing, and theoretical grounding. No domain intuition required. 触发词：找缺口、验证gap、三源验证、这个gap有人做过吗、gap validator、research gap."
 version: 1.0.0
 author: JuliaHZhu
 license: MIT
@@ -194,6 +194,8 @@ AI 驱动的学习支持工具通过增强员工学习敏捷性，促进双元�
 送 model-builder 建模，建议优先用 SCT 作理论框架。
 ```
 
+🔴 **CHECKPOINT: 每个 gap 的三源验证报告展示给用户确认后，再判定 gap 是否成立。不要替用户做"gap 成立/不成立"的最终判断。**
+
 ## Exit Conditions
 
 ```
@@ -202,6 +204,17 @@ AI 驱动的学习支持工具通过增强员工学习敏捷性，促进双元�
   2. 连续验证 3 个候选 gap 全部三源不通过 → 回 territory-mapper 或 idea-rebel（领域可能已饱和）
   3. idea 池中已验证完 5 个 → 如果没有通过的就回头重生成（不用全验 10 个）
 ```
+
+🔴 **CHECKPOINT: 退出前展示通过/不通过的 gap 汇总给用户确认。用户可能选择继续验证某 gap 或调整搜索范围。**
+
+## 失败恢复
+
+| 场景 | 症状 | 恢复动作 |
+|------|------|---------|
+| **期刊搜索无结果但怀疑搜索不充分** | 5 本期刊搜不到，但直觉 gap 应该有人做过 | ① 扩展搜索词变体（同义词、缩写）；② 加 2-3 本相关领域期刊；③ 用 Google Scholar 的 cited-by 从最接近的 related paper 反向追溯 |
+| **学者追溯无法定位** | 概念地图中的学者档案未覆盖 gap 涉及的所有 construct | 用 Google Scholar 搜 construct 名 → 找被引最高的 3 篇 → 从作者中补学者档案 → 重新追溯 |
+| **理论验证三框架都失败** | 试了 2-3 个理论框架都无法干净覆盖 gap | 不要强行套理论。标注"理论待构建"，gap 仍可能成立（跨领域创新），但在 model-builder 中标注论证成本高 |
+| **三源通过但 gap 太窄** | gap 成立但只涉及一个很小的 construct 组合 | gap 成立但贡献可能不够。检查：这个 gap 展开后能不能支撑 ≥ 3 个假设？不能 → 回 idea-rebel 找更宽的 gap |
 
 ## Output
 
