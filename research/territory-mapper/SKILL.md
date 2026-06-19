@@ -82,6 +82,14 @@ saturation_status: active  # active | stable | saturated
 > "team psychological safety is a shared belief that the team is safe for
 >  interpersonal risk taking" (Edmondson 1999, p.354)
 
+### 定义变体（同一 construct 不同学派/层级的定义分歧）
+| 学者 | 定义侧重 | 应用层面 | 引用 |
+|------|---------|---------|------|
+| Edmondson 1999 | shared belief about interpersonal risk | 团队 | ASQ |
+| Baer & Frese 2003 | climate for initiative (更广) | 组织 | JAP |
+| Carmeli 2007 | 扩展到 social capital 维度 | 跨层级 | AMJ |
+<!-- 记录至少 2-3 个不同定义，标注其层面差异。如果只有一种主流定义，标注"定义一致，无显著分歧" -->
+
 ### 用法矩阵
 | 维度 | 内容 |
 |------|------|
