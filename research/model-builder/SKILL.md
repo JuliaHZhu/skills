@@ -1,6 +1,6 @@
 ---
 name: model-builder
-description: "Transform a verified research gap into a testable theoretical model. Variable identification, hypothesis generation, paper splitting logic — with contribution markers on every path."
+description: "Transform a verified research gap into a testable theoretical model. Variable identification, hypothesis generation, paper splitting logic — with contribution markers on every path. 触发词：建模、帮我建模、搭模型、变量太多怎么精简、拆论文、model builder、hypothesis generation."
 version: 1.0.0
 author: JuliaHZhu
 license: MIT
@@ -84,6 +84,8 @@ territory-mapper → idea-rebel → gap-validator → model-builder → contribu
 | 中介链 > 2 层 | ⚠️ 论证链条太长，读者跟不上 |
 | 调节变量 > 3 | ⚠️ 模型复杂度爆炸，选理论支撑最强的 1-2 个 |
 | 任何变量无可用量表 | 🔴 不能进模型（或需自创量表 + 预测试） |
+
+🔴 **CHECKPOINT: 精简后的变量列表展示给用户确认，再继续建模。不要替用户决定砍哪个变量。**
 
 ## Step 3: Model Diagram
 
@@ -189,6 +191,18 @@ territory-mapper → idea-rebel → gap-validator → model-builder → contribu
   关系: 递进 — Paper A 讲"怎么产生"，Paper B 讲"产生后怎么用"
   共享变量: Ambidexterity（Paper A 的 DV，Paper B 的 IV）
 ```
+
+🔴 **CHECKPOINT: 拆论文决策展示给用户确认——是拆成两篇还是一篇精简？如果拆，两篇的叙事一句话确认后再继续。**
+
+## 失败恢复
+
+| 场景 | 症状 | 恢复动作 |
+|------|------|---------|
+| **Gap 验证不充分** | gap-validator 输出模糊，三源验证只有 1-2 源通过 | 退回 gap-validator 补验证，不强行建模。如果 gap 确实不够硬 → 换一个验证通过的 gap |
+| **变量无可用量表** | Step 1 发现某核心变量没有成熟量表 | ① 查邻近领域的量表（如 tourism → HR → medical）；② 改编量表必须标注改编策略；③ 仍不可得 → 该变量不能进模型，找替代 construct 或缩小 gap 范围 |
+| **理论无法覆盖** | 选的理论框架只能解释部分路径，剩余路径没有理论支撑 | ① 试 2-3 个备选理论框架；② 如果单理论不够，考虑双理论（但论证成本翻倍）；③ 仍不行 → 模型可能需要重新设计 |
+| **拆不开也精简不掉** | 变量 > 7 但无法拆分，精简后仍 > 7 | 砍掉 1-2 个调节变量（调节不是核心贡献，牺牲调节保主体模型）；如果仍太大 → 模型本身可能太野心勃勃，回到 gap 层面缩小范围 |
+| **假设逻辑空洞** | H 的一句话逻辑是 "X → Y 因为可能有关系" 而非机制论证 | 回到概念卡片查 X 和 Y 之间的已知机制研究；如果确实没有人论证过机制 → 标记为"探索性假设"而非 confirmatory，在 limitation 中声明 |
 
 ## Output
 
