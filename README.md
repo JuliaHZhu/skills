@@ -42,6 +42,7 @@ Each skill is independently usable — you can jump in at any step if you alread
 | `novel-split` | Dual-atom novel analysis: Doyle (scene×topic) vs Christie (dialogue round) |
 | `novel-tag` | 10/14-tag extension system for novel analysis atoms |
 | `style-analyzer` | 文笔DNA卡片 — analyze writing style fingerprints |
+| `logline` | 7-element story spine: evaluate or craft loglines that force specificity |
 
 ## Productivity
 
