@@ -221,7 +221,7 @@ class Engine:
 
         day = self._day()
         if session in day:
-            return {"ok": False, "error": f"{session} already has a task. Use edit or redraw first."}
+            return {"ok": False, "error": f"{session} already has a task. Use redraw or fill first."}
         day[session] = {
             "box": box,
             "content": content,
@@ -239,7 +239,7 @@ class Engine:
         """Log something without consuming a ball."""
         day = self._day()
         if session in day:
-            return {"ok": False, "error": f"{session} already has a task. Use edit or redraw first."}
+            return {"ok": False, "error": f"{session} already has a task. Use redraw or fill first."}
         day[session] = {
             "box": "Free",
             "content": content,

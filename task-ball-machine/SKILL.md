@@ -14,6 +14,10 @@ metadata:
 
 # Task Ball Machine — Daily Task Lottery
 
+> ⚠️ **DATA INTEGRITY RULE**: config.json and balls.json are **NEVER hand-edited**.
+> All writes go through the CLI. Hand-editing JSON causes format errors, quota
+> mismatches, and silent data corruption. The CLI is the single source of truth.
+
 A randomized daily task allocation system. You pre-fill category "boxes" with numbered balls, each representing a task. Each day, you draw one ball per time slot from a randomly chosen box. Over a cycle, all balls are consumed — ensuring every category gets its fair share of attention.
 
 Think of it as a **carnival lottery booth** for your todo list. Instead of staring at a blank page wondering what to do, you pull a lever and the machine tells you. Not happy with the draw? Put it back and draw again — but each ball can only land in one slot per cycle.
@@ -31,7 +35,7 @@ Think of it as a **carnival lottery booth** for your todo list. Instead of stari
 
 1. **Human loads the machine.** You define categories, tasks, and quotas in `config.json` and `balls.json`. AI never invents your life priorities.
 2. **Machine does the drawing.** Random selection removes human bias toward "easy" or "urgent" categories.
-3. **Human decides completion.** The machine tracks; you mark done, edit, or redraw.
+3. **Human decides completion.** The machine tracks; you mark done, redraw, or fill.
 4. **State lives in files, not context.** `state.json` tracks draws per day. Survives restarts.
 5. **Cycles have boundaries.** One cycle = one full set of balls. When empty, the machine requires a refill (new cycle).
 
@@ -88,16 +92,13 @@ A bounded period (e.g., "May 2026"). At cycle start, all balls are shuffled into
 4. **Mark done** → `complete <session>`
    - Input: session name
    - Output: confirmation + updated status
-5. **Edit task** → `edit <session> <new_content>`
-   - Input: session + new description
-   - Output: confirmation + diff preview
-6. **Redraw** → `redraw <session>` (with user confirmation)
+5. **Redraw** → `redraw <session>` (with user confirmation)
    - Input: session name
    - Output: old ball returned to stack + new draw result
-7. **Custom fill** → `fill <session> <box> <content>` (with preview)
+6. **Custom fill** → `fill <session> <box> <content>` (with preview)
    - Input: session + box + custom task text
    - Output: ball consumed + custom task logged as completed
-8. **Free log** → `log <session> <content>`
+7. **Free log** → `log <session> <content>`
    - Input: session + free text
    - Output: no ball consumed, task logged
 
@@ -161,6 +162,10 @@ python ball-machine.py --data-dir . init           # Create state.json
 ### 4. Edit config.json for cycle dates
 
 Only `cycle_name`, `cycle_start`, `cycle_end` are hand-edited (once per cycle).
+**Everything else — boxes, quotas, balls — must go through CLI.**
+
+> 🛑 **Do NOT hand-edit `boxes` in config.json or any part of `balls.json`.**
+> Use `add-box` / `add-ball` / `set-quota` / `edit-ball` / `remove-ball` instead.
 
 ```json
 {
@@ -203,7 +208,6 @@ When the skill is triggered without explicit command, Hermes presents:
 | `quick-draw` | — | Draw for all empty morning/afternoon/evening slots |
 | `complete` | `<session>` | Mark a session completed |
 | `redraw` | `<session>` | Return ball to stack and redraw |
-| `edit` | `<session> <content...>` | Change task text for an already-drawn session |
 | `fill` | `<session> <box> <content...>` | Custom task, consumes one ball from `<box>` |
 | `log` | `<session> <content...>` | Free record, no ball consumed |
 | `status` | — | Today's board + box inventory |
@@ -214,6 +218,8 @@ When the skill is triggered without explicit command, Hermes presents:
 | `new-cycle` | `<name> <start> <end>` | Reset for a new cycle. Dates: `YYYY-MM-DD` |
 
 #### Admin Commands (operate on config/balls directly — no state.json needed)
+
+> ⚠️ These are the **ONLY** way to modify boxes and balls. Never edit JSON by hand.
 
 | Command | Args | Purpose |
 |---------|------|---------|
@@ -307,7 +313,6 @@ Before executing any **creative** action that modifies user-facing content, Herm
 | Action | Preview Requirement |
 |--------|---------------------|
 | `fill` | Show the custom content and which box's ball will be consumed |
-| `edit` | Show old → new content diff before saving |
 
 ### Daily Workflow Checkpoints
 
@@ -401,8 +406,8 @@ python scripts/ball-machine.py init
 
 | File | Format | Who Writes | When |
 |------|--------|-----------|------|
-| `config.json` | JSON | Human | Once per cycle setup |
-| `balls.json` | JSON | Human | Once per cycle setup |
+| `config.json` | JSON | **CLI** (admin commands) | Box/quota changes; only cycle dates hand-edited |
+| `balls.json` | JSON | **CLI** (admin commands) | When adding/removing/editing balls |
 | CLI args | Strings | Human | Daily interaction |
 
 ### Output
