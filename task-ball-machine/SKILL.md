@@ -304,9 +304,9 @@ Before executing any **destructive** action, Hermes MUST ask for confirmation us
 
 | Action | Confirmation Prompt |
 |--------|---------------------|
-| `init --force` | "`state.json` already exists. Overwriting will erase today's draws and cycle progress. Confirm?" |
-| `new-cycle` | "Starting a new cycle will archive all current progress and reshuffle balls. Confirm?" |
-| `redraw` | "The old ball returns to the stack and may be drawn again. Confirm redraw?" |
+| `init --force` | 🔴 CHECKPOINT — "`state.json` already exists. Overwriting will erase today's draws and cycle progress. Confirm?" |
+| `new-cycle` | 🔴 CHECKPOINT — "Starting a new cycle will archive all current progress and reshuffle balls. Confirm?" |
+| `redraw` | 🔴 CHECKPOINT — "The old ball returns to the stack and may be drawn again. Confirm redraw?" |
 
 Before executing any **creative** action that modifies user-facing content, Hermes MUST present a preview:
 
@@ -368,37 +368,57 @@ Shows:
 
 ## Common Pitfalls
 
-1. **Quota mismatch.** If `config.json` says quota=21 but `balls.json` only has 20 balls for that box, the cycle will end early for that box. Always run `validate` after editing.
+1. **Quota mismatch.** Run `validate` after any admin change. A box with quota=21 but 20 balls ends its cycle early.
+2. **Editing balls mid-cycle.** Changes to `balls.json` have no effect until `new-cycle`. Use admin commands between cycles.
+3. **Forgetting to mark complete.** Uncompleted sessions hurt your streak. Only `completed` counts.
+4. **Redrawing too much.** `redraw` returns the old ball to the stack. Use for "task impossible today," not "I don't feel like it."
+5. **Losing state.json.** Corruption is handled; deletion is not. Git-commit or back up.
 
-2. **Editing balls mid-cycle.** Changing `balls.json` after `init` has no effect until `new-cycle`. The engine reads balls only at cycle start. If you need emergency changes, use `new-cycle` (resets everything).
+## Guardrails
 
-3. **Forgetting to mark complete.** Uncompleted sessions at end of day hurt your streak. The machine tracks `planned` vs `completed`; only `completed` counts.
+What the agent must NOT do when operating the ball machine:
 
-4. **Redrawing too much.** The `redraw` command returns the old ball to the stack — so you might draw it again tomorrow. Use sparingly; it is meant for "this task became impossible today," not "I don't feel like it."
+| # | 禁止行为 | 原因 | 正确做法 |
+|---|---------|------|---------|
+| 1 | **手写或手改 JSON** | 格式错误/配额不匹配 → 数据损坏 | 始终用 `add-box` / `add-ball` / `set-quota` / `edit-ball` / `remove-ball` |
+| 2 | **直接编辑 `state.json`** | 原子写入被绕过、备份链断裂 | state.json 只由 `ball-machine.py` 写入 |
+| 3 | **替用户决定任务内容** | 球的内容是用户的优先级，不是 agent 的 | `add-ball` 用用户提供的原文，不润色、不重写 |
+| 4 | **跳过 CHECKPOINT 确认** | `init --force` / `new-cycle` / `redraw` 不可逆 | 必须展示确认提示，等用户回复 |
+| 5 | **在 `fill` 之前不展示预览** | 用户需要看到哪个盒子的球会被消耗 | 先展示内容 + 盒子名，得到确认再执行 |
 
-5. **Losing state.json.** The backup mechanism handles corruption, but not deletion. Git-commit your machine directory, or at least back up `state.json`.
+## Failure Recovery
 
-6. **`init --force` must delete `state.json` before Engine instantiation.** The `Engine` class auto-loads `state.json` on construction if it exists. A naive `init --force` that passes `--force` but does not `unlink()` the old file first will simply reload the old state and save it back unchanged.
-
-7. **`fill` and `log` must guard against session collisions.** Both commands write into `day[session]` unconditionally. If the session already has a ball drawn, the old entry is silently overwritten. Always check `if session in day: return error` before writing.
-
-8. **Variable shadowing in `new_cycle`.** The method parameter `name` (cycle name) can shadow the loop variable if you iterate `for name, info in boxes.items()`. Rename the loop variable to `box_name` to avoid accidentally writing cycle metadata into box keys.
+| 症状 | 一线修复 | 仍失败则 |
+|------|---------|---------|
+| 用户说"抽球"但所有盒子已空 | 提示："所有盒子已空。开始新周期？" | 展示当前周期统计，等用户确认 `new-cycle` |
+| `validate` 报 quota 不匹配 | 列出不匹配的盒子 | 让用户选择：`set-quota` 调整 / `add-ball` 补足 / `remove-ball` 删多余 |
+| `log` 或 `fill` 报"session already has a task" | 提示用户用 `redraw` 退回再 `fill`，或直接用 `complete` | 展示当前该 session 的内容，问用户想怎么处理 |
+| `draw` 报"already drawn today" | 展示当前该 session 已有的球 | 提示：用 `redraw` 换球，或用 `fill` 自定义 |
+| `state.json` 损坏或丢失 | 引擎自动从 `.bak` 恢复 | 如果 `.bak` 也坏了 → `init --force` 重置（丢失进度，保留球库） |
+| 用户想改一个已抽出的任务描述 | 没有 `edit` 命令 — 唯一路径是 `redraw` + `fill` | `redraw <session>` 退回旧球 → `fill <session> <box> <new_content>` |
+| `init` 发现 `state.json` 已存在 | 展示当前周期摘要 | 让用户选：`--force` 重置 / 继续现有周期 / `new-cycle` |
 
 ## Quick Start
 
-Copy the built-in templates to your working directory and edit them:
-
 ```bash
-# Find where the skill templates live (Hermes skill directory)
-SKILL_DIR="$(dirname $(python -c 'import ball_machine; print(ball_machine.__file__)'))"
-# Or simply copy from the skill path:
-cp ~/.hermes/skills/productivity/task-ball-machine/templates/config.json .
-cp ~/.hermes/skills/productivity/task-ball-machine/templates/balls.json .
-# Edit config.json and balls.json, then:
-python scripts/ball-machine.py init
-```
+# 1. Create boxes
+python ball-machine.py --data-dir . add-box Work   💼 21
+python ball-machine.py --data-dir . add-box Study  📚 21
+python ball-machine.py --data-dir . add-box Health 🏃 15
 
-> Templates live at `~/.hermes/skills/productivity/task-ball-machine/templates/`.
+# 2. Add balls
+python ball-machine.py --data-dir . add-ball Work "Deep work: core project" --difficulty hard
+python ball-machine.py --data-dir . add-ball Work "Email and admin" --difficulty easy
+# ... add quota-many balls per box
+
+# 3. Edit config.json ONCE — only cycle dates and name
+#    (everything else stays CLI-managed)
+
+# 4. Verify and launch
+python ball-machine.py --data-dir . validate
+python ball-machine.py --data-dir . init
+python ball-machine.py --data-dir . status
+```
 
 ## Input / Output Contracts
 
