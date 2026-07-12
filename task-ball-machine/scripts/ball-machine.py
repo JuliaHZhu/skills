@@ -396,6 +396,212 @@ class Engine:
         self._save()
         return {"ok": True, "message": f"✅ New cycle '{name}' started"}
 
+    def digest(self, weeks: int = 1, output_dir: str | None = None) -> dict:
+        """Generate a Markdown weekly digest for LLM querying.
+
+        The digest bridges structured JSON (machine state) and natural-language
+        querying (agent reads markdown). It's read-only — no state changes.
+        """
+        from datetime import date as dt_date
+
+        today = dt_date.today()
+        iso = today.isocalendar()
+        # target week: current week - weeks offset (weeks=1 means last week)
+        target_year, target_week = iso.year, iso.week - (weeks - 1)
+        while target_week < 1:
+            target_year -= 1
+            target_week += dt_date(target_year, 12, 28).isocalendar()[1]
+
+        # Find date range for target week
+        # ISO week: Monday=1, Sunday=7
+        monday = dt_date.fromisocalendar(target_year, target_week, 1)
+        days_in_week = []
+        for i in range(7):
+            d = monday + timedelta(days=i)
+            if d > today:
+                break
+            days_in_week.append(str(d))
+
+        if not days_in_week:
+            return {"ok": False, "error": f"Week {target_year}-W{target_week:02d} has no past days"}
+
+        # Load ball library for content/difficulty lookup
+        try:
+            balls_data = json.loads(self.balls_path.read_text(encoding="utf-8"))
+        except Exception:
+            balls_data = {"boxes": {}}
+
+        ball_lib = {}
+        for box_name, box_info in balls_data.get("boxes", {}).items():
+            for b in box_info.get("balls", []):
+                ball_lib[b["id"]] = {
+                    "box": box_name,
+                    "content": b["content"],
+                    "difficulty": b.get("difficulty", "medium"),
+                }
+
+        # Collect week data
+        daily = []
+        week_completed = 0
+        week_drawn = 0
+        per_box = {}  # box -> {drawn, completed, hard/medium/easy}
+        per_difficulty = {"hard": 0, "medium": 0, "easy": 0}
+
+        for d in days_in_week:
+            day_data = self.state["days"].get(d, {})
+            sessions = []
+            day_done = 0
+            day_total = 0
+            for sess in self.SESSIONS:
+                s = day_data.get(sess)
+                if s:
+                    day_total += 1
+                    info = ball_lib.get(s.get("ball_id", ""), {})
+                    diff = info.get("difficulty", "medium")
+                    status = s.get("status", "planned")
+                    if status == "completed":
+                        day_done += 1
+                    sessions.append({
+                        "session": sess,
+                        "display": self.DISPLAY.get(sess, sess),
+                        "box": s.get("box", "?"),
+                        "content": s.get("content", "?"),
+                        "status": status,
+                        "difficulty": diff,
+                        "ball_id": s.get("ball_id", ""),
+                    })
+                    # Per-box stats
+                    box = s.get("box", "?")
+                    if box not in per_box:
+                        per_box[box] = {"drawn": 0, "completed": 0, "hard": 0, "medium": 0, "easy": 0}
+                    per_box[box]["drawn"] += 1
+                    per_box[box][diff] += 1
+                    if status == "completed":
+                        per_box[box]["completed"] += 1
+                    per_difficulty[diff] += 1
+                else:
+                    sessions.append({
+                        "session": sess,
+                        "display": self.DISPLAY.get(sess, sess),
+                        "box": None,
+                        "content": None,
+                        "status": "empty",
+                    })
+            daily.append({
+                "date": d,
+                "day_name": dt_date.fromisoformat(d).strftime("%A"),
+                "sessions": sessions,
+                "done": day_done,
+                "total": day_total,
+                "rate": int(day_done / day_total * 100) if day_total else 0,
+            })
+            week_completed += day_done
+            week_drawn += day_total
+
+        # Box inventory (current state, not just this week)
+        box_inventory = {}
+        for name, box in self.state["boxes"].items():
+            used = len(box["used"])
+            remaining = len(box["stack"])
+            box_inventory[name] = {
+                "emoji": box.get("emoji", ""),
+                "used": used,
+                "remaining": remaining,
+                "total": used + remaining,
+            }
+
+        # Cycle info
+        cycle = self.state["cycle"]
+
+        # Build markdown
+        lines = []
+        lines.append(f"# 🎱 Ball Machine Digest — Week {target_year}-W{target_week:02d}")
+        lines.append(f"")
+        lines.append(f"**Cycle**: {cycle['name']} ({cycle['start']} → {cycle['end']})")
+        lines.append(f"**Generated**: {today.isoformat()}")
+        lines.append(f"**Week range**: {days_in_week[0]} → {days_in_week[-1]}")
+        lines.append(f"**Week score**: {week_completed}/{week_drawn} ({int(week_completed/week_drawn*100) if week_drawn else 0}%)")
+        lines.append(f"")
+
+        # Daily log
+        lines.append("## 📅 Daily Log")
+        lines.append("")
+        for day in daily:
+            status_bar = f" {_bar(day['done'], day['total'], 14)}" if day["total"] else " — (no draws)"
+            lines.append(f"### {day['date']} ({day['day_name']}){status_bar} {day['done']}/{day['total']}")
+            lines.append("")
+            for s in day["sessions"]:
+                if s["status"] == "empty":
+                    lines.append(f"| {s['display']} | — | — |")
+                else:
+                    status_icon = "✅" if s["status"] == "completed" else "📝"
+                    diff_icon = self.DIFFICULTY_EMOJI.get(s["difficulty"], "")
+                    lines.append(f"| {s['display']} | {s['box']} {diff_icon} | {status_icon} {s['content']} |")
+            lines.append("")
+
+        # Per-box breakdown
+        lines.append("## 📦 Box Breakdown (This Week)")
+        lines.append("")
+        lines.append("| Box | Drawn | Completed | Rate | 🔴 Hard | 🟡 Medium | 🟢 Easy |")
+        lines.append("|-----|-------|-----------|------|---------|-----------|---------|")
+        for name in sorted(per_box.keys()):
+            b = per_box[name]
+            rate = int(b["completed"] / b["drawn"] * 100) if b["drawn"] else 0
+            lines.append(f"| {name} | {b['drawn']} | {b['completed']} | {rate}% | {b['hard']} | {b['medium']} | {b['easy']} |")
+        lines.append("")
+
+        # Difficulty distribution
+        total_diff = sum(per_difficulty.values())
+        if total_diff:
+            lines.append("## 🎯 Difficulty Mix")
+            lines.append("")
+            lines.append(f"- 🔴 Hard: {per_difficulty['hard']} ({int(per_difficulty['hard']/total_diff*100)}%)")
+            lines.append(f"- 🟡 Medium: {per_difficulty['medium']} ({int(per_difficulty['medium']/total_diff*100)}%)")
+            lines.append(f"- 🟢 Easy: {per_difficulty['easy']} ({int(per_difficulty['easy']/total_diff*100)}%)")
+            lines.append("")
+
+        # Box inventory (cycle-level)
+        lines.append("## 📊 Cycle Inventory")
+        lines.append("")
+        for name, box in box_inventory.items():
+            bar = _bar(box["used"], box["total"])
+            pct = int(box["used"] / box["total"] * 100) if box["total"] else 0
+            lines.append(f"- {box['emoji']} **{name}**: {bar} {box['used']}/{box['total']} ({pct}%) — {box['remaining']} remaining")
+        lines.append("")
+
+        # Ball library snapshot (for LLM cross-reference)
+        lines.append("## 🎰 Ball Library (All Boxes)")
+        lines.append("")
+        for box_name in box_inventory:
+            box_info = balls_data.get("boxes", {}).get(box_name, {})
+            lines.append(f"### {box_info.get('emoji', '')} {box_name}")
+            lines.append("")
+            for b in box_info.get("balls", []):
+                diff_icon = self.DIFFICULTY_EMOJI.get(b.get("difficulty", "medium"), "")
+                lines.append(f"- {diff_icon} `{b['id']}` — {b['content']}")
+            lines.append("")
+
+        md_content = "\n".join(lines)
+
+        # Write to file
+        if output_dir:
+            out_path = Path(output_dir)
+        else:
+            out_path = self.data_dir / "digests"
+        out_path.mkdir(parents=True, exist_ok=True)
+        filename = f"{target_year}-W{target_week:02d}.md"
+        filepath = out_path / filename
+        filepath.write_text(md_content, encoding="utf-8")
+
+        return {
+            "ok": True,
+            "message": f"✅ Digest saved to {filepath}",
+            "path": str(filepath),
+            "week": f"{target_year}-W{target_week:02d}",
+            "week_score": f"{week_completed}/{week_drawn} ({int(week_completed/week_drawn*100) if week_drawn else 0}%)",
+            "days_covered": len(days_in_week),
+        }
+
     # ------------------------------------------------------------------
     # Validation
     # ------------------------------------------------------------------
@@ -429,6 +635,169 @@ class Engine:
         if errors:
             return {"ok": False, "errors": errors}
         return {"ok": True, "message": "✅ config.json and balls.json are consistent"}
+
+
+# ------------------------------------------------------------------
+# Admin Commands — operate on config.json / balls.json directly
+# These do NOT require state.json. They are the ONLY write paths for
+# box and ball definitions — humans never edit JSON by hand.
+# ------------------------------------------------------------------
+
+def _load_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _save_json(path: Path, data: dict):
+    tmp = path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.rename(path)
+
+
+def admin_list_boxes(data_dir: Path) -> dict:
+    """List all boxes with their quota and ball count."""
+    cfg = _load_json(data_dir / "config.json")
+    balls = _load_json(data_dir / "balls.json")
+    if not cfg:
+        return {"ok": False, "error": "config.json not found or empty"}
+    boxes = []
+    for name, info in cfg.get("boxes", {}).items():
+        quota = info.get("quota", 0)
+        box_balls = balls.get("boxes", {}).get(name, {}).get("balls", [])
+        boxes.append({
+            "name": name,
+            "emoji": info.get("emoji", ""),
+            "quota": quota,
+            "actual": len(box_balls),
+        })
+    has_state = (data_dir / "state.json").exists()
+    return {"ok": True, "boxes": boxes, "state_exists": has_state}
+
+
+def admin_list_balls(data_dir: Path, box: str) -> dict:
+    """List all balls in a box."""
+    balls = _load_json(data_dir / "balls.json")
+    box_info = balls.get("boxes", {}).get(box)
+    if not box_info:
+        return {"ok": False, "error": f"Box '{box}' not found in balls.json"}
+    return {"ok": True, "box": box, "emoji": box_info.get("emoji", ""), "balls": box_info.get("balls", [])}
+
+
+def admin_add_box(data_dir: Path, name: str, emoji: str, quota: int) -> dict:
+    """Add a new box to config.json and balls.json."""
+    if quota < 1:
+        return {"ok": False, "error": "Quota must be >= 1"}
+
+    cfg = _load_json(data_dir / "config.json")
+    if not cfg:
+        # Bootstrap config.json
+        cfg = {"cycle_name": "New Cycle", "cycle_start": str(date.today()),
+               "cycle_end": str(date.today() + timedelta(days=30)),
+               "duration_map": {"hard": 3.0, "medium": 2.5, "easy": 2.0}, "boxes": {}}
+    cfg.setdefault("boxes", {})
+    if name in cfg["boxes"]:
+        return {"ok": False, "error": f"Box '{name}' already exists in config.json"}
+    cfg["boxes"][name] = {"emoji": emoji, "quota": quota}
+    _save_json(data_dir / "config.json", cfg)
+
+    balls = _load_json(data_dir / "balls.json")
+    balls.setdefault("boxes", {})
+    if name not in balls["boxes"]:
+        balls["boxes"][name] = {"emoji": emoji, "balls": []}
+    _save_json(data_dir / "balls.json", balls)
+
+    warn = ""
+    if (data_dir / "state.json").exists():
+        warn = " ⚠️ state.json exists — box won't appear until next new-cycle"
+    return {"ok": True, "message": f"✅ Box '{name}' added ({emoji}, quota={quota}){warn}"}
+
+
+def admin_add_ball(data_dir: Path, box: str, content: str, difficulty: str = "medium") -> dict:
+    """Add a ball to a box in balls.json."""
+    if difficulty not in ("hard", "medium", "easy"):
+        return {"ok": False, "error": "Difficulty must be hard, medium, or easy"}
+
+    balls = _load_json(data_dir / "balls.json")
+    box_info = balls.get("boxes", {}).get(box)
+    if not box_info:
+        return {"ok": False, "error": f"Box '{box}' not found in balls.json"}
+
+    cfg = _load_json(data_dir / "config.json")
+    quota = cfg.get("boxes", {}).get(box, {}).get("quota", 0)
+    current = len(box_info.get("balls", []))
+    if quota and current >= quota:
+        return {"ok": False, "error": f"Box '{box}' already has {current}/{quota} balls. Increase quota first (set-quota)."}
+
+    existing_ids = [b["id"] for b in box_info.get("balls", [])]
+    seq = 1
+    while f"BALL-{box.upper()}-{seq:03d}" in existing_ids:
+        seq += 1
+    ball_id = f"BALL-{box.upper()}-{seq:03d}"
+
+    new_ball = {"id": ball_id, "content": content, "difficulty": difficulty}
+    box_info.setdefault("balls", []).append(new_ball)
+    _save_json(data_dir / "balls.json", balls)
+
+    warn = ""
+    if (data_dir / "state.json").exists():
+        warn = " ⚠️ state.json exists — new balls available after next new-cycle"
+    return {"ok": True, "message": f"✅ Added {ball_id} to '{box}'{warn}", "ball": new_ball}
+
+
+def admin_remove_ball(data_dir: Path, ball_id: str) -> dict:
+    """Remove a ball from balls.json by ID."""
+    balls = _load_json(data_dir / "balls.json")
+    for box_name, box_info in balls.get("boxes", {}).items():
+        for i, b in enumerate(box_info.get("balls", [])):
+            if b["id"] == ball_id:
+                removed = box_info["balls"].pop(i)
+                _save_json(data_dir / "balls.json", balls)
+                warn = ""
+                if (data_dir / "state.json").exists():
+                    warn = f" ⚠️ ball may already be used in current cycle — run validate and consider new-cycle"
+                return {"ok": True, "message": f"✅ Removed {ball_id} from '{box_name}'{warn}", "ball": removed}
+    return {"ok": False, "error": f"Ball '{ball_id}' not found in any box"}
+
+
+def admin_edit_ball(data_dir: Path, ball_id: str, content: str) -> dict:
+    """Edit a ball's content in balls.json."""
+    balls = _load_json(data_dir / "balls.json")
+    for box_name, box_info in balls.get("boxes", {}).items():
+        for b in box_info.get("balls", []):
+            if b["id"] == ball_id:
+                old = b["content"]
+                b["content"] = content
+                _save_json(data_dir / "balls.json", balls)
+                return {"ok": True, "message": f"✅ Edited {ball_id}", "old": old, "new": content}
+    return {"ok": False, "error": f"Ball '{ball_id}' not found in any box"}
+
+
+def admin_set_quota(data_dir: Path, box: str, quota: int) -> dict:
+    """Change a box's quota in config.json."""
+    if quota < 1:
+        return {"ok": False, "error": "Quota must be >= 1"}
+
+    cfg = _load_json(data_dir / "config.json")
+    if box not in cfg.get("boxes", {}):
+        return {"ok": False, "error": f"Box '{box}' not found in config.json"}
+
+    old = cfg["boxes"][box]["quota"]
+    cfg["boxes"][box]["quota"] = quota
+    _save_json(data_dir / "config.json", cfg)
+
+    balls = _load_json(data_dir / "balls.json")
+    current = len(balls.get("boxes", {}).get(box, {}).get("balls", []))
+
+    msgs = [f"✅ Quota for '{box}': {old} → {quota}"]
+    if current > quota:
+        msgs.append(f"⚠️ Box has {current} balls but quota is now {quota} — remove {current - quota} ball(s)")
+    elif current < quota:
+        msgs.append(f"📝 Box has {current}/{quota} balls — add {quota - current} more")
+    else:
+        msgs.append(f"✅ Box has exactly {quota} balls — quota matched")
+
+    return {"ok": True, "message": "\n".join(msgs), "old": old, "new": quota, "current_balls": current}
 
 
 # ------------------------------------------------------------------
@@ -583,6 +952,37 @@ Examples:
     p_stats = sub.add_parser("stats", help="Show cycle stats and streak")
     p_stats.add_argument("--days", type=int, default=7, help="Daily trend window (default: 7)")
 
+    p_digest = sub.add_parser("digest", help="Generate weekly Markdown digest for LLM querying")
+    p_digest.add_argument("--weeks", type=int, default=1, help="Weeks ago (1=last week, default: 1)")
+    p_digest.add_argument("--output", default=None, help="Output directory (default: data_dir/digests/)")
+
+    # --- Admin commands (no state.json required) ---
+    sub.add_parser("list-boxes", help="List all boxes with quota and ball count")
+
+    p_list_balls = sub.add_parser("list-balls", help="List all balls in a box")
+    p_list_balls.add_argument("box", help="Box name")
+
+    p_add_box = sub.add_parser("add-box", help="Add a new box to config.json + balls.json")
+    p_add_box.add_argument("name", help="Box name")
+    p_add_box.add_argument("emoji", help="Box emoji (e.g. 💼 📚 🏃)")
+    p_add_box.add_argument("quota", type=int, help="Number of balls for this box")
+
+    p_add_ball = sub.add_parser("add-ball", help="Add a ball to a box")
+    p_add_ball.add_argument("box", help="Target box name")
+    p_add_ball.add_argument("content", nargs="+", help="Task description")
+    p_add_ball.add_argument("--difficulty", default="medium", choices=["hard", "medium", "easy"])
+
+    p_rm_ball = sub.add_parser("remove-ball", help="Remove a ball by ID")
+    p_rm_ball.add_argument("ball_id", help="Ball ID (e.g. BALL-WORK-001)")
+
+    p_edit_ball = sub.add_parser("edit-ball", help="Edit a ball's content")
+    p_edit_ball.add_argument("ball_id", help="Ball ID to edit")
+    p_edit_ball.add_argument("content", nargs="+", help="New task description")
+
+    p_set_quota = sub.add_parser("set-quota", help="Change a box's quota")
+    p_set_quota.add_argument("box", help="Box name")
+    p_set_quota.add_argument("quota", type=int, help="New quota value")
+
     p_new = sub.add_parser("new-cycle", help="Start a new cycle (resets and reshuffles)")
     p_new.add_argument("name", help="Cycle name")
     p_new.add_argument("start", help="Start date (YYYY-MM-DD)")
@@ -605,6 +1005,65 @@ Examples:
         engine = Engine(data_dir)
         engine._save()
         print(f"✅ Initialized state.json in {data_dir}")
+        sys.exit(0)
+
+    # --- Admin commands (operate on config/balls, no state.json needed) ---
+    if args.command == "list-boxes":
+        r = admin_list_boxes(data_dir)
+        if r["ok"]:
+            print("\n📦 Boxes:")
+            for b in r["boxes"]:
+                match = "✅" if b["actual"] == b["quota"] else f"⚠️ {b['actual']}/{b['quota']}"
+                print(f"  {b['emoji']} {b['name']:<12} quota={b['quota']}  balls={b['actual']}  {match}")
+            if r.get("state_exists"):
+                print("\n⚠️ state.json exists — changes won't affect current cycle")
+        else:
+            print(f"❌ {r['error']}")
+        sys.exit(0)
+
+    if args.command == "list-balls":
+        r = admin_list_balls(data_dir, args.box)
+        if r["ok"]:
+            print(f"\n{r['emoji']} {r['box']} ({len(r['balls'])} balls):")
+            for b in r["balls"]:
+                diff_icon = Engine.DIFFICULTY_EMOJI.get(b.get("difficulty", "medium"), "")
+                print(f"  {diff_icon} {b['id']} — {b['content']}")
+        else:
+            print(f"❌ {r['error']}")
+        sys.exit(0)
+
+    if args.command == "add-box":
+        r = admin_add_box(data_dir, args.name, args.emoji, args.quota)
+        print(r["message"] if r["ok"] else f"❌ {r['error']}")
+        sys.exit(0)
+
+    if args.command == "add-ball":
+        r = admin_add_ball(data_dir, args.box, " ".join(args.content), args.difficulty)
+        if r["ok"]:
+            print(r["message"])
+            print(f"   ID: {r['ball']['id']} | Difficulty: {r['ball']['difficulty']}")
+        else:
+            print(f"❌ {r['error']}")
+        sys.exit(0)
+
+    if args.command == "remove-ball":
+        r = admin_remove_ball(data_dir, args.ball_id)
+        print(r["message"] if r["ok"] else f"❌ {r['error']}")
+        sys.exit(0)
+
+    if args.command == "edit-ball":
+        r = admin_edit_ball(data_dir, args.ball_id, " ".join(args.content))
+        if r["ok"]:
+            print(r["message"])
+            print(f"   Old: {r['old']}")
+            print(f"   New: {r['new']}")
+        else:
+            print(f"❌ {r['error']}")
+        sys.exit(0)
+
+    if args.command == "set-quota":
+        r = admin_set_quota(data_dir, args.box, args.quota)
+        print(r["message"] if r["ok"] else f"❌ {r['error']}")
         sys.exit(0)
 
     # For all other commands, require existing state
@@ -653,6 +1112,14 @@ Examples:
 
     elif args.command == "stats":
         print_stats(engine.stats(args.days))
+
+    elif args.command == "digest":
+        r = engine.digest(weeks=args.weeks, output_dir=args.output)
+        if r["ok"]:
+            print(r["message"])
+            print(f"   Week: {r['week']} | Score: {r['week_score']} | Days: {r['days_covered']}")
+        else:
+            print(f"❌ {r['error']}")
 
     elif args.command == "new-cycle":
         r = engine.new_cycle(args.name, args.start, args.end)
