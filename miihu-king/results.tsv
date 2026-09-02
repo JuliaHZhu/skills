@@ -1,0 +1,3 @@
+round	change_summary	baseline_score	current_score	judge_decision	margin
+baseline	原始版本	57.5	57.5	-	-
+Round 1	增加执行流程图、判定矩阵、输出模板、失败模式编码表、反骨行为标准、CHECKPOINT 标记	57.5	78.9	keep	clear
