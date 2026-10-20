@@ -1,0 +1,2332 @@
+[
+ {
+  "slug": "analysis-of-chinese-society-classes",
+  "title": "中国社会各阶级的分析",
+  "volume": "毛选第一卷",
+  "order": 1,
+  "status": "distilled",
+  "chars": 4007
+ },
+ {
+  "slug": "report-on-the-hunan-peasant-movement",
+  "title": "湖南农民运动考察报告",
+  "volume": "毛选第一卷",
+  "order": 2
+ },
+ {
+  "slug": "why-can-chinas-red-political-power-exist",
+  "title": "中国的红色政权为什么能够存在？",
+  "volume": "毛选第一卷",
+  "order": 3
+ },
+ {
+  "slug": "the-struggle-in-the-jinggang-mountains",
+  "title": "井冈山的斗争",
+  "volume": "毛选第一卷",
+  "order": 4
+ },
+ {
+  "slug": "on-correcting-erroneous-tendencies-in-the-party",
+  "title": "关于纠正党内的错误思想",
+  "volume": "毛选第一卷",
+  "order": 5
+ },
+ {
+  "slug": "a-single-spark-can-start-a-prairie-fire",
+  "title": "星星之火，可以燎原",
+  "volume": "毛选第一卷",
+  "order": 6
+ },
+ {
+  "slug": "oppose-book-worship",
+  "title": "反对本本主义",
+  "volume": "毛选第一卷",
+  "order": 7
+ },
+ {
+  "slug": "pay-attention-to-economic-work",
+  "title": "必须注意经济工作",
+  "volume": "毛选第一卷",
+  "order": 8
+ },
+ {
+  "slug": "how-to-differentiate-the-classes-in-rural-areas",
+  "title": "怎样分析农村阶级",
+  "volume": "毛选第一卷",
+  "order": 9
+ },
+ {
+  "slug": "our-economic-policy",
+  "title": "我们的经济政策",
+  "volume": "毛选第一卷",
+  "order": 10
+ },
+ {
+  "slug": "care-for-the-masses-pay-attention-to-methods-of-work",
+  "title": "关心群众生活，注意工作方法",
+  "volume": "毛选第一卷",
+  "order": 11
+ },
+ {
+  "slug": "on-tactics-against-japanese-imperialism",
+  "title": "论反对日本帝国主义的策略",
+  "volume": "毛选第一卷",
+  "order": 12
+ },
+ {
+  "slug": "strategic-problems-of-chinas-revolutionary-war",
+  "title": "中国革命战争的战略问题",
+  "volume": "毛选第一卷",
+  "order": 13
+ },
+ {
+  "slug": "declaration-on-chiang-kai-sheks-betrayal",
+  "title": "关于蒋介石声明的声明",
+  "volume": "毛选第一卷",
+  "order": 14
+ },
+ {
+  "slug": "the-tasks-of-the-communist-party-of-china-in-the-period-of-resistance-to-japan",
+  "title": "中国共产党在抗日时期的任务",
+  "volume": "毛选第一卷",
+  "order": 15
+ },
+ {
+  "slug": "win-the-masses-in-their-millions-for-the-anti-japanese-national-united-front",
+  "title": "为争取千百万群众进入抗日民族统一战线而斗争",
+  "volume": "毛选第一卷",
+  "order": 16
+ },
+ {
+  "slug": "on-practice",
+  "title": "实践论",
+  "volume": "毛选第一卷",
+  "order": 17
+ },
+ {
+  "slug": "on-contradiction",
+  "title": "矛盾论",
+  "volume": "毛选第一卷",
+  "order": 18
+ },
+ {
+  "slug": "policies-measures-and-perspectives-for-resisting-the-japanese-invasion",
+  "title": "反对日本进攻的方针、办法和前途",
+  "volume": "毛选第二卷",
+  "order": 19
+ },
+ {
+  "slug": "for-the-mobilization-of-all-the-nations-forces-for-victory-in-the-war-of-resistance",
+  "title": "为动员一切力量争取抗战胜利而斗争",
+  "volume": "毛选第二卷",
+  "order": 20
+ },
+ {
+  "slug": "combat-liberalism",
+  "title": "反对自由主义",
+  "volume": "毛选第二卷",
+  "order": 21
+ },
+ {
+  "slug": "urgent-tasks-after-kmt-communist-cooperation",
+  "title": "国共合作成立后的迫切任务",
+  "volume": "毛选第二卷",
+  "order": 22
+ },
+ {
+  "slug": "interview-with-british-journalist-james-bertram",
+  "title": "和英国记者贝特兰的谈话",
+  "volume": "毛选第二卷",
+  "order": 23
+ },
+ {
+  "slug": "the-situation-after-the-fall-of-shanghai-and-taiyuan",
+  "title": "上海太原失陷以后抗日战争的形势和任务",
+  "volume": "毛选第二卷",
+  "order": 24
+ },
+ {
+  "slug": "barracks-of-the-eighth-route-army",
+  "title": "陕甘宁边区政府、第八路军后方留守处布告",
+  "volume": "毛选第二卷",
+  "order": 25
+ },
+ {
+  "slug": "problems-of-strategy-in-guerrilla-war-against-japan",
+  "title": "抗日游击战争的战略问题",
+  "volume": "毛选第二卷",
+  "order": 26
+ },
+ {
+  "slug": "on-protracted-war",
+  "title": "论持久战",
+  "volume": "毛选第二卷",
+  "order": 27
+ },
+ {
+  "slug": "the-role-of-the-communist-party-of-china-in-the-national-war",
+  "title": "中国共产党在民族战争中的地位",
+  "volume": "毛选第二卷",
+  "order": 28
+ },
+ {
+  "slug": "independence-and-initiative-within-the-united-front",
+  "title": "统一战线中的独立自主问题",
+  "volume": "毛选第二卷",
+  "order": 29
+ },
+ {
+  "slug": "problems-of-war-and-strategy",
+  "title": "战争和战略问题",
+  "volume": "毛选第二卷",
+  "order": 30
+ },
+ {
+  "slug": "the-may-fourth-movement",
+  "title": "五四运动",
+  "volume": "毛选第二卷",
+  "order": 31
+ },
+ {
+  "slug": "the-orientation-of-the-youth-movement",
+  "title": "青年运动的方向",
+  "volume": "毛选第二卷",
+  "order": 32
+ },
+ {
+  "slug": "oppose-capitulation",
+  "title": "反对投降活动",
+  "volume": "毛选第二卷",
+  "order": 33
+ },
+ {
+  "slug": "%E5%BF%85%E9%A1%BB%E5%88%B6%E8%A3%81%E5%8F%8D%E5%8A%A8%E6%B4%BE",
+  "title": "必须制裁反动派",
+  "volume": "毛选第二卷",
+  "order": 34
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%9B%BD%E9%99%85%E6%96%B0%E5%BD%A2%E5%8A%BF%E5%AF%B9%E6%96%B0%E5%8D%8E%E6%97%A5%E6%8A%A5%E8%AE%B0%E8%80%85%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "关于国际新形势对新华日报记者的谈话",
+  "volume": "毛选第二卷",
+  "order": 35
+ },
+ {
+  "slug": "%E5%92%8C%E4%B8%AD%E5%A4%AE%E7%A4%BE-%E6%89%AB%E8%8D%A1%E6%8A%A5-%E6%96%B0%E6%B0%91%E6%8A%A5%E4%B8%89%E8%AE%B0%E8%80%85%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "和中央社、扫荡报、新民报三记者的谈话",
+  "volume": "毛选第二卷",
+  "order": 36
+ },
+ {
+  "slug": "%E8%8B%8F%E8%81%94%E5%88%A9%E7%9B%8A%E5%92%8C%E4%BA%BA%E7%B1%BB%E5%88%A9%E7%9B%8A%E7%9A%84%E4%B8%80%E8%87%B4",
+  "title": "苏联利益和人类利益的一致",
+  "volume": "毛选第二卷",
+  "order": 37
+ },
+ {
+  "slug": "introducing-the-communist",
+  "title": "《共产党人》发刊词",
+  "volume": "毛选第二卷",
+  "order": 38
+ },
+ {
+  "slug": "%E7%9B%AE%E5%89%8D%E5%BD%A2%E5%8A%BF%E5%92%8C%E5%85%9A%E7%9A%84%E4%BB%BB%E5%8A%A1",
+  "title": "目前形势和党的任务",
+  "volume": "毛选第二卷",
+  "order": 39
+ },
+ {
+  "slug": "%E5%A4%A7%E9%87%8F%E5%90%B8%E6%94%B6%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90",
+  "title": "大量吸收知识分子",
+  "volume": "毛选第二卷",
+  "order": 40
+ },
+ {
+  "slug": "chinese-revolution-and-the-communist-party-of-china",
+  "title": "中国革命和中国共产党",
+  "volume": "毛选第二卷",
+  "order": 41
+ },
+ {
+  "slug": "%E6%96%AF%E5%A4%A7%E6%9E%97%E6%98%AF%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E7%9A%84%E6%9C%8B%E5%8F%8B",
+  "title": "斯大林是中国人民的朋友",
+  "volume": "毛选第二卷",
+  "order": 42
+ },
+ {
+  "slug": "in-memory-of-norman-bethune",
+  "title": "纪念白求恩",
+  "volume": "毛选第二卷",
+  "order": 43
+ },
+ {
+  "slug": "on-new-democracy",
+  "title": "新民主主义论",
+  "volume": "毛选第二卷",
+  "order": 44
+ },
+ {
+  "slug": "%E5%85%8B%E6%9C%8D%E6%8A%95%E9%99%8D%E5%8D%B1%E9%99%A9-%E5%8A%9B%E4%BA%89%E6%97%B6%E5%B1%80%E5%A5%BD%E8%BD%AC",
+  "title": "克服投降危险，力争时局好转",
+  "volume": "毛选第二卷",
+  "order": 45
+ },
+ {
+  "slug": "%E5%9B%A2%E7%BB%93%E4%B8%80%E5%88%87%E6%8A%97%E6%97%A5%E5%8A%9B%E9%87%8F-%E5%8F%8D%E5%AF%B9%E5%8F%8D%E5%85%B1%E9%A1%BD%E5%9B%BA%E6%B4%BE",
+  "title": "团结一切抗日力量，反对反共顽固派",
+  "volume": "毛选第二卷",
+  "order": 46
+ },
+ {
+  "slug": "%E5%90%91%E5%9B%BD%E6%B0%91%E5%85%9A%E7%9A%84%E5%8D%81%E7%82%B9%E8%A6%81%E6%B1%82",
+  "title": "向国民党的十点要求",
+  "volume": "毛选第二卷",
+  "order": 47
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%B7%A5%E4%BA%BA-%E5%8F%91%E5%88%8A%E8%AF%8D",
+  "title": "《中国工人》发刊词",
+  "volume": "毛选第二卷",
+  "order": 48
+ },
+ {
+  "slug": "%E5%BF%85%E9%A1%BB%E5%BC%BA%E8%B0%83%E5%9B%A2%E7%BB%93%E5%92%8C%E8%BF%9B%E6%AD%A5",
+  "title": "必须强调团结和进步",
+  "volume": "毛选第二卷",
+  "order": 49
+ },
+ {
+  "slug": "new-democratic-constitutional-government",
+  "title": "新民主主义的宪政",
+  "volume": "毛选第二卷",
+  "order": 50
+ },
+ {
+  "slug": "%E6%8A%97%E6%97%A5%E6%A0%B9%E6%8D%AE%E5%9C%B0%E7%9A%84%E6%94%BF%E6%9D%83%E9%97%AE%E9%A2%98",
+  "title": "抗日根据地的政权问题",
+  "volume": "毛选第二卷",
+  "order": 51
+ },
+ {
+  "slug": "%E7%9B%AE%E5%89%8D%E6%8A%97%E6%97%A5%E7%BB%9F%E4%B8%80%E6%88%98%E7%BA%BF%E4%B8%AD%E7%9A%84%E7%AD%96%E7%95%A5%E9%97%AE%E9%A2%98",
+  "title": "目前抗日统一战线中的策略问题",
+  "volume": "毛选第二卷",
+  "order": 52
+ },
+ {
+  "slug": "%E6%94%BE%E6%89%8B%E5%8F%91%E5%B1%95%E6%8A%97%E6%97%A5%E5%8A%9B%E9%87%8F-%E6%8A%B5%E6%8A%97%E5%8F%8D%E5%85%B1%E9%A1%BD%E5%9B%BA%E6%B4%BE%E7%9A%84%E8%BF%9B%E6%94%BB",
+  "title": "放手发展抗日力量，抵抗反共顽固派的进攻",
+  "volume": "毛选第二卷",
+  "order": 53
+ },
+ {
+  "slug": "%E5%9B%A2%E7%BB%93%E5%88%B0%E5%BA%95",
+  "title": "团结到底",
+  "volume": "毛选第二卷",
+  "order": 54
+ },
+ {
+  "slug": "on-policy",
+  "title": "论政策",
+  "volume": "毛选第二卷",
+  "order": 55
+ },
+ {
+  "slug": "%E4%B8%BA%E7%9A%96%E5%8D%97%E4%BA%8B%E5%8F%98%E5%8F%91%E8%A1%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E5%92%8C%E8%B0%88%E8%AF%9D",
+  "title": "为皖南事变发表的命令和谈话",
+  "volume": "毛选第二卷",
+  "order": 56
+ },
+ {
+  "slug": "%E6%89%93%E9%80%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E5%8F%8D%E5%85%B1%E9%AB%98%E6%BD%AE%E5%90%8E%E7%9A%84%E6%97%B6%E5%B1%80",
+  "title": "打退第二次反共高潮后的时局",
+  "volume": "毛选第二卷",
+  "order": 57
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%89%93%E9%80%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E5%8F%8D%E5%85%B1%E9%AB%98%E6%BD%AE%E7%9A%84%E6%80%BB%E7%BB%93",
+  "title": "关于打退第二次反共高潮的总结",
+  "volume": "毛选第二卷",
+  "order": 58
+ },
+ {
+  "slug": "preface-and-postscript-to-rural-survey",
+  "title": "《农村调查》的序言和跋",
+  "volume": "毛选第三卷",
+  "order": 59
+ },
+ {
+  "slug": "reform-our-study",
+  "title": "改造我们的学习",
+  "volume": "毛选第三卷",
+  "order": 60
+ },
+ {
+  "slug": "%E6%8F%AD%E7%A0%B4%E8%BF%9C%E4%B8%9C%E6%85%95%E5%B0%BC%E9%BB%91%E7%9A%84%E9%98%B4%E8%B0%8B",
+  "title": "揭破远东慕尼黑的阴谋",
+  "volume": "毛选第三卷",
+  "order": 61
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%8F%8D%E6%B3%95%E8%A5%BF%E6%96%AF%E7%9A%84%E5%9B%BD%E9%99%85%E7%BB%9F%E4%B8%80%E6%88%98%E7%BA%BF",
+  "title": "关于反法西斯的国际统一战线",
+  "volume": "毛选第三卷",
+  "order": 62
+ },
+ {
+  "slug": "%E5%9C%A8%E9%99%95%E7%94%98%E5%AE%81%E8%BE%B9%E5%8C%BA%E5%8F%82%E8%AE%AE%E4%BC%9A%E7%9A%84%E6%BC%94%E8%AF%B4",
+  "title": "在陕甘宁边区参议会的演说",
+  "volume": "毛选第三卷",
+  "order": 63
+ },
+ {
+  "slug": "rectify-the-partys-style-of-work",
+  "title": "整顿党的作风",
+  "volume": "毛选第三卷",
+  "order": 64
+ },
+ {
+  "slug": "oppose-stereotyped-party-writing",
+  "title": "反对党八股",
+  "volume": "毛选第三卷",
+  "order": 65
+ },
+ {
+  "slug": "talks-at-the-yanan-forum-on-literature-and-art",
+  "title": "在延安文艺座谈会上的讲话",
+  "volume": "毛选第三卷",
+  "order": 66
+ },
+ {
+  "slug": "%E4%B8%80%E4%B8%AA%E6%9E%81%E5%85%B6%E9%87%8D%E8%A6%81%E7%9A%84%E6%94%BF%E7%AD%96",
+  "title": "一个极其重要的政策",
+  "volume": "毛选第三卷",
+  "order": 67
+ },
+ {
+  "slug": "%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%98%E7%9A%84%E8%BD%AC%E6%8A%98%E7%82%B9",
+  "title": "第二次世界大战的转折点",
+  "volume": "毛选第三卷",
+  "order": 68
+ },
+ {
+  "slug": "%E7%A5%9D%E5%8D%81%E6%9C%88%E9%9D%A9%E5%91%BD%E4%BA%8C%E5%8D%81%E4%BA%94%E5%91%A8%E5%B9%B4",
+  "title": "祝十月革命二十五周年",
+  "volume": "毛选第三卷",
+  "order": 69
+ },
+ {
+  "slug": "%E6%8A%97%E6%97%A5%E6%97%B6%E6%9C%9F%E7%9A%84%E7%BB%8F%E6%B5%8E%E9%97%AE%E9%A2%98%E5%92%8C%E8%B4%A2%E6%94%BF%E9%97%AE%E9%A2%98",
+  "title": "抗日时期的经济问题和财政问题",
+  "volume": "毛选第三卷",
+  "order": 70
+ },
+ {
+  "slug": "some-questions-on-methods-of-leadership",
+  "title": "关于领导方法的若干问题",
+  "volume": "毛选第三卷",
+  "order": 71
+ },
+ {
+  "slug": "%E8%B4%A8%E9%97%AE%E5%9B%BD%E6%B0%91%E5%85%9A",
+  "title": "质问国民党",
+  "volume": "毛选第三卷",
+  "order": 72
+ },
+ {
+  "slug": "%E5%BC%80%E5%B1%95%E6%A0%B9%E6%8D%AE%E5%9C%B0%E7%9A%84%E5%87%8F%E7%A7%9F-%E7%94%9F%E4%BA%A7%E5%92%8C%E6%8B%A5%E6%94%BF%E7%88%B1%E6%B0%91%E8%BF%90%E5%8A%A8",
+  "title": "开展根据地的减租、生产和拥政爱民运动",
+  "volume": "毛选第三卷",
+  "order": 73
+ },
+ {
+  "slug": "%E8%AF%84%E5%9B%BD%E6%B0%91%E5%85%9A%E5%8D%81%E4%B8%80%E4%B8%AD%E5%85%A8%E4%BC%9A%E5%92%8C%E4%B8%89%E5%B1%8A%E4%BA%8C%E6%AC%A1%E5%9B%BD%E6%B0%91%E5%8F%82%E6%94%BF%E4%BC%9A",
+  "title": "评国民党十一中全会和三届二次国民参政会",
+  "volume": "毛选第三卷",
+  "order": 74
+ },
+ {
+  "slug": "get-organized",
+  "title": "组织起来",
+  "volume": "毛选第三卷",
+  "order": 75
+ },
+ {
+  "slug": "our-study-and-the-current-situation",
+  "title": "学习和时局",
+  "volume": "毛选第三卷",
+  "order": 76
+ },
+ {
+  "slug": "serve-the-people",
+  "title": "为人民服务",
+  "volume": "毛选第三卷",
+  "order": 77
+ },
+ {
+  "slug": "%E8%AF%84%E8%92%8B%E4%BB%8B%E7%9F%B3%E5%9C%A8%E5%8F%8C%E5%8D%81%E8%8A%82%E7%9A%84%E6%BC%94%E8%AF%B4",
+  "title": "评蒋介石在双十节的演说",
+  "volume": "毛选第三卷",
+  "order": 78
+ },
+ {
+  "slug": "%E6%96%87%E5%8C%96%E5%B7%A5%E4%BD%9C%E4%B8%AD%E7%9A%84%E7%BB%9F%E4%B8%80%E6%88%98%E7%BA%BF",
+  "title": "文化工作中的统一战线",
+  "volume": "毛选第三卷",
+  "order": 79
+ },
+ {
+  "slug": "%E5%BF%85%E9%A1%BB%E5%AD%A6%E4%BC%9A%E5%81%9A%E7%BB%8F%E6%B5%8E%E5%B7%A5%E4%BD%9C",
+  "title": "必须学会做经济工作",
+  "volume": "毛选第三卷",
+  "order": 80
+ },
+ {
+  "slug": "%E6%B8%B8%E5%87%BB%E5%8C%BA%E4%B9%9F%E8%83%BD%E5%A4%9F%E8%BF%9B%E8%A1%8C%E7%94%9F%E4%BA%A7",
+  "title": "游击区也能够进行生产",
+  "volume": "毛选第三卷",
+  "order": 81
+ },
+ {
+  "slug": "%E4%B8%A4%E4%B8%AA%E4%B8%AD%E5%9B%BD%E4%B9%8B%E5%91%BD%E8%BF%90",
+  "title": "两个中国之命运",
+  "volume": "毛选第三卷",
+  "order": 82
+ },
+ {
+  "slug": "on-coalition-government",
+  "title": "论联合政府",
+  "volume": "毛选第三卷",
+  "order": 83
+ },
+ {
+  "slug": "the-foolish-old-man-who-removed-mountains",
+  "title": "愚公移山",
+  "volume": "毛选第三卷",
+  "order": 84
+ },
+ {
+  "slug": "%E8%AE%BA%E5%86%9B%E9%98%9F%E7%94%9F%E4%BA%A7%E8%87%AA%E7%BB%99-%E5%85%BC%E8%AE%BA%E6%95%B4%E9%A3%8E%E5%92%8C%E7%94%9F%E4%BA%A7%E4%B8%A4%E5%A4%A7%E8%BF%90%E5%8A%A8%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7",
+  "title": "论军队生产自给，兼论整风和生产两大运动的重要性",
+  "volume": "毛选第三卷",
+  "order": 85
+ },
+ {
+  "slug": "%E8%B5%AB%E5%B0%94%E5%88%A9%E5%92%8C%E8%92%8B%E4%BB%8B%E7%9F%B3%E7%9A%84%E5%8F%8C%E7%B0%A7%E5%B7%B2%E7%BB%8F%E7%A0%B4%E4%BA%A7",
+  "title": "赫尔利和蒋介石的双簧已经破产",
+  "volume": "毛选第三卷",
+  "order": 86
+ },
+ {
+  "slug": "%E8%AF%84%E8%B5%AB%E5%B0%94%E5%88%A9%E6%94%BF%E7%AD%96%E7%9A%84%E5%8D%B1%E9%99%A9",
+  "title": "评赫尔利政策的危险",
+  "volume": "毛选第三卷",
+  "order": 87
+ },
+ {
+  "slug": "%E7%BB%99%E7%A6%8F%E6%96%AF%E7%89%B9%E5%90%8C%E5%BF%97%E7%9A%84%E7%94%B5%E6%8A%A5",
+  "title": "给福斯特同志的电报",
+  "volume": "毛选第三卷",
+  "order": 88
+ },
+ {
+  "slug": "%E5%AF%B9%E6%97%A5%E5%AF%87%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E6%88%98",
+  "title": "对日寇的最后一战",
+  "volume": "毛选第三卷",
+  "order": 89
+ },
+ {
+  "slug": "the-situation-after-victory-in-the-war-of-resistance-against-japan",
+  "title": "抗日战争胜利后的时局和我们的方针",
+  "volume": "毛选第四卷",
+  "order": 90
+ },
+ {
+  "slug": "%E8%92%8B%E4%BB%8B%E7%9F%B3%E5%9C%A8%E6%8C%91%E5%8A%A8%E5%86%85%E6%88%98",
+  "title": "蒋介石在挑动内战",
+  "volume": "毛选第四卷",
+  "order": 91
+ },
+ {
+  "slug": "%E7%AC%AC%E5%8D%81%E5%85%AB%E9%9B%86%E5%9B%A2%E5%86%9B%E6%80%BB%E5%8F%B8%E4%BB%A4%E7%BB%99%E8%92%8B%E4%BB%8B%E7%9F%B3%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%94%B5%E6%8A%A5",
+  "title": "第十八集团军总司令给蒋介石的两个电报",
+  "volume": "毛选第四卷",
+  "order": 92
+ },
+ {
+  "slug": "%E8%AF%84%E8%92%8B%E4%BB%8B%E7%9F%B3%E5%8F%91%E8%A8%80%E4%BA%BA%E8%B0%88%E8%AF%9D",
+  "title": "评蒋介石发言人谈话",
+  "volume": "毛选第四卷",
+  "order": 93
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%85%B3%E4%BA%8E%E5%90%8C%E5%9B%BD%E6%B0%91%E5%85%9A%E8%BF%9B%E8%A1%8C%E5%92%8C%E5%B9%B3%E8%B0%88%E5%88%A4%E7%9A%84%E9%80%9A%E7%9F%A5",
+  "title": "中共中央关于同国民党进行和平谈判的通知",
+  "volume": "毛选第四卷",
+  "order": 94
+ },
+ {
+  "slug": "on-the-chongqing-negotiations",
+  "title": "关于重庆谈判",
+  "volume": "毛选第四卷",
+  "order": 95
+ },
+ {
+  "slug": "%E5%9B%BD%E6%B0%91%E5%85%9A%E8%BF%9B%E6%94%BB%E7%9A%84%E7%9C%9F%E7%9B%B8",
+  "title": "国民党进攻的真相",
+  "volume": "毛选第四卷",
+  "order": 96
+ },
+ {
+  "slug": "%E5%87%8F%E7%A7%9F%E5%92%8C%E7%94%9F%E4%BA%A7%E6%98%AF%E4%BF%9D%E5%8D%AB%E8%A7%A3%E6%94%BE%E5%8C%BA%E7%9A%84%E4%B8%A4%E4%BB%B6%E5%A4%A7%E4%BA%8B",
+  "title": "减租和生产是保卫解放区的两件大事",
+  "volume": "毛选第四卷",
+  "order": 97
+ },
+ {
+  "slug": "%E4%B8%80%E4%B9%9D%E5%9B%9B%E5%85%AD%E5%B9%B4%E8%A7%A3%E6%94%BE%E5%8C%BA%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%96%B9%E9%92%88",
+  "title": "一九四六年解放区工作的方针",
+  "volume": "毛选第四卷",
+  "order": 98
+ },
+ {
+  "slug": "%E5%BB%BA%E7%AB%8B%E5%B7%A9%E5%9B%BA%E7%9A%84%E4%B8%9C%E5%8C%97%E6%A0%B9%E6%8D%AE%E5%9C%B0",
+  "title": "建立巩固的东北根据地",
+  "volume": "毛选第四卷",
+  "order": 99
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E7%9B%AE%E5%89%8D%E5%9B%BD%E9%99%85%E5%BD%A2%E5%8A%BF%E7%9A%84%E5%87%A0%E7%82%B9%E4%BC%B0%E8%AE%A1",
+  "title": "关于目前国际形势的几点估计",
+  "volume": "毛选第四卷",
+  "order": 100
+ },
+ {
+  "slug": "%E4%BB%A5%E8%87%AA%E5%8D%AB%E6%88%98%E4%BA%89%E7%B2%89%E7%A2%8E%E8%92%8B%E4%BB%8B%E7%9F%B3%E7%9A%84%E8%BF%9B%E6%94%BB",
+  "title": "以自卫战争粉碎蒋介石的进攻",
+  "volume": "毛选第四卷",
+  "order": 101
+ },
+ {
+  "slug": "talk-with-american-journalist-anna-louise-strong",
+  "title": "和美国记者安娜·路易斯·斯特朗的谈话",
+  "volume": "毛选第四卷",
+  "order": 102
+ },
+ {
+  "slug": "concentrate-forces-to-destroy-the-enemy",
+  "title": "集中优势兵力，各个歼灭敌人",
+  "volume": "毛选第四卷",
+  "order": 103
+ },
+ {
+  "slug": "%E7%BE%8E%E5%9B%BD%E8%B0%83%E8%A7%A3%E7%9C%9F%E7%9B%B8%E5%92%8C%E4%B8%AD%E5%9B%BD%E5%86%85%E6%88%98%E5%89%8D%E9%80%94",
+  "title": "美国“调解”真相和中国内战前途",
+  "volume": "毛选第四卷",
+  "order": 104
+ },
+ {
+  "slug": "%E4%B8%89%E4%B8%AA%E6%9C%88%E6%80%BB%E7%BB%93",
+  "title": "三个月总结",
+  "volume": "毛选第四卷",
+  "order": 105
+ },
+ {
+  "slug": "%E8%BF%8E%E6%8E%A5%E4%B8%AD%E5%9B%BD%E9%9D%A9%E5%91%BD%E7%9A%84%E6%96%B0%E9%AB%98%E6%BD%AE",
+  "title": "迎接中国革命的新高潮",
+  "volume": "毛选第四卷",
+  "order": 106
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%85%B3%E4%BA%8E%E6%9A%82%E6%97%B6%E6%94%BE%E5%BC%83%E5%BB%B6%E5%AE%89%E5%92%8C%E4%BF%9D%E5%8D%AB%E9%99%95%E7%94%98%E5%AE%81%E8%BE%B9%E5%8C%BA%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6",
+  "title": "中共中央关于暂时放弃延安和保卫陕甘宁边区的两个文件",
+  "volume": "毛选第四卷",
+  "order": 107
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E8%A5%BF%E5%8C%97%E6%88%98%E5%9C%BA%E7%9A%84%E4%BD%9C%E6%88%98%E6%96%B9%E9%92%88",
+  "title": "关于西北战场的作战方针",
+  "volume": "毛选第四卷",
+  "order": 108
+ },
+ {
+  "slug": "%E8%92%8B%E4%BB%8B%E7%9F%B3%E6%94%BF%E5%BA%9C%E5%B7%B2%E5%A4%84%E5%9C%A8%E5%85%A8%E6%B0%91%E7%9A%84%E5%8C%85%E5%9B%B4%E4%B8%AD",
+  "title": "蒋介石政府已处在全民的包围中",
+  "volume": "毛选第四卷",
+  "order": 109
+ },
+ {
+  "slug": "%E8%A7%A3%E6%94%BE%E6%88%98%E4%BA%89%E7%AC%AC%E4%BA%8C%E5%B9%B4%E7%9A%84%E6%88%98%E7%95%A5%E6%96%B9%E9%92%88",
+  "title": "解放战争第二年的战略方针",
+  "volume": "毛选第四卷",
+  "order": 110
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E5%AE%A3%E8%A8%80",
+  "title": "中国人民解放军宣言",
+  "volume": "毛选第四卷",
+  "order": 111
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E6%80%BB%E9%83%A8%E5%85%B3%E4%BA%8E%E9%87%8D%E8%A1%8C%E9%A2%81%E5%B8%83%E4%B8%89%E5%A4%A7%E7%BA%AA%E5%BE%8B%E5%85%AB%E9%A1%B9%E6%B3%A8%E6%84%8F%E7%9A%84%E8%AE%AD%E4%BB%A4",
+  "title": "中国人民解放军总部关于重行颁布三大纪律八项注意的训令",
+  "volume": "毛选第四卷",
+  "order": 112
+ },
+ {
+  "slug": "the-present-situation-and-our-tasks",
+  "title": "目前形势和我们的任务",
+  "volume": "毛选第四卷",
+  "order": 113
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%BB%BA%E7%AB%8B%E6%8A%A5%E5%91%8A%E5%88%B6%E5%BA%A6",
+  "title": "关于建立报告制度",
+  "volume": "毛选第四卷",
+  "order": 114
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E7%9B%AE%E5%89%8D%E5%85%9A%E7%9A%84%E6%94%BF%E7%AD%96%E4%B8%AD%E7%9A%84%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E9%97%AE%E9%A2%98",
+  "title": "关于目前党的政策中的几个重要问题",
+  "volume": "毛选第四卷",
+  "order": 115
+ },
+ {
+  "slug": "%E5%86%9B%E9%98%9F%E5%86%85%E9%83%A8%E7%9A%84%E6%B0%91%E4%B8%BB%E8%BF%90%E5%8A%A8",
+  "title": "军队内部的民主运动",
+  "volume": "毛选第四卷",
+  "order": 116
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9C%B0%E5%8C%BA%E5%AE%9E%E6%96%BD%E5%9C%9F%E5%9C%B0%E6%B3%95%E7%9A%84%E4%B8%8D%E5%90%8C%E7%AD%96%E7%95%A5",
+  "title": "在不同地区实施土地法的不同策略",
+  "volume": "毛选第四卷",
+  "order": 117
+ },
+ {
+  "slug": "%E7%BA%A0%E6%AD%A3%E5%9C%9F%E5%9C%B0%E6%94%B9%E9%9D%A9%E5%AE%A3%E4%BC%A0%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BE%E9%94%99%E8%AF%AF",
+  "title": "纠正土地改革宣传中的“左”倾错误",
+  "volume": "毛选第四卷",
+  "order": 118
+ },
+ {
+  "slug": "%E6%96%B0%E8%A7%A3%E6%94%BE%E5%8C%BA%E5%9C%9F%E5%9C%B0%E6%94%B9%E9%9D%A9%E8%A6%81%E7%82%B9",
+  "title": "新解放区土地改革要点",
+  "volume": "毛选第四卷",
+  "order": 119
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%B7%A5%E5%95%86%E4%B8%9A%E6%94%BF%E7%AD%96",
+  "title": "关于工商业政策",
+  "volume": "毛选第四卷",
+  "order": 120
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%B0%91%E6%97%8F%E8%B5%84%E4%BA%A7%E9%98%B6%E7%BA%A7%E5%92%8C%E5%BC%80%E6%98%8E%E7%BB%85%E5%A3%AB%E9%97%AE%E9%A2%98",
+  "title": "关于民族资产阶级和开明绅士问题",
+  "volume": "毛选第四卷",
+  "order": 121
+ },
+ {
+  "slug": "%E8%AF%84%E8%A5%BF%E5%8C%97%E5%A4%A7%E6%8D%B7%E5%85%BC%E8%AE%BA%E8%A7%A3%E6%94%BE%E5%86%9B%E7%9A%84%E6%96%B0%E5%BC%8F%E6%95%B4%E5%86%9B%E8%BF%90%E5%8A%A8",
+  "title": "评西北大捷兼论解放军的新式整军运动",
+  "volume": "毛选第四卷",
+  "order": 122
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%83%85%E5%86%B5%E7%9A%84%E9%80%9A%E6%8A%A5",
+  "title": "关于情况的通报",
+  "volume": "毛选第四卷",
+  "order": 123
+ },
+ {
+  "slug": "speech-at-the-jin-sui-cadre-conference",
+  "title": "在晋绥干部会议上的讲话",
+  "volume": "毛选第四卷",
+  "order": 124
+ },
+ {
+  "slug": "%E5%AF%B9%E6%99%8B%E7%BB%A5%E6%97%A5%E6%8A%A5%E7%BC%96%E8%BE%91%E4%BA%BA%E5%91%98%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "对晋绥日报编辑人员的谈话",
+  "volume": "毛选第四卷",
+  "order": 125
+ },
+ {
+  "slug": "%E5%86%8D%E5%85%8B%E6%B4%9B%E9%98%B3%E5%90%8E%E7%BB%99%E6%B4%9B%E9%98%B3%E5%89%8D%E7%BA%BF%E6%8C%87%E6%8C%A5%E9%83%A8%E7%9A%84%E7%94%B5%E6%8A%A5",
+  "title": "再克洛阳后给洛阳前线指挥部的电报",
+  "volume": "毛选第四卷",
+  "order": 126
+ },
+ {
+  "slug": "%E6%96%B0%E8%A7%A3%E6%94%BE%E5%8C%BA%E5%86%9C%E6%9D%91%E5%B7%A5%E4%BD%9C%E7%9A%84%E7%AD%96%E7%95%A5%E9%97%AE%E9%A2%98",
+  "title": "新解放区农村工作的策略问题",
+  "volume": "毛选第四卷",
+  "order": 127
+ },
+ {
+  "slug": "%E4%B8%80%E4%B9%9D%E5%9B%9B%E5%85%AB%E5%B9%B4%E7%9A%84%E5%9C%9F%E5%9C%B0%E6%94%B9%E9%9D%A9%E5%B7%A5%E4%BD%9C%E5%92%8C%E6%95%B4%E5%85%9A%E5%B7%A5%E4%BD%9C",
+  "title": "一九四八年的土地改革工作和整党工作",
+  "volume": "毛选第四卷",
+  "order": 128
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E8%BE%BD%E6%B2%88%E6%88%98%E5%BD%B9%E7%9A%84%E4%BD%9C%E6%88%98%E6%96%B9%E9%92%88",
+  "title": "关于辽沈战役的作战方针",
+  "volume": "毛选第四卷",
+  "order": 129
+ },
+ {
+  "slug": "on-improving-party-committee-system",
+  "title": "关于健全党委制",
+  "volume": "毛选第四卷",
+  "order": 130
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%85%B3%E4%BA%8E%E4%B9%9D%E6%9C%88%E4%BC%9A%E8%AE%AE%E7%9A%84%E9%80%9A%E7%9F%A5",
+  "title": "中共中央关于九月会议的通知",
+  "volume": "毛选第四卷",
+  "order": 131
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%B7%AE%E6%B5%B7%E6%88%98%E5%BD%B9%E7%9A%84%E7%9A%84%E4%BD%9C%E6%88%98%E6%96%B9%E9%92%88",
+  "title": "关于淮海战役的的作战方针",
+  "volume": "毛选第四卷",
+  "order": 132
+ },
+ {
+  "slug": "%E5%85%A8%E4%B8%96%E7%95%8C%E9%9D%A9%E5%91%BD%E5%8A%9B%E9%87%8F%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5-%E5%8F%8D%E5%AF%B9%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E7%9A%84%E4%BE%B5%E7%95%A5",
+  "title": "全世界革命力量团结起来，反对帝国主义的侵略",
+  "volume": "毛选第四卷",
+  "order": 133
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%86%9B%E4%BA%8B%E5%BD%A2%E5%8A%BF%E7%9A%84%E9%87%8D%E5%A4%A7%E5%8F%98%E5%8C%96",
+  "title": "中国军事形势的重大变化",
+  "volume": "毛选第四卷",
+  "order": 134
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%B9%B3%E6%B4%A5%E6%88%98%E5%BD%B9%E7%9A%84%E4%BD%9C%E6%88%98%E6%96%B9%E9%92%88",
+  "title": "关于平津战役的作战方针",
+  "volume": "毛选第四卷",
+  "order": 135
+ },
+ {
+  "slug": "%E6%95%A6%E4%BF%83%E6%9D%9C%E8%81%BF%E6%98%8E%E7%AD%89%E6%8A%95%E9%99%8D%E4%B9%A6",
+  "title": "敦促杜聿明等投降书",
+  "volume": "毛选第四卷",
+  "order": 136
+ },
+ {
+  "slug": "carry-the-revolution-through-to-the-end",
+  "title": "将革命进行到底",
+  "volume": "毛选第四卷",
+  "order": 137
+ },
+ {
+  "slug": "%E8%AF%84%E6%88%98%E7%8A%AF%E6%B1%82%E5%92%8C",
+  "title": "评战犯求和",
+  "volume": "毛选第四卷",
+  "order": 138
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E6%AF%9B%E6%B3%BD%E4%B8%9C%E4%B8%BB%E5%B8%AD%E5%85%B3%E4%BA%8E%E6%97%B6%E5%B1%80%E7%9A%84%E5%A3%B0%E6%98%8E",
+  "title": "中共中央毛泽东主席关于时局的声明",
+  "volume": "毛选第四卷",
+  "order": 139
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E5%8F%91%E8%A8%80%E4%BA%BA%E8%AF%84%E5%8D%97%E4%BA%AC%E8%A1%8C%E6%94%BF%E9%99%A2%E7%9A%84%E5%86%B3%E8%AE%AE",
+  "title": "中共发言人评南京行政院的决议",
+  "volume": "毛选第四卷",
+  "order": 140
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E5%8F%91%E8%A8%80%E4%BA%BA%E5%85%B3%E4%BA%8E%E5%91%BD%E4%BB%A4%E5%9B%BD%E6%B0%91%E5%85%9A%E5%8F%8D%E5%8A%A8%E6%94%BF%E5%BA%9C%E9%87%8D%E6%96%B0%E9%80%AE%E6%8D%95%E5%89%8D%E6%97%A5%E6%9C%AC%E4%BE%B5%E5%8D%8E%E5%86%9B%E6%80%BB%E5%8F%B8%E4%BB%A4%E5%86%88%E6%9D%91%E5%AE%81%E6%AC%A1%E5%92%8C%E9%80%AE%E6%8D%95%E5%9B%BD%E6%B0%91%E5%85%9A%E5%86%85%E6%88%98%E7%BD%AA%E7%8A%AF%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "中共发言人关于命令国民党反动政府重新逮捕前日本侵华军总司令冈村宁次和逮捕国民党内战罪犯的谈话",
+  "volume": "毛选第四卷",
+  "order": 141
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E5%8F%91%E8%A8%80%E4%BA%BA%E5%85%B3%E4%BA%8E%E5%92%8C%E5%B9%B3%E6%9D%A1%E4%BB%B6%E5%BF%85%E9%A1%BB%E5%8C%85%E6%8B%AC%E6%83%A9%E5%8A%9E%E6%97%A5%E6%9C%AC%E6%88%98%E7%8A%AF%E5%92%8C%E5%9B%BD%E6%B0%91%E5%85%9A%E6%88%98%E7%8A%AF%E7%9A%84%E5%A3%B0%E6%98%8E",
+  "title": "中共发言人关于和平条件必须包括惩办日本战犯和国民党战犯的声明",
+  "volume": "毛选第四卷",
+  "order": 142
+ },
+ {
+  "slug": "%E6%8A%8A%E5%86%9B%E9%98%9F%E5%8F%98%E4%B8%BA%E5%B7%A5%E4%BD%9C%E9%98%9F",
+  "title": "把军队变为工作队",
+  "volume": "毛选第四卷",
+  "order": 143
+ },
+ {
+  "slug": "%E5%9B%9B%E5%88%86%E4%BA%94%E8%A3%82%E7%9A%84%E5%8F%8D%E5%8A%A8%E6%B4%BE%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E8%A6%81%E7%A9%BA%E5%96%8A%E5%85%A8%E9%9D%A2%E5%92%8C%E5%B9%B3",
+  "title": "四分五裂的反动派为什么还要空喊“全面和平”？",
+  "volume": "毛选第四卷",
+  "order": 144
+ },
+ {
+  "slug": "%E5%9B%BD%E6%B0%91%E5%85%9A%E5%8F%8D%E5%8A%A8%E6%B4%BE%E7%94%B1%E5%91%BC%E5%90%81%E5%92%8C%E5%B9%B3%E5%8F%98%E4%B8%BA%E5%91%BC%E5%90%81%E6%88%98%E4%BA%89",
+  "title": "国民党反动派由“呼吁和平”变为呼吁战争",
+  "volume": "毛选第四卷",
+  "order": 145
+ },
+ {
+  "slug": "%E8%AF%84%E5%9B%BD%E6%B0%91%E5%85%9A%E5%AF%B9%E6%88%98%E4%BA%89%E8%B4%A3%E4%BB%BB%E9%97%AE%E9%A2%98%E7%9A%84%E5%87%A0%E7%A7%8D%E7%AD%94%E6%A1%88",
+  "title": "评国民党对战争责任问题的几种答案",
+  "volume": "毛选第四卷",
+  "order": 146
+ },
+ {
+  "slug": "report-to-the-second-plenary-session-of-the-seventh-central-committee",
+  "title": "在中国共产党第七届中央委员会第二次全体会议上的报告",
+  "volume": "毛选第四卷",
+  "order": 147
+ },
+ {
+  "slug": "methods-of-work-of-party-committees",
+  "title": "党委会的工作方法",
+  "volume": "毛选第四卷",
+  "order": 148
+ },
+ {
+  "slug": "%E5%8D%97%E4%BA%AC%E6%94%BF%E5%BA%9C%E5%90%91%E4%BD%95%E5%A4%84%E5%8E%BB",
+  "title": "南京政府向何处去？",
+  "volume": "毛选第四卷",
+  "order": 149
+ },
+ {
+  "slug": "%E5%90%91%E5%85%A8%E5%9B%BD%E8%BF%9B%E5%86%9B%E7%9A%84%E5%91%BD%E4%BB%A4",
+  "title": "向全国进军的命令",
+  "volume": "毛选第四卷",
+  "order": 150
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E5%B8%83%E5%91%8A",
+  "title": "中国人民解放军布告",
+  "volume": "毛选第四卷",
+  "order": 151
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E6%80%BB%E9%83%A8%E5%8F%91%E8%A8%80%E4%BA%BA%E4%B8%BA%E8%8B%B1%E5%9B%BD%E5%86%9B%E8%88%B0%E6%9A%B4%E8%A1%8C%E5%8F%91%E8%A1%A8%E7%9A%84%E5%A3%B0%E6%98%8E",
+  "title": "中国人民解放军总部发言人为英国军舰暴行发表的声明",
+  "volume": "毛选第四卷",
+  "order": 152
+ },
+ {
+  "slug": "%E5%9C%A8%E6%96%B0%E6%94%BF%E6%B2%BB%E5%8D%8F%E5%95%86%E4%BC%9A%E8%AE%AE%E7%AD%B9%E5%A4%87%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在新政治协商会议筹备会上的讲话",
+  "volume": "毛选第四卷",
+  "order": 153
+ },
+ {
+  "slug": "%E8%AE%BA%E4%BA%BA%E6%B0%91%E6%B0%91%E4%B8%BB%E4%B8%93%E6%94%BF",
+  "title": "论人民民主专政",
+  "volume": "毛选第四卷",
+  "order": 154
+ },
+ {
+  "slug": "cast-away-illusions-prepare-for-struggle",
+  "title": "丢掉幻想，准备斗争",
+  "volume": "毛选第四卷",
+  "order": 155
+ },
+ {
+  "slug": "farewell-leighton-stuart",
+  "title": "别了，司徒雷登",
+  "volume": "毛选第四卷",
+  "order": 156
+ },
+ {
+  "slug": "%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%A8%E8%AE%BA%E7%99%BD%E7%9A%AE%E4%B9%A6",
+  "title": "为什么要讨论白皮书？",
+  "volume": "毛选第四卷",
+  "order": 157
+ },
+ {
+  "slug": "%E5%8F%8B%E8%B0%8A-%E8%BF%98%E6%98%AF%E4%BE%B5%E7%95%A5",
+  "title": "“友谊”，还是侵略？",
+  "volume": "毛选第四卷",
+  "order": 158
+ },
+ {
+  "slug": "bankruptcy-of-the-idealist-conception-of-history",
+  "title": "唯心历史观的破产",
+  "volume": "毛选第四卷",
+  "order": 159
+ },
+ {
+  "slug": "%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86-%E5%87%BA%E7%89%88%E8%AF%B4%E6%98%8E",
+  "title": "毛泽东选集 - 出版说明",
+  "volume": "毛选第五卷",
+  "order": 160
+ },
+ {
+  "slug": "the-chinese-people-have-stood-up",
+  "title": "中国人民站起来了",
+  "volume": "毛选第五卷",
+  "order": 161
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%9B%A2%E7%BB%93%E4%B8%87%E5%B2%81",
+  "title": "中国人民大团结万岁",
+  "volume": "毛选第五卷",
+  "order": 162
+ },
+ {
+  "slug": "%E4%BA%BA%E6%B0%91%E8%8B%B1%E9%9B%84%E4%BB%AC%E6%B0%B8%E5%9E%82%E4%B8%8D%E6%9C%BD",
+  "title": "人民英雄们永垂不朽",
+  "volume": "毛选第五卷",
+  "order": 163
+ },
+ {
+  "slug": "%E6%B0%B8%E8%BF%9C%E4%BF%9D%E6%8C%81%E8%89%B0%E8%8B%A6%E5%A5%8B%E6%96%97%E7%9A%84%E4%BD%9C%E9%A3%8E",
+  "title": "永远保持艰苦奋斗的作风",
+  "volume": "毛选第五卷",
+  "order": 164
+ },
+ {
+  "slug": "%E5%BE%81%E8%AF%A2%E5%AF%B9%E5%BE%85%E5%AF%8C%E5%86%9C%E7%AD%96%E7%95%A5%E9%97%AE%E9%A2%98%E7%9A%84%E6%84%8F%E8%A7%81",
+  "title": "征询对待富农策略问题的意见",
+  "volume": "毛选第五卷",
+  "order": 165
+ },
+ {
+  "slug": "%E4%B8%BA%E4%BA%89%E5%8F%96%E5%9B%BD%E5%AE%B6%E8%B4%A2%E6%94%BF%E7%BB%8F%E6%B5%8E%E7%8A%B6%E5%86%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%A5%BD%E8%BD%AC%E8%80%8C%E6%96%97%E4%BA%89",
+  "title": "为争取国家财政经济状况的基本好转而斗争",
+  "volume": "毛选第五卷",
+  "order": 166
+ },
+ {
+  "slug": "dont-attack-on-all-fronts",
+  "title": "不要四面出击",
+  "volume": "毛选第五卷",
+  "order": 167
+ },
+ {
+  "slug": "%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AE%8C%E5%85%A8%E7%9A%84%E9%9D%A9%E5%91%BD%E6%B4%BE",
+  "title": "做一个完全的革命派",
+  "volume": "毛选第五卷",
+  "order": 168
+ },
+ {
+  "slug": "%E4%BD%A0%E4%BB%AC%E6%98%AF%E5%85%A8%E6%B0%91%E6%97%8F%E7%9A%84%E6%A8%A1%E8%8C%83%E4%BA%BA%E7%89%A9",
+  "title": "你们是全民族的模范人物",
+  "volume": "毛选第五卷",
+  "order": 169
+ },
+ {
+  "slug": "%E7%BB%99%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%BF%97%E6%84%BF%E5%86%9B%E7%9A%84%E5%91%BD%E4%BB%A4",
+  "title": "给中国人民志愿军的命令",
+  "volume": "毛选第五卷",
+  "order": 170
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%BF%97%E6%84%BF%E5%86%9B%E8%A6%81%E7%88%B1%E6%8A%A4%E6%9C%9D%E9%B2%9C%E7%9A%84%E4%B8%80%E5%B1%B1%E4%B8%80%E6%B0%B4%E4%B8%80%E8%8D%89%E4%B8%80%E6%9C%A8",
+  "title": "中国人民志愿军要爱护朝鲜的一山一水一草一木",
+  "volume": "毛选第五卷",
+  "order": 171
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E6%94%BF%E6%B2%BB%E5%B1%80%E6%89%A9%E5%A4%A7%E4%BC%9A%E8%AE%AE%E5%86%B3%E8%AE%AE%E8%A6%81%E7%82%B9",
+  "title": "中共中央政治局扩大会议决议要点",
+  "volume": "毛选第五卷",
+  "order": 172
+ },
+ {
+  "slug": "mass-line-in-suppressing-counter-revolution",
+  "title": "镇压反革命必须实行党的群众路线",
+  "volume": "毛选第五卷",
+  "order": 173
+ },
+ {
+  "slug": "%E9%95%87%E5%8E%8B%E5%8F%8D%E9%9D%A9%E5%91%BD%E5%BF%85%E9%A1%BB%E6%89%93%E5%BE%97%E7%A8%B3-%E6%89%93%E5%BE%97%E5%87%86-%E6%89%93%E5%BE%97%E7%8B%A0",
+  "title": "镇压反革命必须打得稳，打得准，打得狠",
+  "volume": "毛选第五卷",
+  "order": 174
+ },
+ {
+  "slug": "%E5%BA%94%E5%BD%93%E9%87%8D%E8%A7%86%E7%94%B5%E5%BD%B1-%E6%AD%A6%E8%AE%AD%E4%BC%A0-%E7%9A%84%E8%AE%A8%E8%AE%BA",
+  "title": "应当重视电影《武训传》的讨论",
+  "volume": "毛选第五卷",
+  "order": 175
+ },
+ {
+  "slug": "%E4%B8%89%E5%A4%A7%E8%BF%90%E5%8A%A8%E7%9A%84%E4%BC%9F%E5%A4%A7%E8%83%9C%E5%88%A9",
+  "title": "三大运动的伟大胜利",
+  "volume": "毛选第五卷",
+  "order": 176
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E4%B8%89%E5%8F%8D%E4%BA%94%E5%8F%8D%E7%9A%84%E6%96%97%E4%BA%89",
+  "title": "关于“三反”“五反”的斗争",
+  "volume": "毛选第五卷",
+  "order": 177
+ },
+ {
+  "slug": "%E6%8A%8A%E5%86%9C%E4%B8%9A%E4%BA%92%E5%8A%A9%E5%90%88%E4%BD%9C%E5%BD%93%E4%BD%9C%E4%B8%80%E4%BB%B6%E5%A4%A7%E4%BA%8B%E5%8E%BB%E5%81%9A",
+  "title": "把农业互助合作当作一件大事去做",
+  "volume": "毛选第五卷",
+  "order": 178
+ },
+ {
+  "slug": "%E5%85%83%E6%97%A6%E7%A5%9D%E8%AF%8D",
+  "title": "元旦祝词",
+  "volume": "毛选第五卷",
+  "order": 179
+ },
+ {
+  "slug": "%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E5%85%B3%E4%BA%8E%E8%A5%BF%E8%97%8F%E5%B7%A5%E4%BD%9C%E6%96%B9%E9%92%88%E7%9A%84%E6%8C%87%E7%A4%BA",
+  "title": "中共中央关于西藏工作方针的指示",
+  "volume": "毛选第五卷",
+  "order": 180
+ },
+ {
+  "slug": "%E5%B7%A5%E4%BA%BA%E9%98%B6%E7%BA%A7%E4%B8%8E%E8%B5%84%E4%BA%A7%E9%98%B6%E7%BA%A7%E7%9A%84%E7%9F%9B%E7%9B%BE%E6%98%AF%E5%9B%BD%E5%86%85%E7%9A%84%E4%B8%BB%E8%A6%81%E7%9F%9B%E7%9B%BE",
+  "title": "工人阶级与资产阶级的矛盾是国内的主要矛盾",
+  "volume": "毛选第五卷",
+  "order": 181
+ },
+ {
+  "slug": "%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5-%E5%88%92%E6%B8%85%E6%95%8C%E6%88%91%E7%95%8C%E9%99%90",
+  "title": "团结起来，划清敌我界限",
+  "volume": "毛选第五卷",
+  "order": 182
+ },
+ {
+  "slug": "%E7%A5%9D%E8%B4%BA%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%BF%97%E6%84%BF%E5%86%9B%E7%9A%84%E9%87%8D%E5%A4%A7%E8%83%9C%E5%88%A9",
+  "title": "祝贺中国人民志愿军的重大胜利",
+  "volume": "毛选第五卷",
+  "order": 183
+ },
+ {
+  "slug": "%E5%8F%8D%E5%AF%B9%E5%AE%98%E5%83%9A%E4%B8%BB%E4%B9%89-%E5%91%BD%E4%BB%A4%E4%B8%BB%E4%B9%89%E5%92%8C%E8%BF%9D%E6%B3%95%E4%B9%B1%E7%BA%AA",
+  "title": "反对官僚主义、命令主义和违法乱纪",
+  "volume": "毛选第五卷",
+  "order": 184
+ },
+ {
+  "slug": "%E6%89%B9%E5%88%A4%E5%A4%A7%E6%B1%89%E6%97%8F%E4%B8%BB%E4%B9%89",
+  "title": "批判大汉族主义",
+  "volume": "毛选第五卷",
+  "order": 185
+ },
+ {
+  "slug": "%E8%A7%A3%E5%86%B3%E4%BA%94%E5%A4%9A%E9%97%AE%E9%A2%98",
+  "title": "解决“五多”问题",
+  "volume": "毛选第五卷",
+  "order": 186
+ },
+ {
+  "slug": "%E5%AF%B9%E5%88%98%E5%B0%91%E5%A5%87-%E6%9D%A8%E5%B0%9A%E6%98%86%E7%A0%B4%E5%9D%8F%E7%BA%AA%E5%BE%8B%E6%93%85%E8%87%AA%E4%BB%A5%E4%B8%AD%E5%A4%AE%E5%90%8D%E4%B9%89%E5%8F%91%E5%87%BA%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%B9%E8%AF%84",
+  "title": "对刘少奇、杨尚昆破坏纪律擅自以中央名义发出文件的批评",
+  "volume": "毛选第五卷",
+  "order": 187
+ },
+ {
+  "slug": "%E6%89%B9%E5%88%A4%E7%A6%BB%E5%BC%80%E6%80%BB%E8%B7%AF%E7%BA%BF%E7%9A%84%E5%8F%B3%E5%80%BE%E8%A7%82%E7%82%B9",
+  "title": "批判离开总路线的右倾观点",
+  "volume": "毛选第五卷",
+  "order": 188
+ },
+ {
+  "slug": "%E9%9D%92%E5%B9%B4%E5%9B%A2%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%A6%81%E7%85%A7%E9%A1%BE%E9%9D%92%E5%B9%B4%E7%9A%84%E7%89%B9%E7%82%B9",
+  "title": "青年团的工作要照顾青年的特点",
+  "volume": "毛选第五卷",
+  "order": 189
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%9B%BD%E5%AE%B6%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89",
+  "title": "关于国家资本主义",
+  "volume": "毛选第五卷",
+  "order": 190
+ },
+ {
+  "slug": "%E5%85%9A%E5%9C%A8%E8%BF%87%E6%B8%A1%E6%97%B6%E6%9C%9F%E7%9A%84%E6%80%BB%E8%B7%AF%E7%BA%BF",
+  "title": "党在过渡时期的总路线",
+  "volume": "毛选第五卷",
+  "order": 191
+ },
+ {
+  "slug": "%E5%8F%8D%E5%AF%B9%E5%85%9A%E5%86%85%E7%9A%84%E8%B5%84%E4%BA%A7%E9%98%B6%E7%BA%A7%E6%80%9D%E6%83%B3",
+  "title": "反对党内的资产阶级思想",
+  "volume": "毛选第五卷",
+  "order": 192
+ },
+ {
+  "slug": "%E6%94%B9%E9%80%A0%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E5%B7%A5%E5%95%86%E4%B8%9A%E7%9A%84%E5%BF%85%E7%BB%8F%E4%B9%8B%E8%B7%AF",
+  "title": "改造资本主义工商业的必经之路",
+  "volume": "毛选第五卷",
+  "order": 193
+ },
+ {
+  "slug": "%E6%8A%97%E7%BE%8E%E6%8F%B4%E6%9C%9D%E7%9A%84%E4%BC%9F%E5%A4%A7%E8%83%9C%E5%88%A9%E5%92%8C%E4%BB%8A%E5%90%8E%E7%9A%84%E4%BB%BB%E5%8A%A1",
+  "title": "抗美援朝的伟大胜利和今后的任务",
+  "volume": "毛选第五卷",
+  "order": 194
+ },
+ {
+  "slug": "%E6%89%B9%E5%88%A4%E6%A2%81%E6%BC%B1%E6%BA%9F%E7%9A%84%E5%8F%8D%E5%8A%A8%E6%80%9D%E6%83%B3",
+  "title": "批判梁漱溟的反动思想",
+  "volume": "毛选第五卷",
+  "order": 195
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%86%9C%E4%B8%9A%E4%BA%92%E5%8A%A9%E5%90%88%E4%BD%9C%E7%9A%84%E4%B8%A4%E6%AC%A1%E8%B0%88%E8%AF%9D",
+  "title": "关于农业互助合作的两次谈话",
+  "volume": "毛选第五卷",
+  "order": 196
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%AE%AA%E6%B3%95%E8%8D%89%E6%A1%88",
+  "title": "关于中华人民共和国宪法草案",
+  "volume": "毛选第五卷",
+  "order": 197
+ },
+ {
+  "slug": "%E4%B8%BA%E5%BB%BA%E8%AE%BE%E4%B8%80%E4%B8%AA%E4%BC%9F%E5%A4%A7%E7%9A%84%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%9B%BD%E5%AE%B6%E8%80%8C%E5%A5%8B%E6%96%97",
+  "title": "为建设一个伟大的社会主义国家而奋斗",
+  "volume": "毛选第五卷",
+  "order": 198
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E-%E7%BA%A2%E6%A5%BC%E6%A2%A6-%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98%E7%9A%84%E4%BF%A1",
+  "title": "关于《红楼梦》研究问题的信",
+  "volume": "毛选第五卷",
+  "order": 199
+ },
+ {
+  "slug": "%E5%8E%9F%E5%AD%90%E5%BC%B9%E5%90%93%E4%B8%8D%E5%80%92%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91",
+  "title": "原子弹吓不倒中国人民",
+  "volume": "毛选第五卷",
+  "order": 200
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E5%85%A8%E5%9B%BD%E4%BB%A3%E8%A1%A8%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中国共产党全国代表会议上的讲话",
+  "volume": "毛选第五卷",
+  "order": 201
+ },
+ {
+  "slug": "%E9%A9%B3%E8%88%86%E8%AE%BA%E4%B8%80%E5%BE%8B",
+  "title": "驳“舆论一律”",
+  "volume": "毛选第五卷",
+  "order": 202
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E8%83%A1%E9%A3%8E%E5%8F%8D%E9%9D%A9%E5%91%BD%E9%9B%86%E5%9B%A2%E7%9A%84%E6%9D%90%E6%96%99-%E7%9A%84%E5%BA%8F%E8%A8%80%E5%92%8C%E6%8C%89%E8%AF%AD",
+  "title": "《关于胡风反革命集团的材料》的序言和按语",
+  "volume": "毛选第五卷",
+  "order": 203
+ },
+ {
+  "slug": "on-agricultural-cooperativization",
+  "title": "关于农业合作化问题",
+  "volume": "毛选第五卷",
+  "order": 204
+ },
+ {
+  "slug": "%E5%86%9C%E4%B8%9A%E5%90%88%E4%BD%9C%E5%8C%96%E5%BF%85%E9%A1%BB%E4%BE%9D%E9%9D%A0%E5%85%9A%E5%9B%A2%E5%91%98%E5%92%8C%E8%B4%AB%E5%86%9C%E4%B8%8B%E4%B8%AD%E5%86%9C",
+  "title": "农业合作化必须依靠党团员和贫农下中农",
+  "volume": "毛选第五卷",
+  "order": 205
+ },
+ {
+  "slug": "%E5%86%9C%E4%B8%9A%E5%90%88%E4%BD%9C%E5%8C%96%E7%9A%84%E4%B8%80%E5%9C%BA%E8%BE%A9%E8%AE%BA%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E9%98%B6%E7%BA%A7%E6%96%97%E4%BA%89",
+  "title": "农业合作化的一场辩论和当前的阶级斗争",
+  "volume": "毛选第五卷",
+  "order": 206
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%86%9C%E6%9D%91%E7%9A%84%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E9%AB%98%E6%BD%AE-%E7%9A%84%E5%BA%8F%E8%A8%80",
+  "title": "《中国农村的社会主义高潮》的序言",
+  "volume": "毛选第五卷",
+  "order": 207
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%86%9C%E6%9D%91%E7%9A%84%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E9%AB%98%E6%BD%AE-%E7%9A%84%E6%8C%89%E8%AF%AD",
+  "title": "《中国农村的社会主义高潮》的按语",
+  "volume": "毛选第五卷",
+  "order": 208
+ },
+ {
+  "slug": "%E5%BE%81%E8%AF%A2%E5%AF%B9%E5%86%9C%E4%B8%9A%E5%8D%81%E4%B8%83%E6%9D%A1%E7%9A%84%E6%84%8F%E8%A7%81",
+  "title": "征询对农业十七条的意见",
+  "volume": "毛选第五卷",
+  "order": 209
+ },
+ {
+  "slug": "%E5%8A%A0%E5%BF%AB%E6%89%8B%E5%B7%A5%E4%B8%9A%E7%9A%84%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%94%B9%E9%80%A0",
+  "title": "加快手工业的社会主义改造",
+  "volume": "毛选第五卷",
+  "order": 210
+ },
+ {
+  "slug": "on-the-ten-major-relationships",
+  "title": "论十大关系",
+  "volume": "毛选第五卷",
+  "order": 211
+ },
+ {
+  "slug": "%E7%BE%8E%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E6%98%AF%E7%BA%B8%E8%80%81%E8%99%8E",
+  "title": "美帝国主义是纸老虎",
+  "volume": "毛选第五卷",
+  "order": 212
+ },
+ {
+  "slug": "%E5%A2%9E%E5%BC%BA%E5%85%9A%E7%9A%84%E5%9B%A2%E7%BB%93-%E7%BB%A7%E6%89%BF%E5%85%9A%E7%9A%84%E4%BC%A0%E7%BB%9F",
+  "title": "增强党的团结，继承党的传统",
+  "volume": "毛选第五卷",
+  "order": 213
+ },
+ {
+  "slug": "%E6%88%91%E4%BB%AC%E5%85%9A%E7%9A%84%E4%BA%9B%E5%8E%86%E5%8F%B2%E7%BB%8F%E9%AA%8C",
+  "title": "我们党的—些历史经验",
+  "volume": "毛选第五卷",
+  "order": 214
+ },
+ {
+  "slug": "%E7%BA%AA%E5%BF%B5%E5%AD%99%E4%B8%AD%E5%B1%B1%E5%85%88%E7%94%9F",
+  "title": "纪念孙中山先生",
+  "volume": "毛选第五卷",
+  "order": 215
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E7%AC%AC%E5%85%AB%E5%B1%8A%E4%B8%AD%E5%A4%AE%E5%A7%94%E5%91%98%E4%BC%9A%E7%AC%AC%E4%BA%8C%E6%AC%A1%E5%85%A8%E4%BD%93%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中国共产党第八届中央委员会第二次全体会议上的讲话",
+  "volume": "毛选第五卷",
+  "order": 216
+ },
+ {
+  "slug": "%E5%9C%A8%E7%9C%81%E5%B8%82%E8%87%AA%E6%B2%BB%E5%8C%BA%E5%85%9A%E5%A7%94%E4%B9%A6%E8%AE%B0%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在省市自治区党委书记会议上的讲话",
+  "volume": "毛选第五卷",
+  "order": 217
+ },
+ {
+  "slug": "on-the-correct-handling-of-contradictions-among-the-people",
+  "title": "关于正确处理人民内部矛盾的问题",
+  "volume": "毛选第五卷",
+  "order": 218
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E5%85%A8%E5%9B%BD%E5%AE%A3%E4%BC%A0%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中国共产党全国宣传工作会议上的讲话",
+  "volume": "毛选第五卷",
+  "order": 219
+ },
+ {
+  "slug": "%E5%9D%9A%E6%8C%81%E8%89%B0%E8%8B%A6%E5%A5%8B%E6%96%97-%E5%AF%86%E5%88%87%E8%81%94%E7%B3%BB%E7%BE%A4%E4%BC%97",
+  "title": "坚持艰苦奋斗，密切联系群众",
+  "volume": "毛选第五卷",
+  "order": 220
+ },
+ {
+  "slug": "%E4%BA%8B%E6%83%85%E6%AD%A3%E5%9C%A8%E8%B5%B7%E5%8F%98%E5%8C%96",
+  "title": "事情正在起变化",
+  "volume": "毛选第五卷",
+  "order": 221
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E6%98%AF%E5%85%A8%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E7%9A%84%E9%A2%86%E5%AF%BC%E6%A0%B8%E5%BF%83",
+  "title": "中国共产党是全中国人民的领导核心",
+  "volume": "毛选第五卷",
+  "order": 222
+ },
+ {
+  "slug": "%E7%BB%84%E7%BB%87%E5%8A%9B%E9%87%8F%E5%8F%8D%E5%87%BB%E5%8F%B3%E6%B4%BE%E5%88%86%E5%AD%90%E7%9A%84%E7%8C%96%E7%8B%82%E8%BF%9B%E6%94%BB",
+  "title": "组织力量反击右派分子的猖狂进攻",
+  "volume": "毛选第五卷",
+  "order": 223
+ },
+ {
+  "slug": "%E6%96%87%E6%B1%87%E6%8A%A5%E7%9A%84%E8%B5%84%E4%BA%A7%E9%98%B6%E7%BA%A7%E6%96%B9%E5%90%91%E5%BA%94%E5%BD%93%E6%89%B9%E5%88%A4",
+  "title": "文汇报的资产阶级方向应当批判",
+  "volume": "毛选第五卷",
+  "order": 224
+ },
+ {
+  "slug": "%E6%89%93%E9%80%80%E8%B5%84%E4%BA%A7%E9%98%B6%E7%BA%A7%E5%8F%B3%E6%B4%BE%E7%9A%84%E8%BF%9B%E6%94%BB",
+  "title": "打退资产阶级右派的进攻",
+  "volume": "毛选第五卷",
+  "order": 225
+ },
+ {
+  "slug": "%E4%B8%80%E4%B9%9D%E4%BA%94%E4%B8%83%E5%B9%B4%E5%A4%8F%E5%AD%A3%E7%9A%84%E5%BD%A2%E5%8A%BF",
+  "title": "一九五七年夏季的形势",
+  "volume": "毛选第五卷",
+  "order": 226
+ },
+ {
+  "slug": "%E5%81%9A%E9%9D%A9%E5%91%BD%E7%9A%84%E4%BF%83%E8%BF%9B%E6%B4%BE",
+  "title": "做革命的促进派",
+  "volume": "毛选第五卷",
+  "order": 227
+ },
+ {
+  "slug": "%E5%9D%9A%E5%AE%9A%E5%9C%B0%E7%9B%B8%E4%BF%A1%E7%BE%A4%E4%BC%97%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0",
+  "title": "坚定地相信群众的大多数",
+  "volume": "毛选第五卷",
+  "order": 228
+ },
+ {
+  "slug": "%E5%85%9A%E5%86%85%E5%9B%A2%E7%BB%93%E7%9A%84%E8%BE%A9%E8%AF%81%E6%96%B9%E6%B3%95",
+  "title": "党内团结的辩证方法",
+  "volume": "毛选第五卷",
+  "order": 229
+ },
+ {
+  "slug": "%E4%B8%80%E5%88%87%E5%8F%8D%E5%8A%A8%E6%B4%BE%E9%83%BD%E6%98%AF%E7%BA%B8%E8%80%81%E8%99%8E",
+  "title": "一切反动派都是纸老虎",
+  "volume": "毛选第五卷",
+  "order": 230
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%BF%97%E6%84%BF%E5%86%9B%E6%92%A4%E5%87%BA%E6%9C%9D%E9%B2%9C%E9%97%AE%E9%A2%98",
+  "title": "关于中国人民志愿军撤出朝鲜问题",
+  "volume": "毛选第六卷",
+  "order": 231
+ },
+ {
+  "slug": "%E5%B7%A5%E4%BD%9C%E6%96%B9%E6%B3%95%E5%85%AD%E5%8D%81%E6%9D%A1-%E8%8D%89%E6%A1%88",
+  "title": "工作方法六十条（草案）",
+  "volume": "毛选第六卷",
+  "order": 232
+ },
+ {
+  "slug": "%E5%9C%A8%E6%88%90%E9%83%BD%E4%BC%9A%E8%AE%AE1%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在成都会议上的讲话",
+  "volume": "毛选第六卷",
+  "order": 233
+ },
+ {
+  "slug": "%E5%B9%B2%E9%83%A8%E8%A6%81%E4%BB%A5%E6%99%AE%E9%80%9A%E5%8A%B3%E5%8A%A8%E8%80%85%E7%9A%84%E5%A7%BF%E6%80%81%E5%87%BA%E7%8E%B0",
+  "title": "干部要以普通劳动者的姿态出现",
+  "volume": "毛选第六卷",
+  "order": 234
+ },
+ {
+  "slug": "%E8%A6%81%E6%90%9E%E4%B8%80%E7%82%B9%E5%8E%9F%E5%AD%90%E5%BC%B9%E6%B0%A2%E5%BC%B9",
+  "title": "要搞一点原子弹氢弹",
+  "volume": "毛选第六卷",
+  "order": 235
+ },
+ {
+  "slug": "%E8%A5%BF%E8%97%8F%E8%A6%81%E5%87%86%E5%A4%87%E5%AF%B9%E4%BB%98%E9%82%A3%E9%87%8C%E7%9A%84%E5%8F%AF%E8%83%BD%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%9B%E4%B9%B1",
+  "title": "西藏要准备对付那里的可能的全局叛乱",
+  "volume": "毛选第六卷",
+  "order": 236
+ },
+ {
+  "slug": "%E4%BB%8B%E7%BB%8D%E4%B8%80%E5%B0%81%E4%BF%A11",
+  "title": "介绍一封信",
+  "volume": "毛选第六卷",
+  "order": 237
+ },
+ {
+  "slug": "%E5%90%8C%E8%8B%8F%E8%81%94%E9%A9%BB%E5%8D%8E%E5%A4%A7%E4%BD%BF%E5%B0%A4%E9%87%91%E7%9A%84%E8%B0%88%E8%AF%9D1",
+  "title": "同苏联驻华大使尤金的谈话",
+  "volume": "毛选第六卷",
+  "order": 238
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%9B%BD%E9%99%85%E5%BD%A2%E5%8A%BF%E9%97%AE%E9%A2%981",
+  "title": "关于国际形势问题",
+  "volume": "毛选第六卷",
+  "order": 239
+ },
+ {
+  "slug": "%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E9%98%B2%E9%83%A8%E5%91%8A%E5%8F%B0%E6%B9%BE%E5%90%8C%E8%83%9E%E4%B9%A6",
+  "title": "中华人民共和国国防部告台湾同胞书",
+  "volume": "毛选第六卷",
+  "order": 240
+ },
+ {
+  "slug": "%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E9%98%B2%E9%83%A8%E5%91%BD%E4%BB%A4",
+  "title": "中华人民共和国国防部命令",
+  "volume": "毛选第六卷",
+  "order": 241
+ },
+ {
+  "slug": "%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E9%98%B2%E9%83%A8%E5%86%8D%E5%91%8A%E5%8F%B0%E6%B9%BE%E5%90%8C%E8%83%9E%E4%B9%A6",
+  "title": "中华人民共和国国防部再告台湾同胞书",
+  "volume": "毛选第六卷",
+  "order": 242
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%95%86%E5%93%81%E7%94%9F%E4%BA%A7%E9%97%AE%E9%A2%981",
+  "title": "关于社会主义商品生产问题",
+  "volume": "毛选第六卷",
+  "order": 243
+ },
+ {
+  "slug": "%E8%AE%B0%E8%80%85%E5%A4%B4%E8%84%91%E8%A6%81%E5%86%B7%E9%9D%99",
+  "title": "记者头脑要冷静",
+  "volume": "毛选第六卷",
+  "order": 244
+ },
+ {
+  "slug": "%E5%9C%A8%E6%AD%A6%E6%98%8C%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在武昌会议上的讲话",
+  "volume": "毛选第六卷",
+  "order": 245
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E5%92%8C%E4%B8%80%E5%88%87%E5%8F%8D%E5%8A%A8%E6%B4%BE%E6%98%AF%E4%B8%8D%E6%98%AF%E7%9C%9F%E8%80%81%E8%99%8E%E7%9A%84%E9%97%AE%E9%A2%98",
+  "title": "关于帝国主义和一切反动派是不是真老虎的问题",
+  "volume": "毛选第六卷",
+  "order": 246
+ },
+ {
+  "slug": "%E5%9C%A8%E5%85%AB%E5%B1%8A%E5%85%AD%E4%B8%AD%E5%85%A8%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在八届六中全会上的讲话",
+  "volume": "毛选第六卷",
+  "order": 247
+ },
+ {
+  "slug": "%E9%A9%AC%E5%88%97%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%87%B3%E4%BB%8A%E6%9C%AA%E5%8F%98-%E4%B8%AA%E5%88%AB%E7%BB%93%E8%AE%BA%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98",
+  "title": "马列主义基本原理至今未变，个别结论可以改变",
+  "volume": "毛选第六卷",
+  "order": 248
+ },
+ {
+  "slug": "%E5%9C%A8%E7%AC%AC%E4%BA%8C%E6%AC%A1%E9%83%91%E5%B7%9E%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在第二次郑州会议上的讲话",
+  "volume": "毛选第六卷",
+  "order": 249
+ },
+ {
+  "slug": "%E5%85%9A%E5%86%85%E9%80%9A%E4%BF%A1%E5%BB%BA%E8%AE%AE%E5%8F%AC%E5%BC%80%E5%8E%BF%E4%BA%94%E7%BA%A7%E5%B9%B2%E9%83%A8%E5%A4%A7%E4%BC%9A",
+  "title": "党内通信——建议召开县五级干部大会",
+  "volume": "毛选第六卷",
+  "order": 250
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E8%A5%BF%E8%97%8F%E5%B9%B3%E5%8F%9B1",
+  "title": "关于西藏平叛",
+  "volume": "毛选第六卷",
+  "order": 251
+ },
+ {
+  "slug": "%E5%85%9A%E5%86%85%E9%80%9A%E4%BF%A1%E8%87%B4%E5%85%AD%E7%BA%A7%E5%B9%B2%E9%83%A8%E7%9A%84%E5%85%AC%E5%BC%80%E4%BF%A1",
+  "title": "党内通信——致六级干部的公开信",
+  "volume": "毛选第六卷",
+  "order": 252
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E8%A5%BF%E8%97%8F%E9%97%AE%E9%A2%98%E5%92%8C%E5%8F%B0%E6%B9%BE%E9%97%AE%E9%A2%98",
+  "title": "关于西藏问题和台湾问题",
+  "volume": "毛选第六卷",
+  "order": 253
+ },
+ {
+  "slug": "%E7%BB%8F%E6%B5%8E%E5%BB%BA%E8%AE%BE%E6%98%AF%E7%A7%91%E5%AD%A6-%E8%A6%81%E8%80%81%E8%80%81%E5%AE%9E%E5%AE%9E%E5%AD%A6%E4%B9%A0",
+  "title": "经济建设是科学，要老老实实学习",
+  "volume": "毛选第六卷",
+  "order": 254
+ },
+ {
+  "slug": "%E8%A6%81%E6%94%BF%E6%B2%BB%E5%AE%B6%E5%8A%9E%E6%8A%A5",
+  "title": "要政治家办报",
+  "volume": "毛选第六卷",
+  "order": 255
+ },
+ {
+  "slug": "%E5%A6%82%E5%AE%9E%E5%85%AC%E5%BC%80%E6%8A%A5%E9%81%93%E7%81%BE%E6%83%85",
+  "title": "如实公开报道灾情",
+  "volume": "毛选第六卷",
+  "order": 256
+ },
+ {
+  "slug": "%E5%BA%90%E5%B1%B1%E4%BC%9A%E8%AE%AE%E8%AE%A8%E8%AE%BA%E7%9A%84%E5%8D%81%E5%85%AB%E4%B8%AA%E9%97%AE%E9%A2%98",
+  "title": "庐山会议讨论的十八个问题",
+  "volume": "毛选第六卷",
+  "order": 257
+ },
+ {
+  "slug": "%E5%9C%A8%E5%BA%90%E5%B1%B1%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E5%A4%9A%E6%AC%A1%E8%AE%B2%E8%AF%9D-%E6%89%B9%E8%AF%AD",
+  "title": "在庐山会议上的多次讲话、批语",
+  "volume": "毛选第六卷",
+  "order": 258
+ },
+ {
+  "slug": "%E5%AF%B9%E5%BD%AD%E5%BE%B7%E6%80%80%E4%B9%9D%E6%9C%88%E4%B9%9D%E6%97%A5%E4%BF%A11%E7%9A%84%E6%89%B9%E7%A4%BA",
+  "title": "对彭德怀九月九日信的批示",
+  "volume": "毛选第六卷",
+  "order": 259
+ },
+ {
+  "slug": "%E4%BA%89%E5%8F%96%E6%AF%94%E8%BE%83%E9%95%BF%E7%9A%84%E5%92%8C%E5%B9%B3%E6%97%B6%E9%97%B4%E6%98%AF%E5%8F%AF%E8%83%BD%E7%9A%84",
+  "title": "争取比较长的和平时间是可能的",
+  "volume": "毛选第六卷",
+  "order": 260
+ },
+ {
+  "slug": "%E5%90%8C%E6%BE%B3%E5%85%B1%E6%80%BB%E4%B9%A6%E8%AE%B0%E5%A4%8F%E5%9F%BA%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "同澳共总书记夏基的谈话",
+  "volume": "毛选第六卷",
+  "order": 261
+ },
+ {
+  "slug": "%E8%AF%BB%E8%8B%8F%E8%81%94-%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6%E6%95%99%E7%A7%91%E4%B9%A6-%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "读苏联《政治经济学教科书》的谈话",
+  "volume": "毛选第六卷",
+  "order": 262
+ },
+ {
+  "slug": "%E5%9D%9A%E5%86%B3%E5%88%B6%E6%AD%A2%E9%87%8D%E5%88%AE%E5%85%B1%E4%BA%A7%E9%A3%8E%E7%AD%89%E8%BF%9D%E6%B3%95%E4%B9%B1%E7%BA%AA%E8%A1%8C%E4%B8%BA",
+  "title": "坚决制止重刮“共产风”等违法乱纪行为",
+  "volume": "毛选第六卷",
+  "order": 263
+ },
+ {
+  "slug": "%E5%90%8C%E8%92%99%E5%93%A5%E9%A9%AC%E5%88%A9%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "同蒙哥马利的谈话",
+  "volume": "毛选第六卷",
+  "order": 264
+ },
+ {
+  "slug": "%E5%8D%81%E5%B9%B4%E6%80%BB%E7%BB%93",
+  "title": "十年总结",
+  "volume": "毛选第六卷",
+  "order": 265
+ },
+ {
+  "slug": "%E5%90%8C%E6%96%AF%E8%AF%BA%E7%9A%84%E8%B0%88%E8%AF%9D%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E7%B2%BE%E7%A5%9E%E9%9D%A2%E8%B2%8C%E6%94%B9%E5%8F%98%E4%BA%86",
+  "title": "同斯诺的谈话——中国人的精神面貌改变了",
+  "volume": "毛选第六卷",
+  "order": 266
+ },
+ {
+  "slug": "%E5%BD%BB%E5%BA%95%E7%BA%A0%E6%AD%A3%E4%BA%94%E9%A3%8E",
+  "title": "彻底纠正“五风”",
+  "volume": "毛选第六卷",
+  "order": 267
+ },
+ {
+  "slug": "%E6%B0%B8%E8%BF%9C%E4%B8%8D%E8%AE%B8%E4%B8%80%E5%B9%B3%E4%BA%8C%E8%B0%831",
+  "title": "永远不许一平二调",
+  "volume": "毛选第六卷",
+  "order": 268
+ },
+ {
+  "slug": "%E5%9D%9A%E5%86%B3%E9%80%80%E8%B5%94-%E5%88%B9%E4%BD%8F%E5%85%B1%E4%BA%A7%E9%A3%8E",
+  "title": "坚决退赔，刹住“共产风”",
+  "volume": "毛选第六卷",
+  "order": 269
+ },
+ {
+  "slug": "%E5%A4%A7%E5%85%B4%E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6%E4%B9%8B%E9%A3%8E",
+  "title": "大兴调查研究之风",
+  "volume": "毛选第六卷",
+  "order": 270
+ },
+ {
+  "slug": "%E8%A6%81%E5%81%9A%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%94%B1%E5%8E%86%E5%8F%B2%E5%88%B0%E7%8E%B0%E7%8A%B6%E7%9A%84%E8%B0%83%E6%9F%A5%E7%A0%94%E7%A9%B6",
+  "title": "要做系统的由历史到现状的调查研究",
+  "volume": "毛选第六卷",
+  "order": 271
+ },
+ {
+  "slug": "%E6%80%BB%E7%BB%93%E7%BB%8F%E9%AA%8C-%E6%95%99%E8%82%B2%E5%B9%B2%E9%83%A8",
+  "title": "总结经验，教育干部",
+  "volume": "毛选第六卷",
+  "order": 272
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%9C%A8%E8%81%94%E5%90%88%E5%9B%BD%E5%8F%AA%E8%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E4%BB%A3%E8%A1%A8",
+  "title": "中国在联合国只能有一个代表",
+  "volume": "毛选第六卷",
+  "order": 273
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%83%E5%8D%83%E4%BA%BA%E5%A4%A7%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D%E5%85%B3%E4%BA%8E%E5%85%9A%E7%9A%84%E6%B0%91%E4%B8%BB%E9%9B%86%E4%B8%AD%E5%88%B6",
+  "title": "在七千人大会上的讲话——关于党的民主集中制",
+  "volume": "毛选第六卷",
+  "order": 274
+ },
+ {
+  "slug": "%E5%9C%A8%E5%8C%97%E6%88%B4%E6%B2%B3%E4%B8%AD%E5%A4%AE%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E4%B8%AD%E5%BF%83%E5%B0%8F%E7%BB%84%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在北戴河中央工作会议中心小组会上的讲话",
+  "volume": "毛选第六卷",
+  "order": 275
+ },
+ {
+  "slug": "%E5%9C%A8%E5%85%AB%E5%B1%8A%E5%8D%81%E4%B8%AD%E5%85%A8%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在八届十中全会上的讲话",
+  "volume": "毛选第六卷",
+  "order": 276
+ },
+ {
+  "slug": "%E5%B9%B2%E9%83%A8%E5%8F%82%E5%8A%A0%E5%8A%B3%E5%8A%A8%E7%9A%84%E4%BC%9F%E5%A4%A7%E6%84%8F%E4%B9%89",
+  "title": "干部参加劳动的伟大意义",
+  "volume": "毛选第六卷",
+  "order": 277
+ },
+ {
+  "slug": "%E4%BA%BA%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%9D%E6%83%B3%E6%98%AF%E4%BB%8E%E5%93%AA%E9%87%8C%E6%9D%A5%E7%9A%84",
+  "title": "人的正确思想是从哪里来的？",
+  "volume": "毛选第六卷",
+  "order": 278
+ },
+ {
+  "slug": "%E8%AE%BA%E5%8F%8D%E5%AF%B9%E5%AE%98%E5%83%9A%E4%B8%BB%E4%B9%89",
+  "title": "论反对官僚主义",
+  "volume": "毛选第六卷",
+  "order": 279
+ },
+ {
+  "slug": "%E6%94%AF%E6%8C%81%E7%BE%8E%E5%9B%BD%E9%BB%91%E4%BA%BA%E5%8F%8D%E5%AF%B9%E7%A7%8D%E6%97%8F%E6%AD%A7%E8%A7%86%E6%96%97%E4%BA%89%E7%9A%84%E5%A3%B0%E6%98%8E",
+  "title": "支持美国黑人反对种族歧视斗争的声明",
+  "volume": "毛选第六卷",
+  "order": 280
+ },
+ {
+  "slug": "%E5%8F%97%E5%8E%8B%E8%BF%AB%E7%9A%84%E4%BA%BA%E6%B0%91%E6%80%BB%E6%98%AF%E8%A6%81%E8%B5%B7%E6%9D%A5%E7%9A%84",
+  "title": "受压迫的人民总是要起来的",
+  "volume": "毛选第六卷",
+  "order": 281
+ },
+ {
+  "slug": "%E9%9D%A9%E5%91%BD%E5%92%8C%E5%BB%BA%E8%AE%BE%E9%83%BD%E8%A6%81%E9%9D%A0%E8%87%AA%E5%B7%B1",
+  "title": "革命和建设都要靠自己",
+  "volume": "毛选第六卷",
+  "order": 282
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%96%87%E8%89%BA%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%89%B9%E7%A4%BA",
+  "title": "关于文艺工作的批示",
+  "volume": "毛选第六卷",
+  "order": 283
+ },
+ {
+  "slug": "%E5%8A%A0%E5%BC%BA%E7%9B%B8%E4%BA%92%E5%AD%A6%E4%B9%A0-%E5%85%8B%E6%9C%8D%E5%9B%BA%E6%AD%A5%E8%87%AA%E5%B0%81-%E9%AA%84%E5%82%B2%E8%87%AA%E6%BB%A1",
+  "title": "加强相互学习，克服固步自封、骄傲自满",
+  "volume": "毛选第六卷",
+  "order": 284
+ },
+ {
+  "slug": "%E4%B8%8D%E6%90%9E%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF-%E7%94%9F%E4%BA%A7%E5%8A%9B%E6%97%A0%E6%B3%95%E6%8F%90%E9%AB%98",
+  "title": "不搞科学技术，生产力无法提高",
+  "volume": "毛选第六卷",
+  "order": 285
+ },
+ {
+  "slug": "%E6%88%91%E5%9B%BD%E8%BF%98%E5%8F%AF%E8%83%BD%E8%A6%81%E8%B5%B0%E4%B8%80%E6%AE%B5%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E5%A4%8D%E8%BE%9F%E7%9A%84%E9%81%93%E8%B7%AF",
+  "title": "我国还可能要走一段资本主义复辟的道路",
+  "volume": "毛选第六卷",
+  "order": 286
+ },
+ {
+  "slug": "%E4%B8%AD%E6%B3%95%E4%B9%8B%E9%97%B4%E6%9C%89%E5%85%B1%E5%90%8C%E7%82%B9",
+  "title": "中法之间有共同点",
+  "volume": "毛选第六卷",
+  "order": 287
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%95%99%E8%82%B2%E9%9D%A9%E5%91%BD%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "关于教育革命的谈话",
+  "volume": "毛选第六卷",
+  "order": 288
+ },
+ {
+  "slug": "%E4%BB%A5%E5%86%9C%E4%B8%9A%E4%B8%BA%E5%9F%BA%E7%A1%80-%E4%BB%A5%E5%B7%A5%E4%B8%9A%E4%B8%BA%E4%B8%BB%E5%AF%BC",
+  "title": "以农业为基础，以工业为主导",
+  "volume": "毛选第六卷",
+  "order": 289
+ },
+ {
+  "slug": "%E6%94%AF%E6%8C%81%E8%A2%AB%E5%8E%8B%E8%BF%AB%E4%BA%BA%E6%B0%91%E5%8F%8D%E5%AF%B9%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E7%9A%84%E6%88%98%E4%BA%89",
+  "title": "支持被压迫人民反对帝国主义的战争",
+  "volume": "毛选第六卷",
+  "order": 290
+ },
+ {
+  "slug": "%E5%92%8C%E7%8E%8B%E6%B5%B7%E8%93%891%E5%90%8C%E5%BF%97%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "和王海蓉同志的谈话",
+  "volume": "毛选第六卷",
+  "order": 291
+ },
+ {
+  "slug": "%E5%93%AA%E9%87%8C%E6%9C%89%E5%8E%8B%E8%BF%AB%E5%93%AA%E9%87%8C%E5%B0%B1%E6%9C%89%E5%8F%8D%E6%8A%97",
+  "title": "哪里有压迫哪里就有反抗",
+  "volume": "毛选第六卷",
+  "order": 292
+ },
+ {
+  "slug": "%E6%8E%A5%E8%A7%81%E6%97%A5%E6%9C%AC%E7%A4%BE%E4%BC%9A%E5%85%9A%E4%BA%BA%E5%A3%AB%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "接见日本社会党人士的谈话",
+  "volume": "毛选第六卷",
+  "order": 293
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E4%B9%9D%E8%AF%84%E8%8B%8F%E5%85%B1%E4%B8%AD%E5%A4%AE%E7%9A%84%E5%85%AC%E5%BC%80%E4%BF%A1%E7%9A%84%E8%8A%82%E5%BD%95",
+  "title": "关于九评苏共中央的公开信的节录",
+  "volume": "毛选第六卷",
+  "order": 294
+ },
+ {
+  "slug": "%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E6%94%BF%E5%BA%9C%E5%A3%B0%E6%98%8E",
+  "title": "中华人民共和国政府声明",
+  "volume": "毛选第六卷",
+  "order": 295
+ },
+ {
+  "slug": "%E6%89%93%E7%A0%B4%E6%A0%B8%E5%9E%84%E6%96%AD-%E6%B6%88%E7%81%AD%E6%A0%B8%E6%AD%A6%E5%99%A8",
+  "title": "打破核垄断，消灭核武器",
+  "volume": "毛选第六卷",
+  "order": 296
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E7%9A%84%E5%A4%A7%E8%B7%83%E8%BF%9B",
+  "title": "中国的大跃进",
+  "volume": "毛选第六卷",
+  "order": 297
+ },
+ {
+  "slug": "%E5%90%8C%E6%96%AF%E8%AF%BA%E7%9A%84%E8%B0%88%E8%AF%9D%E5%85%B3%E4%BA%8E%E8%B6%8A%E5%8D%97%E6%88%98%E4%BA%89",
+  "title": "同斯诺的谈话——关于越南战争",
+  "volume": "毛选第六卷",
+  "order": 298
+ },
+ {
+  "slug": "%E5%AE%98%E5%83%9A%E4%B8%BB%E4%B9%89%E8%80%85%E9%98%B6%E7%BA%A7%E6%98%AF%E9%9D%A9%E5%91%BD%E5%AF%B9%E8%B1%A1",
+  "title": "官僚主义者阶级是革命对象",
+  "volume": "毛选第六卷",
+  "order": 299
+ },
+ {
+  "slug": "%E6%88%91%E4%BB%AC%E5%B8%8C%E6%9C%9B%E9%98%BF%E6%8B%89%E4%BC%AF%E5%9B%BD%E5%AE%B6%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5",
+  "title": "我们希望阿拉伯国家团结起来",
+  "volume": "毛选第六卷",
+  "order": 300
+ },
+ {
+  "slug": "%E6%8A%8A%E5%8C%BB%E7%96%97%E5%8D%AB%E7%94%9F%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%87%8D%E7%82%B9%E6%94%BE%E5%88%B0%E5%86%9C%E6%9D%91%E5%8E%BB",
+  "title": "把医疗卫生工作的重点放到农村去",
+  "volume": "毛选第六卷",
+  "order": 301
+ },
+ {
+  "slug": "%E4%BA%BA%E6%B0%91%E7%BB%99%E6%94%BF%E5%BA%9C%E9%A5%AD%E5%90%83-%E5%90%83%E4%BA%86%E9%A5%AD%E5%B0%B1%E8%A6%81%E4%B8%BA%E4%BA%BA%E6%B0%91%E6%9C%8D%E5%8A%A1",
+  "title": "人民给政府饭吃，吃了饭就要为人民服务",
+  "volume": "毛选第六卷",
+  "order": 302
+ },
+ {
+  "slug": "%E8%83%9C%E5%88%A9%E7%9A%84%E4%BF%A1%E5%BF%B5%E6%98%AF%E4%BB%8E%E6%96%97%E4%BA%89%E4%B8%AD%E5%BE%97%E6%9D%A5%E7%9A%84",
+  "title": "胜利的信念是从斗争中得来的",
+  "volume": "毛选第六卷",
+  "order": 303
+ },
+ {
+  "slug": "%E7%AA%81%E5%87%BA%E6%94%BF%E6%B2%BB-%E5%8F%8D%E5%AF%B9%E6%8A%98%E8%A1%B7%E4%B8%BB%E4%B9%89",
+  "title": "突出政治，反对折衷主义",
+  "volume": "毛选第六卷",
+  "order": 304
+ },
+ {
+  "slug": "%E4%B8%8A%E9%9D%A2%E8%A6%81%E9%9D%A0%E5%85%9A%E7%9A%84%E9%A2%86%E5%AF%BC-%E4%B8%8B%E9%9D%A2%E8%A6%81%E9%9D%A0%E5%B9%BF%E5%A4%A7%E7%BE%A4%E4%BC%97",
+  "title": "上面要靠党的领导，下面要靠广大群众",
+  "volume": "毛选第六卷",
+  "order": 305
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%86%9C%E4%B8%9A%E6%9C%BA%E6%A2%B0%E5%8C%96%E5%A4%87%E6%88%98%E5%A4%87%E8%8D%92%E4%B8%BA%E4%BA%BA%E6%B0%91",
+  "title": "关于农业机械化——备战备荒为人民",
+  "volume": "毛选第七卷",
+  "order": 306
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%A4%AE%E6%94%BF%E6%B2%BB%E5%B1%80%E5%B8%B8%E5%A7%94%E6%89%A9%E5%A4%A7%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中央政治局常委扩大会议上的讲话",
+  "volume": "毛选第七卷",
+  "order": 307
+ },
+ {
+  "slug": "%E5%AF%B9%E4%B8%AD%E5%AE%A3%E9%83%A8%E5%92%8C%E5%8C%97%E4%BA%AC%E5%B8%82%E5%A7%94%E7%9A%84%E6%89%B9%E8%AF%84",
+  "title": "对中宣部和北京市委的批评",
+  "volume": "毛选第七卷",
+  "order": 308
+ },
+ {
+  "slug": "%E5%AD%A6%E6%A0%A1%E4%B8%80%E5%BE%8B%E8%A6%81%E5%AE%9E%E8%A1%8C%E5%8D%8A%E5%B7%A5%E5%8D%8A%E8%AF%BB",
+  "title": "学校一律要实行半工半读",
+  "volume": "毛选第七卷",
+  "order": 309
+ },
+ {
+  "slug": "%E9%83%A8%E9%98%9F%E6%96%87%E8%89%BA%E5%B7%A5%E4%BD%9C%E5%BA%A7%E8%B0%88%E4%BC%9A%E7%BA%AA%E8%A6%81",
+  "title": "部队文艺工作座谈会纪要",
+  "volume": "毛选第七卷",
+  "order": 310
+ },
+ {
+  "slug": "%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%90%9E%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD",
+  "title": "为什么要搞文化大革命",
+  "volume": "毛选第七卷",
+  "order": 311
+ },
+ {
+  "slug": "%E5%90%84%E8%A1%8C%E5%90%84%E4%B8%9A%E5%9D%87%E5%BA%94%E4%B8%80%E4%B8%9A%E4%B8%BA%E4%B8%BB%E5%85%BC%E5%AD%A6%E5%88%AB%E6%A0%B7%E4%BA%94%E4%B8%83%E6%8C%87%E7%A4%BA",
+  "title": "各行各业均应一业为主兼学别样——五·七指示",
+  "volume": "毛选第七卷",
+  "order": 312
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E4%B8%AD%E5%A4%AE%E5%A7%94%E5%91%98%E4%BC%9A%E9%80%9A%E7%9F%A5%E4%BA%94%E4%B8%80%E5%85%AD%E9%80%9A%E7%9F%A5",
+  "title": "中国共产党中央委员会通知——五·一六通知",
+  "volume": "毛选第七卷",
+  "order": 313
+ },
+ {
+  "slug": "%E5%90%8C%E8%83%A1%E5%BF%97%E6%98%8E%E7%9A%84%E8%B0%88%E8%AF%9D%E4%B8%8D%E6%90%9E%E6%B8%85%E5%AE%98%E8%B4%AA%E5%AE%98-%E6%90%9E%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD",
+  "title": "同胡志明的谈话——不搞清官贪官，搞文化大革命",
+  "volume": "毛选第七卷",
+  "order": 314
+ },
+ {
+  "slug": "%E7%BB%99%E6%B1%9F%E9%9D%92%E7%9A%84%E4%BF%A1",
+  "title": "给江青的信",
+  "volume": "毛选第七卷",
+  "order": 315
+ },
+ {
+  "slug": "%E5%87%A1%E6%98%AF%E9%95%87%E5%8E%8B%E5%AD%A6%E7%94%9F%E8%BF%90%E5%8A%A8%E7%9A%84%E4%BA%BA-%E9%83%BD%E6%B2%A1%E6%9C%89%E5%A5%BD%E4%B8%8B%E5%9C%BA",
+  "title": "凡是镇压学生运动的人，都没有好下场",
+  "volume": "毛选第七卷",
+  "order": 316
+ },
+ {
+  "slug": "%E5%B7%A5%E4%BD%9C%E7%BB%84%E8%A6%81%E6%92%A4-%E6%96%87%E5%8C%96%E9%9D%A9%E5%91%BD%E8%A6%81%E4%BE%9D%E9%9D%A0%E9%9D%A9%E5%91%BD%E5%B8%88%E7%94%9F",
+  "title": "工作组要撤，文化革命要依靠革命师生",
+  "volume": "毛选第七卷",
+  "order": 317
+ },
+ {
+  "slug": "%E7%BB%99%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E4%B8%AD%E5%AD%A6%E7%BA%A2%E5%8D%AB%E5%85%B5%E7%9A%84%E4%BF%A1",
+  "title": "给清华大学附属中学红卫兵的信",
+  "volume": "毛选第七卷",
+  "order": 318
+ },
+ {
+  "slug": "%E4%B8%8D%E8%AE%B8%E9%95%87%E5%8E%8B%E5%AD%A6%E7%94%9F%E8%BF%90%E5%8A%A8",
+  "title": "不许镇压学生运动",
+  "volume": "毛选第七卷",
+  "order": 319
+ },
+ {
+  "slug": "%E7%82%AE%E6%89%93%E5%8F%B8%E4%BB%A4%E9%83%A8%E6%88%91%E7%9A%84%E4%B8%80%E5%BC%A0%E5%A4%A7%E5%AD%97%E6%8A%A5",
+  "title": "炮打司令部——我的一张大字报",
+  "volume": "毛选第七卷",
+  "order": 320
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E4%B8%AD%E5%A4%AE%E5%A7%94%E5%91%98%E4%BC%9A%E5%85%B3%E4%BA%8E%E6%97%A0%E4%BA%A7%E9%98%B6%E7%BA%A7%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD%E7%9A%84%E5%86%B3%E5%AE%9A",
+  "title": "中国共产党中央委员会关于无产阶级文化大革命的决定",
+  "volume": "毛选第七卷",
+  "order": 321
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%85%B1%E5%85%AB%E5%B1%8A%E5%8D%81%E4%B8%80%E4%B8%AD%E5%85%A8%E4%BC%9A%E9%97%AD%E5%B9%95%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中共八届十一中全会闭幕会上的讲话",
+  "volume": "毛选第七卷",
+  "order": 322
+ },
+ {
+  "slug": "%E5%AF%B9%E5%9B%9B%E4%BD%8D%E5%A4%96%E5%9B%BD%E4%B8%93%E5%AE%B6%E7%9A%84%E5%A4%A7%E5%AD%97%E6%8A%A5%E7%9A%84%E6%89%B9%E8%AF%AD",
+  "title": "对四位外国专家的大字报的批语",
+  "volume": "毛选第七卷",
+  "order": 323
+ },
+ {
+  "slug": "%E9%A9%BB%E5%A4%96%E6%9C%BA%E5%85%B3%E4%B9%9F%E8%A6%81%E9%9D%A9%E5%91%BD%E5%8C%96",
+  "title": "驻外机关也要革命化",
+  "volume": "毛选第七卷",
+  "order": 324
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%A4%AE%E5%B7%A5%E4%BD%9C%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中央工作会议上的讲话",
+  "volume": "毛选第七卷",
+  "order": 325
+ },
+ {
+  "slug": "%E6%96%97%E4%BA%89%E8%A6%81%E6%96%87%E6%98%8E%E4%BA%9B-%E5%9D%9A%E6%8C%81%E6%96%87%E6%96%97-%E4%B8%8D%E7%94%A8%E6%AD%A6%E6%96%97",
+  "title": "斗争要文明些，坚持文斗，不用武斗",
+  "volume": "毛选第七卷",
+  "order": 326
+ },
+ {
+  "slug": "%E5%AF%B9%E5%88%98%E5%B0%91%E5%A5%87%E5%88%B0%E5%AD%A6%E6%A0%A1%E5%81%9A%E5%85%AC%E5%BC%80%E6%A3%80%E6%9F%A5%E7%9A%84%E6%89%B9%E7%A4%BA",
+  "title": "对刘少奇到学校做公开检查的批示",
+  "volume": "毛选第七卷",
+  "order": 327
+ },
+ {
+  "slug": "%E5%AF%B9-%E6%96%87%E6%B1%87%E6%8A%A5-%E8%A7%A3%E6%94%BE%E6%97%A5%E6%8A%A5-%E5%A4%BA%E6%9D%83%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "对《文汇报》、《解放日报》夺权事件的谈话",
+  "volume": "毛选第七卷",
+  "order": 328
+ },
+ {
+  "slug": "%E8%AE%BA%E5%A4%BA%E6%9D%83",
+  "title": "论夺权",
+  "volume": "毛选第七卷",
+  "order": 329
+ },
+ {
+  "slug": "%E4%BA%BA%E6%B0%91%E8%A7%A3%E6%94%BE%E5%86%9B%E5%BA%94%E8%AF%A5%E6%94%AF%E6%8C%81%E5%B7%A6%E6%B4%BE%E5%B9%BF%E5%A4%A7%E7%BE%A4%E4%BC%97",
+  "title": "人民解放军应该支持左派广大群众",
+  "volume": "毛选第七卷",
+  "order": 330
+ },
+ {
+  "slug": "%E6%8E%A5%E8%A7%81%E5%8D%A1%E5%8D%9A%E5%92%8C%E5%B7%B4%E5%8D%A2%E5%BA%93%E6%97%B6%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "接见卡博和巴卢库时的谈话",
+  "volume": "毛选第七卷",
+  "order": 331
+ },
+ {
+  "slug": "%E5%AF%B9%E4%B8%8A%E6%B5%B7%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD%E7%9A%84%E6%8C%87%E7%A4%BA",
+  "title": "对上海文化大革命的指示",
+  "volume": "毛选第七卷",
+  "order": 332
+ },
+ {
+  "slug": "%E6%89%B9%E8%AF%84%E4%BA%8C%E6%9C%88%E9%80%86%E6%B5%811",
+  "title": "批评“二月逆流”",
+  "volume": "毛选第七卷",
+  "order": 333
+ },
+ {
+  "slug": "%E8%AE%BA%E9%9D%A9%E5%91%BD%E7%9A%84%E4%B8%89%E7%BB%93%E5%90%88",
+  "title": "论革命的“三结合”",
+  "volume": "毛选第七卷",
+  "order": 334
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E4%B8%A4%E6%9D%A1%E8%B7%AF%E7%BA%BF%E6%96%97%E4%BA%89%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98",
+  "title": "关于两条路线斗争的基本问题",
+  "volume": "毛选第七卷",
+  "order": 335
+ },
+ {
+  "slug": "%E6%98%AF%E4%B9%89%E5%92%8C%E5%9B%A2%E4%BE%B5%E7%95%A5%E4%BA%86%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E4%BA%86%E5%90%97",
+  "title": "是义和团侵略了帝国主义了吗？",
+  "volume": "毛选第七卷",
+  "order": 336
+ },
+ {
+  "slug": "%E4%B8%AD%E5%A4%AE%E5%86%9B%E5%A7%94%E5%85%B3%E4%BA%8E%E6%94%AF%E5%B7%A6%E5%B7%A5%E4%BD%9C%E5%8D%81%E6%9D%A1%E5%91%BD%E4%BB%A4",
+  "title": "中央军委关于支左工作十条命令",
+  "volume": "毛选第七卷",
+  "order": 337
+ },
+ {
+  "slug": "%E6%8E%A5%E8%A7%81%E9%98%BF%E5%B0%94%E5%B7%B4%E5%B0%BC%E4%BA%9A%E5%86%9B%E4%BA%8B%E4%BB%A3%E8%A1%A8%E5%9B%A2%E6%97%B6%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "接见阿尔巴尼亚军事代表团时的谈话",
+  "volume": "毛选第七卷",
+  "order": 338
+ },
+ {
+  "slug": "%E8%AE%BA%E6%97%A0%E4%BA%A7%E9%98%B6%E7%BA%A7%E4%B8%93%E6%94%BF%E4%B8%8B%E7%BB%A7%E7%BB%AD%E9%9D%A9%E5%91%BD",
+  "title": "论无产阶级专政下继续革命",
+  "volume": "毛选第七卷",
+  "order": 339
+ },
+ {
+  "slug": "%E5%9C%A8%E5%90%AC%E4%BA%86%E6%B0%A2%E5%BC%B9%E4%BC%9A%E8%AE%AE%E6%B1%87%E6%8A%A5%E5%90%8E%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在听了氢弹会议汇报后的讲话",
+  "volume": "毛选第七卷",
+  "order": 340
+ },
+ {
+  "slug": "%E8%A7%86%E5%AF%9F%E5%8D%8E%E5%8C%97-%E4%B8%AD%E5%8D%97%E5%92%8C%E5%8D%8E%E4%B8%9C%E5%9C%B0%E5%8C%BA%E6%97%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%8C%87%E7%A4%BA",
+  "title": "视察华北、中南和华东地区时的重要指示",
+  "volume": "毛选第七卷",
+  "order": 341
+ },
+ {
+  "slug": "%E6%8E%A5%E8%A7%81%E5%88%9A%E6%9E%9C-%E5%B8%83-%E6%80%BB%E7%90%86%E5%8A%AA%E9%A9%AC%E6%89%8E%E8%8E%B1%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "接见刚果（布）总理努马扎莱的谈话",
+  "volume": "毛选第七卷",
+  "order": 342
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E4%B9%9D%E5%A4%A7%E5%92%8C%E6%95%B4%E5%85%9A%E9%97%AE%E9%A2%98%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "关于“九大”和整党问题的谈话",
+  "volume": "毛选第七卷",
+  "order": 343
+ },
+ {
+  "slug": "%E7%A5%9D%E8%B4%BA%E8%B6%8A%E5%8D%97%E5%8D%97%E6%96%B9%E6%B0%91%E6%97%8F%E8%A7%A3%E6%94%BE%E9%98%B5%E7%BA%BF%E6%88%90%E7%AB%8B%E4%B8%83%E5%91%A8%E5%B9%B4%E7%9A%84%E7%94%B5%E6%8A%A5",
+  "title": "祝贺越南南方民族解放阵线成立七周年的电报",
+  "volume": "毛选第七卷",
+  "order": 344
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%9B%BD%E5%AE%B6%E6%9C%BA%E5%85%B3%E7%9A%84%E6%94%B9%E9%9D%A9%E5%92%8C%E9%9D%A9%E5%91%BD%E5%A7%94%E5%91%98%E4%BC%9A%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%8F%E9%AA%8C",
+  "title": "关于国家机关的改革和革命委员会的基本经验",
+  "volume": "毛选第七卷",
+  "order": 345
+ },
+ {
+  "slug": "%E6%94%AF%E6%8C%81%E7%BE%8E%E5%9B%BD%E9%BB%91%E4%BA%BA%E6%8A%97%E6%9A%B4%E6%96%97%E4%BA%89%E7%9A%84%E5%A3%B0%E6%98%8E",
+  "title": "支持美国黑人抗暴斗争的声明",
+  "volume": "毛选第七卷",
+  "order": 346
+ },
+ {
+  "slug": "%E5%AD%A6%E6%A0%A1%E6%95%99%E8%82%B2%E9%9D%A9%E5%91%BD%E7%9A%84%E6%96%B9%E5%90%91%E8%A6%81%E5%92%8C%E5%B7%A5%E5%86%9C%E5%85%B5%E7%BB%93%E5%90%88",
+  "title": "学校教育革命的方向——要和工农兵结合",
+  "volume": "毛选第七卷",
+  "order": 347
+ },
+ {
+  "slug": "%E6%8E%A5%E8%A7%81%E9%A6%96%E9%83%BD%E7%BA%A2%E4%BB%A3%E4%BC%9A%E4%BA%94%E5%A4%A7%E9%A2%86%E8%A2%96%E6%97%B6%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "接见首都红代会“五大领袖”时的谈话",
+  "volume": "毛选第七卷",
+  "order": 348
+ },
+ {
+  "slug": "%E5%8C%BB%E5%AD%A6%E6%95%99%E8%82%B2%E9%9D%A9%E5%91%BD%E7%9A%84%E6%96%B9%E5%90%91%E8%B5%A4%E8%84%9A%E5%8C%BB%E7%94%9F%E5%B0%B1%E6%98%AF%E5%A5%BD",
+  "title": "医学教育革命的方向——赤脚医生就是好",
+  "volume": "毛选第七卷",
+  "order": 349
+ },
+ {
+  "slug": "%E5%B9%BF%E5%A4%A7%E5%B9%B2%E9%83%A8%E4%B8%8B%E6%94%BE%E5%8A%B3%E5%8A%A8%E6%98%AF%E4%B8%80%E7%A7%8D%E9%87%8D%E6%96%B0%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9E%81%E5%A5%BD%E6%9C%BA%E4%BC%9A",
+  "title": "广大干部下放劳动是一种重新学习的极好机会",
+  "volume": "毛选第七卷",
+  "order": 350
+ },
+ {
+  "slug": "%E5%9C%A8%E4%B8%AD%E5%85%B1%E5%85%AB%E5%B1%8A%E6%89%A9%E5%A4%A7%E7%9A%84%E5%8D%81%E4%BA%8C%E4%B8%AD%E5%85%A8%E4%BC%9A%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "在中共八届扩大的十二中全会上的讲话",
+  "volume": "毛选第七卷",
+  "order": 351
+ },
+ {
+  "slug": "%E8%B5%9E%E6%88%90%E8%B6%8A%E5%8D%97%E5%8F%88%E6%89%93%E5%8F%88%E8%B0%88%E7%9A%84%E6%96%B9%E9%92%88",
+  "title": "赞成越南又打又谈的方针",
+  "volume": "毛选第七卷",
+  "order": 352
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E7%9F%A5%E8%AF%86%E9%9D%92%E5%B9%B4%E5%88%B0%E5%86%9C%E6%9D%91%E5%8E%BB%E7%9A%84%E5%8F%B7%E5%8F%AC",
+  "title": "关于知识青年到农村去的号召",
+  "volume": "毛选第七卷",
+  "order": 353
+ },
+ {
+  "slug": "%E5%AF%B9%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E7%AC%AC%E4%B9%9D%E6%AC%A1%E5%85%A8%E5%9B%BD%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A%E7%9A%84%E8%AE%B2%E8%AF%9D",
+  "title": "对中国共产党第九次全国代表大会的讲话",
+  "volume": "毛选第七卷",
+  "order": 354
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E6%88%98%E5%A4%87%E7%96%8F%E6%95%A3%E7%9A%84%E6%8C%87%E7%A4%BA",
+  "title": "关于战备疏散的指示",
+  "volume": "毛选第七卷",
+  "order": 355
+ },
+ {
+  "slug": "%E7%A5%9D%E8%B4%BA%E8%B6%8A%E5%8D%97%E5%8D%97%E6%96%B9%E6%B0%91%E6%97%8F%E8%A7%A3%E6%94%BE%E9%98%B5%E7%BA%BF%E6%88%90%E7%AB%8B%E4%B9%9D%E5%91%A8%E5%B9%B4%E7%9A%84%E7%94%B5%E6%8A%A5",
+  "title": "祝贺越南南方民族解放阵线成立九周年的电报",
+  "volume": "毛选第七卷",
+  "order": 356
+ },
+ {
+  "slug": "%E4%B8%8E%E9%BB%8E%E7%AC%8B%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "与黎笋的谈话",
+  "volume": "毛选第七卷",
+  "order": 357
+ },
+ {
+  "slug": "%E5%85%A8%E4%B8%96%E7%95%8C%E4%BA%BA%E6%B0%91%E5%9B%A2%E7%BB%93%E8%B5%B7%E6%9D%A5-%E6%89%93%E8%B4%A5%E7%BE%8E%E5%9B%BD%E4%BE%B5%E7%95%A5%E8%80%85%E5%8F%8A%E5%85%B6%E4%B8%80%E5%88%87%E8%B5%B0%E7%8B%97",
+  "title": "全世界人民团结起来，打败美国侵略者及其一切走狗",
+  "volume": "毛选第七卷",
+  "order": 358
+ },
+ {
+  "slug": "%E5%8F%91%E5%B1%95%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%A5%E4%B8%9A%E5%92%8C%E5%86%9C%E4%B8%9A%E4%B8%8D%E8%A6%81%E4%BE%9D%E9%9D%A0%E5%A4%96%E5%9B%BD",
+  "title": "发展自己的工业和农业不要依靠外国",
+  "volume": "毛选第七卷",
+  "order": 359
+ },
+ {
+  "slug": "%E5%B8%9D%E5%9B%BD%E4%B8%BB%E4%B9%89%E6%80%95%E7%AC%AC%E4%B8%89%E4%B8%96%E7%95%8C",
+  "title": "帝国主义怕第三世界",
+  "volume": "毛选第七卷",
+  "order": 360
+ },
+ {
+  "slug": "%E5%9B%BD%E9%99%85%E9%97%B4%E7%9A%84%E4%BA%8B%E8%A6%81%E7%94%B1%E5%A4%A7%E5%AE%B6%E5%95%86%E9%87%8F%E8%A7%A3%E5%86%B3",
+  "title": "国际间的事要由大家商量解决",
+  "volume": "毛选第七卷",
+  "order": 361
+ },
+ {
+  "slug": "%E6%94%B9%E5%8F%98%E5%9B%BD%E5%AE%B6%E4%BD%93%E5%88%B6-%E4%B8%8D%E8%AE%BE%E5%9B%BD%E5%AE%B6%E4%B8%BB%E5%B8%AD",
+  "title": "改变国家体制，不设国家主席",
+  "volume": "毛选第七卷",
+  "order": 362
+ },
+ {
+  "slug": "%E6%88%91%E7%9A%84%E4%B8%80%E7%82%B9%E6%84%8F%E8%A7%81",
+  "title": "我的一点意见",
+  "volume": "毛选第七卷",
+  "order": 363
+ },
+ {
+  "slug": "%E4%B8%8E%E6%96%AF%E8%AF%BA%E7%9A%84%E8%B0%88%E8%AF%9D%E5%85%B3%E4%BA%8E%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD",
+  "title": "与斯诺的谈话——关于文化大革命",
+  "volume": "毛选第七卷",
+  "order": 364
+ },
+ {
+  "slug": "%E5%AF%B9%E5%A4%96%E5%AE%A3%E4%BC%A0%E5%B7%A5%E4%BD%9C%E4%B8%8D%E5%8F%AF%E5%BC%BA%E5%8A%A0%E4%BA%8E%E4%BA%BA",
+  "title": "对外宣传工作不可强加于人",
+  "volume": "毛选第七卷",
+  "order": 365
+ },
+ {
+  "slug": "%E6%80%9D%E6%83%B3%E4%B8%8A%E6%94%BF%E6%B2%BB%E4%B8%8A%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%AD%A3%E7%A1%AE%E4%B8%8E%E5%90%A6%E6%98%AF%E5%86%B3%E5%AE%9A%E4%B8%80%E5%88%87%E7%9A%84",
+  "title": "思想上政治上的路线正确与否是决定一切的",
+  "volume": "毛选第七卷",
+  "order": 366
+ },
+ {
+  "slug": "%E6%81%A2%E5%A4%8D%E8%81%94%E5%90%88%E5%9B%BD%E5%B8%AD%E4%BD%8D%E5%90%8E%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "恢复联合国席位后的谈话",
+  "volume": "毛选第七卷",
+  "order": 367
+ },
+ {
+  "slug": "%E5%AF%B9%E5%8F%8D%E9%9D%A9%E5%91%BD%E4%B8%8D%E8%A6%81%E6%9D%80-%E4%BF%9D%E7%95%99%E6%B4%BB%E8%AF%81%E6%8D%AE",
+  "title": "对反革命不要杀，保留活证据",
+  "volume": "毛选第七卷",
+  "order": 368
+ },
+ {
+  "slug": "%E4%BC%9A%E8%A7%81%E7%BE%8E%E5%9B%BD%E6%80%BB%E7%BB%9F%E5%B0%BC%E5%85%8B%E6%9D%BE%E6%97%B6%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "会见美国总统尼克松时的谈话",
+  "volume": "毛选第七卷",
+  "order": 369
+ },
+ {
+  "slug": "%E4%B8%AD%E7%BE%8E%E8%81%94%E5%90%88%E5%85%AC%E6%8A%A5-%E4%B8%8A%E6%B5%B7%E5%85%AC%E6%8A%A5-%E4%B8%AD%E5%9B%BD%E6%96%B9%E9%9D%A2%E7%9A%84%E5%A3%B0%E6%98%8E",
+  "title": "中美联合公报（“上海公报”）中国方面的声明",
+  "volume": "毛选第七卷",
+  "order": 370
+ },
+ {
+  "slug": "%E4%B8%8E%E6%97%A5%E6%9C%AC%E9%A6%96%E7%9B%B8%E7%94%B0%E4%B8%AD%E8%A7%92%E8%8D%A3%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "与日本首相田中角荣的谈话",
+  "volume": "毛选第七卷",
+  "order": 371
+ },
+ {
+  "slug": "%E6%B7%B1%E6%8C%96%E6%B4%9E-%E5%B9%BF%E7%A7%AF%E7%B2%AE-%E4%B8%8D%E7%A7%B0%E9%9C%B8",
+  "title": "深挖洞，广积粮，不称霸",
+  "volume": "毛选第七卷",
+  "order": 372
+ },
+ {
+  "slug": "%E7%A5%9D%E8%B4%BA%E8%B6%8A%E5%8D%97%E4%BA%BA%E6%B0%91%E5%8F%96%E5%BE%97%E7%9A%84%E4%BC%9F%E5%A4%A7%E8%83%9C%E5%88%A9",
+  "title": "祝贺越南人民取得的伟大胜利",
+  "volume": "毛选第七卷",
+  "order": 373
+ },
+ {
+  "slug": "%E6%8E%A5%E8%A7%81%E5%9F%BA%E8%BE%9B%E6%A0%BC%E6%97%B6%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "接见基辛格时的谈话*",
+  "volume": "毛选第七卷",
+  "order": 374
+ },
+ {
+  "slug": "%E5%90%AF%E7%94%A8%E9%82%93%E5%B0%8F%E5%B9%B3",
+  "title": "启用邓小平",
+  "volume": "毛选第七卷",
+  "order": 375
+ },
+ {
+  "slug": "%E5%9C%A8%E6%94%BF%E6%B2%BB%E5%B1%80%E4%BC%9A%E8%AE%AE%E4%B8%8A%E7%9A%84%E8%AE%B2%E8%AF%9D%E5%85%AB%E5%A4%A7%E5%86%9B%E5%8C%BA%E5%8F%B8%E4%BB%A4%E5%91%98%E5%AF%B9%E8%B0%83",
+  "title": "在政治局会议上的讲话——八大军区司令员对调",
+  "volume": "毛选第七卷",
+  "order": 376
+ },
+ {
+  "slug": "%E4%B8%AD%E5%9B%BD%E5%B0%86%E4%BF%AE%E5%BB%BA%E9%9D%92%E8%97%8F%E9%93%81%E8%B7%AF",
+  "title": "中国将修建青藏铁路",
+  "volume": "毛选第七卷",
+  "order": 377
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E5%88%92%E5%88%86%E4%B8%89%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "关于划分三个世界的谈话",
+  "volume": "毛选第七卷",
+  "order": 378
+ },
+ {
+  "slug": "%E5%90%8C%E8%8B%B1%E5%9B%BD%E5%89%8D%E9%A6%96%E7%9B%B8%E5%B8%8C%E6%80%9D%E7%9A%84%E8%B0%88%E8%AF%9D",
+  "title": "同英国前首相希思的谈话",
+  "volume": "毛选第七卷",
+  "order": 379
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E%E7%90%86%E8%AE%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%B0%88%E8%AF%9D%E8%A6%81%E7%82%B9",
+  "title": "关于理论问题的谈话要点",
+  "volume": "毛选第七卷",
+  "order": 380
+ },
+ {
+  "slug": "%E5%AF%B9%E5%9C%A8%E6%8A%BC%E5%9B%BD%E6%B0%91%E5%85%9A%E6%88%98%E7%8A%AF-%E5%85%9A%E6%94%BF%E5%86%9B%E7%89%B9%E4%BA%BA%E5%91%98%E4%B8%80%E5%BE%8B%E9%87%8A%E6%94%BE",
+  "title": "对在押国民党战犯、党政军特人员一律释放",
+  "volume": "毛选第七卷",
+  "order": 381
+ },
+ {
+  "slug": "%E8%A6%81%E5%AE%89%E5%AE%9A%E5%9B%A2%E7%BB%93%E4%B8%8D%E8%A6%81%E5%88%86%E8%A3%82-%E4%B8%8D%E8%A6%81%E6%90%9E%E9%98%B4%E8%B0%8B%E8%AF%A1%E8%AE%A1",
+  "title": "要安定团结不要分裂，不要搞阴谋诡计",
+  "volume": "毛选第七卷",
+  "order": 382
+ },
+ {
+  "slug": "%E5%85%B3%E4%BA%8E-%E6%B0%B4%E6%B5%92-%E7%9A%84%E8%AF%84%E8%AE%BA",
+  "title": "关于《水浒》的评论",
+  "volume": "毛选第七卷",
+  "order": 383
+ },
+ {
+  "slug": "%E4%B8%AD%E7%BE%8E%E5%85%B3%E7%B3%BB%E4%BC%9A%E4%B8%80%E7%82%B9%E7%82%B9%E5%A5%BD%E8%B5%B7%E6%9D%A5",
+  "title": "中美关系会一点点好起来",
+  "volume": "毛选第七卷",
+  "order": 384
+ },
+ {
+  "slug": "%E7%A5%9D%E8%B4%BA%E5%8D%B0%E5%BA%A6%E6%94%AF%E9%82%A3%E4%B8%89%E5%9B%BD%E6%8A%97%E7%BE%8E%E6%95%91%E5%9B%BD%E6%88%98%E4%BA%89%E5%8F%96%E5%BE%97%E8%83%9C%E5%88%A9",
+  "title": "祝贺印度支那三国抗美救国战争取得胜利",
+  "volume": "毛选第七卷",
+  "order": 385
+ },
+ {
+  "slug": "%E8%B5%B0%E8%B5%84%E6%B4%BE%E8%BF%98%E5%9C%A8%E8%B5%B0-%E6%B0%B8%E4%B8%8D%E7%BF%BB%E6%A1%88%E9%9D%A0%E4%B8%8D%E4%BD%8F",
+  "title": "走资派还在走，“永不翻案”靠不住",
+  "volume": "毛选第七卷",
+  "order": 386
+ },
+ {
+  "slug": "%E5%AF%B9%E5%A4%A9%E5%AE%89%E9%97%A8%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%8C%87%E7%A4%BA",
+  "title": "对天安门事件的指示",
+  "volume": "毛选第七卷",
+  "order": 387
+ },
+ {
+  "slug": "%E5%90%8E%E4%BA%8B%E4%BA%A4%E4%BB%A3",
+  "title": "后事交代",
+  "volume": "毛选第七卷",
+  "order": 388
+ }
+]

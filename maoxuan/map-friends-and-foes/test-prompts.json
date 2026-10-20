@@ -1,0 +1,52 @@
+{
+  "skill": "map-friends-and-foes",
+  "version": "0.1.0",
+  "source_book": "《毛泽东选集》第一卷《中国社会各阶级的分析》 — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我想做一个新方向/进一个新市场，但感觉力量不够，不知道谁是可以拉拢的盟友、谁是真对手。",
+      "expected_behavior": "应激活 map-friends-and-foes：列相关方 → 两轴分类 → 划三区 → 切中间派 → 行为验证 → 定资源分配。",
+      "notes": "正面场景：结盟动员前的力量盘点，且明确表达了'力量不够、分不清敌友'。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我要推动一个变革，支持的人不够，还能争取谁？哪些人表面中立其实拉得动？",
+      "expected_behavior": "应激活，重点落在步骤 4（切中间派：左翼可争取 vs 右翼提防）和步骤 5（行为验证）。",
+      "notes": "正面场景：'还能争取谁'直指中间动摇派，是本 skill 的精髓触发点。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "进一个新学术领域，我想搞清楚哪些学者是同盟、哪些可能是评审反对者、哪些是可争取的中立者。",
+      "expected_behavior": "应激活，把'学者/派系'作为相关方做两轴分类。",
+      "notes": "正面场景：迁移到学术/职业，仍属于'行动前搞清阵营'。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下 2024 年智能手机市场份额数据。",
+      "expected_behavior": "不应激活本 skill，因为没有'结盟/动员/力量盘点'意图，是纯信息查询。",
+      "notes": "诱饵：出现了'市场'一词，但不是阵营测绘场景。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "给我写一份这周工作周报，总结做了什么。",
+      "expected_behavior": "不应激活本 skill，例行汇报不涉及相关方立场分类。",
+      "notes": "诱饵：例行/事务性请求，无战略结盟意图。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想给一个同事定性：他到底算我们这边的人，还是对面的人？",
+      "expected_behavior": "边界判断：表面像'分清敌友'，但目的已滑向'贴标签/定性'。若激活，必须强制走步骤 5 行为验证、并明确输出'盘点非判决'；若意图纯粹是给人定性，则应拒绝并说明本 skill 是资源盘点工具。",
+      "notes": "边界：直击'阶级叙事'的陷阱——把'盘点'误用成'判决/出身论'。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过（诱饵容错为 0）。"
+}
