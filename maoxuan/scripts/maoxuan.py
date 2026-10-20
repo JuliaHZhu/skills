@@ -66,18 +66,23 @@ def clean(s):
     return s.strip()
 
 
-SITE_BADGE = "该标题由maoxuan.app整理"
+SITE_BADGE = "由maoxuan.app整理"
 
 
 def extract_article(raw):
     """从文章页 HTML 抽 title / 原文段落列表（保真：剔除站方导读与站方小标题标注）。
 
-    关键事实：页面有两块 prose——`prose-base`(aside 里)=站方导读(非原文)，
-    `prose prose-lg`=原文。原文区内的 h2/h3 也是站方加的小标题（带"该标题由maoxuan.app整理"徽标），
-    不是毛原文结构。所以：只抽 prose-lg 区的段落，小标题透明标注，站方导读直接丢弃。
+    关键事实（两篇实测）：
+    - 站方导读（"一句话概括/核心观点/阅读提示"）放在 `<aside>` 里，非原文，直接删。
+    - 原文在 `prose prose-lg` 容器里；但日期段落可能单独占一个 `prose-lg`（-mb-4），
+      所以不能只 find 第一个 prose-lg 就完事——正确顺序是：先删 aside，再抽 prose-lg 区。
+    - 原文区内的 h2/h3 是站方加的小标题（带"该标题由maoxuan.app整理"徽标），透明标注。
     """
     m = re.search(r"<h1[^>]*>(.*?)</h1>", raw, re.S)
     title = clean(m.group(1)) if m else ""
+
+    # 1) 删掉站方导读块（<aside>...</aside>，含导读/核心观点/阅读提示/相关文章等非原文内容）
+    raw = re.sub(r"<aside\b.*?</aside>", "", raw, flags=re.S)
 
     start = raw.find("prose prose-lg")
     if start < 0:
@@ -103,7 +108,8 @@ def extract_article(raw):
             continue
         if kind in ("h2", "h3"):
             site_added = SITE_BADGE in txt
-            txt = txt.replace(SITE_BADGE, "").strip()
+            # 去掉徽标文本（"该标题/该导读由maoxuan.app整理" 等）
+            txt = re.sub(r"该(标题|导读|小标题|编者)[^由]*由maoxuan\.app整理", "", txt).strip()
             blocks.append(("heading" if not site_added else "site-heading", txt))
         elif kind == "blockquote":
             blocks.append(("quote", txt))
