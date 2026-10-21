@@ -8,10 +8,12 @@ maoxuan.py — 毛选逐篇蒸馏的机械层脚本（爬取/提取/状态跟踪
   - 脚本不生成 SKILL.md，只准备原文和跟踪状态。
 
 用法：
-  python3 maoxuan.py fetch <slug>     # 抓一篇 → raw/<slug>.md，标记 fetched
-  python3 maoxuan.py next            # 下一篇未蒸馏的 slug
-  python3 maoxuan.py status          # 进度总览
-  python3 maoxuan.py mark <slug> <st># 手动改状态 fetched|distilled
+  python3 maoxuan.py fetch <slug>      # 抓一篇 → raw/<slug>.md，标记 fetched
+  python3 maoxuan.py next             # 下一篇未蒸馏的 slug（自动跳过 skip 的）
+  python3 maoxuan.py status           # 进度总览（跳过的单独列）
+  python3 maoxuan.py skipped          # 列出所有已跳过的篇目 + 原因
+  python3 maoxuan.py skip <slug> <原因> # 标记跳过（如"政治类·创业阶段暂不读"）
+  python3 maoxuan.py mark <slug> <st> # 手动改状态 fetched|distilled
 """
 
 import json, re, html, subprocess, sys, os, time, random, urllib.parse
@@ -157,7 +159,9 @@ def cmd_fetch(items, slug):
     path = os.path.join(RAW, slug + ".md")
     with open(path, "w", encoding="utf-8") as f:
         f.write(to_markdown(title, date, blocks))
-    it["status"] = "fetched"
+    # 已蒸馏的篇目，重新 fetch 只是刷新 raw 缓存，不降级状态
+    if it.get("status") != "distilled":
+        it["status"] = "fetched"
     it["chars"] = sum(len(txt) for _, txt in blocks)
     save_manifest(items)
     print(f"已存 {path}  ·  标题={title}  ·  {len(blocks)} 块 / {it['chars']} 字")
@@ -165,6 +169,8 @@ def cmd_fetch(items, slug):
 
 def cmd_next(items):
     for it in items:
+        if it.get("skip"):
+            continue
         if it.get("status", "") != "distilled":
             print(it["order"], it["slug"], "|", it["volume"], "|", it["title"],
                   "|", it.get("status", "未抓"))
@@ -175,13 +181,62 @@ def cmd_next(items):
 def cmd_status(items):
     from collections import Counter
     c = Counter(it.get("status", "未抓") for it in items)
-    print(f"总 {len(items)} 篇：", dict(c))
-    print("--- 未完成清单（menu 式，标进度）---")
+    skipped = [it for it in items if it.get("skip")]
+    print(f"总 {len(items)} 篇 | 已跳过 {len(skipped)} 篇 | 状态分布: {dict(c)}")
+    print("--- 未完成清单（非跳过，menu 式，标进度）---")
     for it in items:
+        if it.get("skip"):
+            continue
         if it.get("status", "") != "distilled":
             print(f"[{'✓' if it.get('status')=='fetched' else ' '}] "
                   f"{it['order']:>3} {it['volume']} {it['title']}  "
                   f"({it['slug']})")
+    if skipped:
+        print("--- 已跳过（详见 SKIPPED.md）---")
+        for it in skipped:
+            print(f"  {it['order']:>3} {it['title']}  → {it.get('skip')}")
+
+
+def write_skipped_md(items):
+    """从 manifest 生成人读的 SKIPPED.md（记录跳过了什么）。"""
+    skipped = [it for it in items if it.get("skip")]
+    lines = [
+        "# 已跳过篇目",
+        "",
+        "创业阶段暂不读的篇目，留待以后需要时再蒸馏。用 `python3 scripts/maoxuan.py skipped` 随时查。",
+        "",
+        "| # | 卷 | 篇名 | slug | 跳过原因 |",
+        "|---|-----|------|------|---------|",
+    ]
+    if skipped:
+        for it in skipped:
+            lines.append(f"| {it['order']} | {it['volume']} | {it['title']} | {it['slug']} | {it['skip']} |")
+    else:
+        lines.append("| — | — | （暂无跳过） | — | — |")
+    lines += ["", "> 恢复：编辑 MANIFEST.json 删掉该篇的 `skip` 字段（或置空）即可。"]
+    with open(os.path.join(REPO, "SKIPPED.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+
+def cmd_skip(items, slug, reason):
+    it = find_item(items, slug)
+    if it is None:
+        print(f"未知 slug: {slug}")
+        sys.exit(1)
+    it["skip"] = reason
+    save_manifest(items)
+    write_skipped_md(items)
+    print(f"已跳过 {slug} · {reason}")
+
+
+def cmd_skipped(items):
+    skipped = [it for it in items if it.get("skip")]
+    if not skipped:
+        print("无跳过记录")
+        return
+    print(f"已跳过 {len(skipped)} 篇：")
+    for it in skipped:
+        print(f"  {it['order']:>3} {it['volume']} · {it['title']}  → {it.get('skip')}")
 
 
 def cmd_mark(items, slug, st):
@@ -206,6 +261,10 @@ def main():
         cmd_next(items)
     elif cmd == "status":
         cmd_status(items)
+    elif cmd == "skipped":
+        cmd_skipped(items)
+    elif cmd == "skip" and len(sys.argv) >= 4:
+        cmd_skip(items, sys.argv[2], " ".join(sys.argv[3:]))
     elif cmd == "mark" and len(sys.argv) >= 4:
         cmd_mark(items, sys.argv[2], sys.argv[3])
     else:

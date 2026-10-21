@@ -1,0 +1,52 @@
+{
+  "skill": "survival-condition-analysis",
+  "version": "0.1.0",
+  "source_book": "《毛泽东选集》第一卷《中国的红色政权为什么能够存在？》 — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我想做一个新方向，但赛道里已经挤满巨头，我心里没底，不知道这事到底能不能活下来、我们还有没有空间。",
+      "expected_behavior": "应激活 survival-condition-analysis：挖深层矛盾 → 定位夹缝（我的空间是哪个分裂给的）→ 列自身硬条件 → 判断条件状态 → 配策略。",
+      "notes": "正面场景：'巨头林立 + 还有没有空间'，直指本 skill 的'从对手矛盾里找夹缝'核心。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我对手内部现在乱得很（路线之争、内斗），这是不是我的机会？我该趁乱扩张还是观望？",
+      "expected_behavior": "应激活，重点落在步骤 4（判断条件状态：对手分裂=宽松期）和步骤 5（宽松期→扩张，但绑定切换信号）。",
+      "notes": "正面场景：'对手乱不乱 + 该激进还是保守'，正是'条件状态动态判断'的触发点。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "融资环境突然收紧了，我之前一直烧钱扩张，现在要不要收缩？怎么判断？",
+      "expected_behavior": "应激活，重点在步骤 4-5：把'融资收紧'识别为'对手稳定/收紧期'，策略从扩张切到收缩，并给出可观测的切换信号。",
+      "notes": "正面场景：环境变化 → 条件状态切换 → 策略跟着切，对应'八月失败'的反面教训。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下 2024 年 AI 大模型各家的市场份额。",
+      "expected_behavior": "不应激活本 skill，因为这是纯信息查询，没有'判断某个脆弱主体能不能活'的意图。",
+      "notes": "诱饵：出现了'各家'一词，但不是生存判断场景。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "给我写一段鼓励团队的话，让大家相信我们一定能赢。",
+      "expected_behavior": "不应激活本 skill，本 skill 给的是冷判断（生存条件诊断），不是鸡汤式信心。",
+      "notes": "诱饵：'能不能赢'表面相关，但意图是打气，不是做条件分析。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想做一个市面上完全没有的东西，没有直接对手，帮我分析一下能不能活。",
+      "expected_behavior": "边界判断：'没有存量对手'意味着本 skill 的'从对手矛盾里找夹缝'不适用（零和视角失效）。应说明：本框架只适用于'从现有对手手里抢空间'的场景；创造新市场的场景应改用'需求验证/新范式'类方法。",
+      "notes": "边界：直击作者盲点——毛的框架隐含'必须依附某个分裂结构'，不适用于增量/新市场。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过（诱饵容错为 0）。"
+}
