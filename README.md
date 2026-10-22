@@ -50,6 +50,12 @@ Each skill is independently usable — you can jump in at any step if you alread
 |-------|-------------|
 | `task-ball-machine` | Draw random tasks from a configurable ball machine |
 
+## Knowledge Management
+
+| Skill | Description |
+|-------|-------------|
+| `double-helix` | 对话反转录成双螺旋知识卡：经典理论链 × 个人答案链 |
+
 ---
 
 All skills are MIT licensed. Compatible with Hermes Agent.
