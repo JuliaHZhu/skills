@@ -1,0 +1,52 @@
+{
+  "skill": "win-the-middle",
+  "version": "0.1.0",
+  "source_book": "《毛泽东选集》第一卷《井冈山的斗争》 — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们生态里有一批观望的合作伙伴，既不明确站我们也不明确站对手，我该怎么对待他们？",
+      "expected_behavior": "应激活 win-the-middle：识别中间力量 → 判断强势/弱势期 → 检查是否打击过重 → 定策略（强势期吸纳、弱势期留后路并降低忠诚期望）。",
+      "notes": "正面场景：'观望的骑墙者 + 怎么对待'，直指本 skill 核心。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我一直对某个合作方很好、给足了好处，结果我们一遇到困难他转头就投了对手，为什么？",
+      "expected_behavior": "应激活，重点落在'忠诚是形势的函数，不是关系经营的结果'——解释为什么'对他好'留不住骑墙者。",
+      "notes": "正面场景：'对他好却倒戈'，正是本 skill 要纠正的直觉错误之一。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们最近出的规则会不会太狠了，把那些本来中立的人逼到对手那边去？",
+      "expected_behavior": "应激活，重点落在步骤 3（检查是否打击过重），识别'政策过猛把中间力量推向敌人'的风险。",
+      "notes": "正面场景：'担心把中立者推走'，对应'打击过重是反叛主因'。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下今年各家云厂商的市场份额排名。",
+      "expected_behavior": "不应激活本 skill，因为这是纯信息查询，没有'对待骑墙者/中间力量'的意图。",
+      "notes": "诱饵：出现了'各家'一词，但不是联盟/骑墙者场景。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我想给团队做一次价值观宣贯，让大家认同我们的使命。",
+      "expected_behavior": "不应激活本 skill，本 skill 是关于'联盟中骑墙者的忠诚规律'，不是内部团队价值观建设。",
+      "notes": "诱饵：'认同/忠诚'表面相关，但对象是内部团队而非外部中间力量。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "这个市场就两家死磕，没有第三方，我要不要也争取一下供应商当中间派？",
+      "expected_behavior": "边界判断：'明确两极对立、无中间地带'意味着本 skill 前提（存在可争取的中间力量）不成立。应说明：不要把不存在中间力量的地方硬套；先确认是否真的存在可争取的中间派。",
+      "notes": "边界：直击本 skill 的前提假设——适用于'存在中间力量'的场景，不适用于纯两极。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过（诱饵容错为 0）。"
+}

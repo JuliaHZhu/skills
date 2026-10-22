@@ -1,0 +1,52 @@
+{
+  "skill": "non-material-motivation",
+  "version": "0.1.0",
+  "source_book": "《毛泽东选集》第一卷《井冈山的斗争》 — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们是个早期团队，给不起大厂那种薪资和福利，但项目很关键，我需要团队拼命、有凝聚力，怎么办？",
+      "expected_behavior": "应激活 non-material-motivation：盘点平等/参与/透明三个杠杆 → 找参与感的最小抓手 → 设计平等信号 → 验证火炉效应。",
+      "notes": "正面场景：'给不起钱但要拼命'，直指本 skill 的'没钱靠非物质杠杆'核心。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我发现同样的员工，在上一家公司很拼，来我们这之后就摸鱼了，这是为什么？怎么改？",
+      "expected_behavior": "应激活，重点落在'人的产出是组织环境的函数'——用平等/参与/透明三个杠杆诊断当前组织环境缺了什么。",
+      "notes": "正面场景：'同样的人换了环境就不一样'，正是'火炉效应'的反面提问。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想让团队成员有主人翁意识，别老觉得是在给老板打工，钱又加不动，能做点什么？",
+      "expected_behavior": "应激活，重点落在步骤 2（参与：把切身相关的决定权交下去）和步骤 3（平等：领导者放弃特权），把'雇佣感'改写成'主人翁感'。",
+      "notes": "正面场景：'主人翁意识 + 加不动钱'，是本 skill 的目标状态。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下 2025 年互联网大厂的平均薪资水平。",
+      "expected_behavior": "不应激活本 skill，因为这是纯信息查询，没有'资源紧张却要提升战斗力/凝聚力'的意图。",
+      "notes": "诱饵：出现了'薪资'一词，但不是激励设计场景。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "给我们团队写几句正能量口号，贴在墙上鼓舞士气。",
+      "expected_behavior": "不应激活本 skill，本 skill 要求结构性改变（平等/参与/透明的制度），不是口号/氛围营造。",
+      "notes": "诱饵：'鼓舞士气'表面相关，但诉求是'打鸡血'而非结构性激励，直击边界。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们公司现在工资都发不出来了，员工基本生活都成问题，能不能靠平等透明这些精神激励撑过去？",
+      "expected_behavior": "边界判断：'物质跌破生存线'意味着本 skill 前提失效。应说明：先解决生存问题，精神解放是物质有基本保障之后的事；此时谈平等参与透明是画饼。",
+      "notes": "边界：直击作者盲点/前提——毛的军队民主主义建立在'物质虽菲薄但能维持'之上，不是零物质。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过（诱饵容错为 0）。"
+}

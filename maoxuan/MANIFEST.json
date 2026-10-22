@@ -35,7 +35,9 @@
   "volume": "毛选第一卷",
   "order": 4,
   "topic": "",
-  "skip": ""
+  "skip": "",
+  "status": "distilled",
+  "chars": 15369
  },
  {
   "slug": "on-correcting-erroneous-tendencies-in-the-party",

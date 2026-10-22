@@ -1,0 +1,52 @@
+{
+  "skill": "embed-at-the-smallest-unit",
+  "version": "0.1.0",
+  "source_book": "《毛泽东选集》第一卷《井冈山的斗争》 — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们公司从十几个人长到上百人了，价值观开始稀释，一线执行老是走样，怎么把理念真正落到一线？",
+      "expected_behavior": "应激活 embed-at-the-smallest-unit：确定最小作战单元 → 设价值观守护者 → 明确他的抓手 → 验证不溃散。",
+      "notes": "正面场景：'公司变大 + 价值观稀释 + 怎么落到一线'，直指本 skill 核心。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们的团队一遇到压力就人心涣散，怎么让最小的那个小组自己也有凝聚力和纪律？",
+      "expected_behavior": "应激活，重点落在'在最小单元安一个守护价值观的角色'，让最小单元在压力下不散。",
+      "notes": "正面场景：'压力下涣散 + 最小单元凝聚力'，对应'艰难奋战而不溃散'。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们的文化价值观只挂在墙上、贴在入职手册里，一线没人当回事，怎么改？",
+      "expected_behavior": "应激活，重点落在步骤 2（在最小单元设实权守护者，而非宣传），把'墙上价值观'改成'结构上埋角色'。",
+      "notes": "正面场景：'价值观只在墙上'，正是本 skill 要纠正的'宣传 vs 结构'区别。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我查一下华为的价值观体系有哪些内容。",
+      "expected_behavior": "不应激活本 skill，因为这是纯信息查询，没有'组织下沉/守护最小单元'的意图。",
+      "notes": "诱饵：出现了'价值观'一词，但不是组织设计场景。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我给新员工做一次企业文化培训的课件。",
+      "expected_behavior": "不应激活本 skill，本 skill 要求结构上的常设角色（下沉到最小单元），不是一次性培训/宣贯动作。",
+      "notes": "诱饵：'企业文化培训'表面相关，但诉求是宣传而非结构下沉，直击边界。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们是个三人的独立工作室，要不要也设一个'价值观守护者'来守住我们的理念？",
+      "expected_behavior": "边界判断：'组织极小、尚无最小单元 vs 总部之分'意味着本 skill 前提不成立，下沉是过度设计。应说明：三个人直接对齐即可，不需要常设守护角色。",
+      "notes": "边界：直击本 skill 的前提——适用于'组织变大、有最小单元 vs 总部之分'的场景，不适用于极小组织。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过（诱饵容错为 0）。"
+}
